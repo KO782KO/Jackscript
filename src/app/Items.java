@@ -182,7 +182,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
    //displays a report of current inventory 
      public void itemReport() throws IOException{
          try{
-                NewJFrame fr=new NewJFrame();
+                FileChooser fr=new FileChooser();
                 fr.setVisible(false);
                 String selection=fr.fileName();
                 if(selection!=null){

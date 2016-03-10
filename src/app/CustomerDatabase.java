@@ -78,9 +78,12 @@ public class CustomerDatabase {
         System.out.printf("Sorry, the file appears to be missing.  Please contact IT.");
     }catch(IOException ioe){
         System.out.printf("An error has occurred.  Please contact IT.");
+    }catch(NumberFormatException e){
+        System.out.printf("Number Format Exception: please contact IT.");
     }catch(Exception e){
-        System.out.printf("General error: please contact IT");
-    }finally{}
+        System.out.printf("Something weird happened, please contact IT.");
+    }
+    finally{}
 
     }
     
@@ -147,11 +150,5 @@ public class CustomerDatabase {
         }
         
         return approved;
-    }
-
-        
-   
-    
+    }   
 }
-
-

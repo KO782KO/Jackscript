@@ -16,6 +16,7 @@ public class Inventory implements Comparable<Inventory> {
     public Inventory(){};
     
     public Inventory(int itemID, int quantityInStock){
+        //TODO: ids should be alphanumerical
         this.itemID=itemID;
         this.quantityInStock=quantityInStock;
     }
