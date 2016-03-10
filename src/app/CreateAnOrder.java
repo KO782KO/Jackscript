@@ -201,7 +201,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                             setTitle("Create Order");
 
-                            OrderSummary.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                            OrderSummary.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
                             PriceField.setEditable(false);
                             PriceField.addActionListener(new java.awt.event.ActionListener() {
