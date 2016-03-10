@@ -26,20 +26,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -47,41 +39,49 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="33" red="ff" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="name" type="java.lang.String" value="Point of Sale System" noResource="true"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;            @Override&#xa;            protected void paintComponent(Graphics g) {&#xa;                Graphics2D g2d1 = (Graphics2D) g.create();&#xa;                RenderingHints hints1 = new RenderingHints(&#xa;                        RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);&#xa;                RenderingHints render1 = new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_SPEED);&#xa;                hints1.add(render1);&#xa;                g2d1.setRenderingHints(hints1);&#xa;                Polygon p1 = new Polygon();&#xa;                p1.addPoint(0, 0);&#xa;                p1.addPoint(0, 200);&#xa;&#xa;                p1.addPoint(this.getWidth() + 50, 200);&#xa;                p1.addPoint(this.getWidth() + 50, 0);&#xa;                java.awt.GradientPaint gp1 = new java.awt.GradientPaint(0.0f, 200.0f, new java.awt.Color(20, 60, 100),&#xa;                        0.0f, 0.0f, new java.awt.Color(100, 200, 200, 255), true);&#xa;&#xa;                g2d1.setColor(new java.awt.Color(20, 60, 100));&#xa;                g2d1.fill(getBounds());&#xa;                g2d1.setPaint(gp1);&#xa;                g2d1.fill(p1);&#xa;                //Image img=&#x9;image.getImage(&quot;/resources/GameIcon2.jpg&quot;);&#xa;            }}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="218" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="230" max="-2" attributes="0"/>
-                  <EmptySpace pref="13" max="32767" attributes="0"/>
-                  <Component id="jButton3" min="-2" pref="230" max="-2" attributes="0"/>
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButton3" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Component id="jButton1" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" pref="42" max="32767" attributes="0"/>
-                      <Component id="jButton1" alignment="3" pref="42" max="32767" attributes="0"/>
-                      <Component id="jButton3" alignment="3" pref="42" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <Component id="jButton3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -90,9 +90,14 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Sans" size="24" style="0"/>
+              <Font name="Courier New" size="80" style="1"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="3c" green="1e" red="c8" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Jackscript"/>
+            <Property name="alignmentX" type="float" value="0.5"/>
           </Properties>
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Main Menu"/>
