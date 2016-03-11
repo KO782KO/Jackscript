@@ -64,6 +64,7 @@ public class AMenu extends javax.swing.JFrame {
                 e.printStackTrace();
             }
             Exit = new javax.swing.JButton();
+            ManageInventory = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(153, 255, 0));
@@ -101,34 +102,47 @@ public class AMenu extends javax.swing.JFrame {
                 }
             });
 
+            ManageInventory.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            ManageInventory.setText("Manage Inventory");
+            ManageInventory.setToolTipText("");
+            ManageInventory.setFocusPainted(false);
+            ManageInventory.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ManageInventoryActionPerformed(evt);
+                }
+            });
+
             org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(295, 295, 295))
-                .add(jPanel1Layout.createSequentialGroup()
                     .add(168, 168, 168)
                     .add(Title)
                     .addContainerGap(168, Short.MAX_VALUE))
+                .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(295, 295, 295))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .add(Title)
-                    .add(116, 116, 116)
+                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 96, Short.MAX_VALUE)
+                    .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(45, 45, 45)
                     .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(40, 40, 40)
+                    .add(45, 45, 45)
                     .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(40, 40, 40)
+                    .add(45, 45, 45)
                     .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(194, Short.MAX_VALUE))
+                    .add(114, 114, 114))
             );
 
             Title.getAccessibleContext().setAccessibleDescription("Main Menu");
@@ -183,6 +197,11 @@ public class AMenu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_ExitActionPerformed
 
+    private void ManageInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageInventoryActionPerformed
+        ManageInventory inventory=new ManageInventory();
+        inventory.setVisible(true);
+    }//GEN-LAST:event_ManageInventoryActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,6 +219,7 @@ public class AMenu extends javax.swing.JFrame {
     private javax.swing.JButton CreateOrder;
     private javax.swing.JButton Exit;
     private javax.swing.JButton InventoryReport;
+    private javax.swing.JButton ManageInventory;
     private javax.swing.JLabel Title;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

@@ -66,7 +66,9 @@ public void initItems() throws FileNotFoundException, IOException{
     }*/
 
 }
-
+public Items getItems(){
+    return this;
+}
 /*public void initInventory() throws FileNotFoundException, IOException{
     
     
@@ -93,6 +95,15 @@ public void initItems() throws FileNotFoundException, IOException{
     readInventory.close();
 
 }*/
+    //checks items for specified id
+    public boolean checkItems(int id){
+        for(Item i:a){
+            if(i.getItemId()==id){
+                return true;
+            }
+        }
+        return false;
+    }
 //adds an item to the array and then writes it to the file
     public void addItem(int id, String name, double price, int quantity){
         Item temp=new Item(id,name,price,quantity);
@@ -104,7 +115,7 @@ public void initItems() throws FileNotFoundException, IOException{
          try{
                 String selection="%Jackscript%/Product.csv";
                 if(selection!=null){
-
+                                                                            //boolean true makes it append to end of file
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection,true));
         
 

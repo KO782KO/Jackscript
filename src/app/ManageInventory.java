@@ -31,12 +31,15 @@ public class ManageInventory extends javax.swing.JFrame {
         BackButton = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         CreateNewItem = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        IDLabel = new javax.swing.JLabel();
+        NameLabel = new javax.swing.JLabel();
+        PriceLabel = new javax.swing.JLabel();
+        QuantityLabel = new javax.swing.JLabel();
+        IDNumField = new javax.swing.JTextField();
+        NameField = new javax.swing.JTextField();
+        PriceField = new javax.swing.JTextField();
+        QuantityField = new javax.swing.JTextField();
+        AddItemButton = new javax.swing.JButton();
         AddExistingItems = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,24 +59,35 @@ public class ManageInventory extends javax.swing.JFrame {
 
         CreateNewItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        jLabel1.setText("jLabel1");
+        IDLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+        IDLabel.setText("Item ID Number");
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        jLabel2.setText("jLabel2");
+        NameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+        NameLabel.setText("Item Name");
 
-        jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        jLabel3.setText("jLabel3");
+        PriceLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+        PriceLabel.setText("Selling Price");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        QuantityLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+        QuantityLabel.setText("Quantity");
+
+        IDNumField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                IDNumFieldActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        NameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                NameFieldActionPerformed(evt);
+            }
+        });
+
+        AddItemButton.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        AddItemButton.setText("Add New Item");
+        AddItemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddItemButtonActionPerformed(evt);
             }
         });
 
@@ -84,32 +98,44 @@ public class ManageInventory extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateNewItemLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3))
+                    .addComponent(IDLabel)
+                    .addComponent(NameLabel)
+                    .addComponent(PriceLabel)
+                    .addComponent(QuantityLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(QuantityField)
+                    .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                    .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PriceField, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(CreateNewItemLayout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         CreateNewItemLayout.setVerticalGroup(
             CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreateNewItemLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(IDNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IDLabel))
                 .addGap(18, 18, 18)
                 .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NameLabel))
                 .addGap(18, 18, 18)
                 .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(97, Short.MAX_VALUE))
+                    .addComponent(PriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PriceLabel))
+                .addGap(18, 18, 18)
+                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(QuantityLabel)
+                    .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         jTabbedPane1.addTab("Create New Item", null, CreateNewItem, "");
@@ -125,7 +151,7 @@ public class ManageInventory extends javax.swing.JFrame {
         );
         AddExistingItemsLayout.setVerticalGroup(
             AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 204, Short.MAX_VALUE)
+            .addGap(0, 266, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
@@ -146,8 +172,8 @@ public class ManageInventory extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(BackButton)
                 .addGap(46, 46, 46)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(227, Short.MAX_VALUE))
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
@@ -164,6 +190,7 @@ public class ManageInventory extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
@@ -171,13 +198,18 @@ public class ManageInventory extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_NameFieldActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void IDNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNumFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_IDNumFieldActionPerformed
+
+    private void AddItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButtonActionPerformed
+    
+       System.out.println(JavaApplication10.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
+    }//GEN-LAST:event_AddItemButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,15 +249,18 @@ public class ManageInventory extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AddExistingItems;
+    private javax.swing.JButton AddItemButton;
     private javax.swing.JButton BackButton;
     private javax.swing.JPanel CreateNewItem;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel IDLabel;
+    private javax.swing.JTextField IDNumField;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JLabel NameLabel;
+    private javax.swing.JTextField PriceField;
+    private javax.swing.JLabel PriceLabel;
+    private javax.swing.JTextField QuantityField;
+    private javax.swing.JLabel QuantityLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

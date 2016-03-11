@@ -14,15 +14,15 @@ import java.util.logging.Logger;
  * @author Nolan
  */
 public class JavaApplication10 {
-
+        public static AMenu code=new AMenu();
+        public static Items oItems=new Items();
+        public static CustomerDatabase db=new CustomerDatabase();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
         // TODO code application logic here
-        AMenu code=new AMenu();
-        Items oItems=new Items();
-        CustomerDatabase db=new CustomerDatabase();
+        
         try {
             //loads customer
             db.loadCustomer();
@@ -42,5 +42,8 @@ public class JavaApplication10 {
         
         
         
+    }
+    public JavaApplication10 getApp(){
+        return this;
     }
 }
