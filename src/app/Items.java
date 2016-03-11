@@ -220,6 +220,45 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          }finally
          {
          }
+}
+          public void updateItemList() throws IOException{
+         try{
+                String selection="%Jackscript%/";
+                if(selection!=null){
+
+                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv"));
+        
+
+                    String header=("ItemId,Item Name,Pieces in Store,SellingPrice,\n");
+                    fileWriter.append(header);
+                    for (int i=0; i<a.size()-1; i++) {
+                        Item temp=a.get(i);
+                        fileWriter.append(temp.toString());
+                    fileWriter.append(System.getProperty("line.separator"));
+
+                    }
+                    
+ //closes buffered writer
+            fileWriter.close();
+            JOptionPane.showMessageDialog(null, "Export successful");
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(null, "Program shit the bed");
+            }
+         
+         }catch(FileNotFoundException io){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }catch(IOException ioe){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }catch(HeadlessException e){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }finally
+         {
+         }
 } 
      public String orderSummary(){
          
