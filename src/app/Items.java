@@ -25,7 +25,8 @@ public class Items {
 
 //Item object variables for the inventory 
 public void initItems() throws FileNotFoundException, IOException{
- 
+    if(a.size()>=1)
+        a.clear();
     
     BufferedReader readItem=new BufferedReader(new FileReader("Product.csv"));
     
@@ -62,8 +63,6 @@ public void initItems() throws FileNotFoundException, IOException{
         int inStock=inventoryMatch(itemID);
         ((Item)item).setQuantity(inStock);
         
-        
-        
     }
 
 }
@@ -87,16 +86,12 @@ public void initInventory() throws FileNotFoundException, IOException{
             Inventory inventory=new Inventory(productID, quantity);
             inStock.add(inventory);
         
-        
         line=readInventory.readLine();
     
         }
-
     }
-    
     readInventory.close();
 
-    
 }
     
 //searches inventory
@@ -115,14 +110,9 @@ public int inventoryMatch(int productID){
                         
                     }
      }
-     
     
     return quantity;
 }
-
-
-
-
 //sells item, updates inventory, and creates new order
 
 public void sellAnItem(boolean shippingCharged, Item item, Customer customer, int quantityOrdered, double finalPrice){
@@ -223,10 +213,10 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
 }
           public void updateItemList() throws IOException{
          try{
-                String selection="%Jackscript%/";
+                String selection="%Jackscript%/Inventory.csv";
                 if(selection!=null){
 
-                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv"));
+                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv",true));
         
 
                     String header=("ItemId,Item Name,Pieces in Store,SellingPrice,\n");
@@ -269,7 +259,5 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
                  "\nOrder Type:"+reviewedOrder.getType();
          
          return orderSummary;
-     }
-
-    
+     }   
 } 
