@@ -21,7 +21,7 @@ public class Items {
     // define the array list header. Note that it is an instance variable
     public static ArrayList<Item> a= new ArrayList<Item>();
     public static ArrayList<Order> order=new ArrayList<Order>();
-    public static ArrayList<Inventory> inStock=new ArrayList<Inventory>();
+    //public static ArrayList<Inventory> inStock=new ArrayList<Inventory>();
 
 //Item object variables for the inventory 
 public void initItems() throws FileNotFoundException, IOException{
@@ -43,8 +43,8 @@ public void initItems() throws FileNotFoundException, IOException{
             int productID=Integer.parseInt(nextItem.nextToken());
             String productName=nextItem.nextToken();
             double salePrice=Double.parseDouble(nextItem.nextToken());
-            
-            Item product=new Item(productID, productName, salePrice);
+            int quantity=Integer.parseInt(nextItem.nextToken());
+            Item product=new Item(productID, productName, salePrice, quantity);
             a.add(product);
         
         
@@ -54,7 +54,7 @@ public void initItems() throws FileNotFoundException, IOException{
     
     readItem.close();
     
-    Iterator loading=a.iterator();
+    /*Iterator loading=a.iterator();
     
     while(loading.hasNext()){
         Object item;
@@ -63,11 +63,11 @@ public void initItems() throws FileNotFoundException, IOException{
         int inStock=inventoryMatch(itemID);
         ((Item)item).setQuantity(inStock);
         
-    }
+    }*/
 
 }
 
-public void initInventory() throws FileNotFoundException, IOException{
+/*public void initInventory() throws FileNotFoundException, IOException{
     
     
     BufferedReader readInventory=new BufferedReader(new FileReader("Inventory.csv"));
@@ -92,10 +92,53 @@ public void initInventory() throws FileNotFoundException, IOException{
     }
     readInventory.close();
 
-}
-    
-//searches inventory
+}*/
+//adds an item to the array and then writes it to the file
+    public void addItem(int id, String name, double price, int quantity){
+        Item temp=new Item(id,name,price,quantity);
+        a.add(temp);
+        updateItemList(temp);
+    }
+    //Updates product.csv, used when adding a new inventory item to the file.
+    public void updateItemList(Item i){
+         try{
+                String selection="%Jackscript%/Product.csv";
+                if(selection!=null){
 
+                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection,true));
+        
+
+                    //for (int i=0; i<a.size()-1; i++) {
+                    String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity()+",";
+                        fileWriter.write(item);
+                   // fileWriter.append(System.getProperty("line.separator"));
+
+                    //}
+                    
+ //closes buffered writer
+            fileWriter.close();
+            JOptionPane.showMessageDialog(null, "Export successful");
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(null, "Program shit the bed");
+            }
+         
+         }catch(FileNotFoundException io){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }catch(IOException ioe){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }catch(HeadlessException e){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }finally
+         {
+         }
+} 
+//searches inventory
+/*
 public int inventoryMatch(int productID){
     Iterator iterate=inStock.iterator();
     int quantity=0;
@@ -112,7 +155,7 @@ public int inventoryMatch(int productID){
      }
     
     return quantity;
-}
+}*/
 //sells item, updates inventory, and creates new order
 
 public void sellAnItem(boolean shippingCharged, Item item, Customer customer, int quantityOrdered, double finalPrice){
@@ -211,45 +254,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          {
          }
 }
-          public void updateItemList() throws IOException{
-         try{
-                String selection="%Jackscript%/Inventory.csv";
-                if(selection!=null){
-
-                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv",true));
-        
-
-                    String header=("ItemId,Item Name,Pieces in Store,SellingPrice,\n");
-                    fileWriter.append(header);
-                    for (int i=0; i<a.size()-1; i++) {
-                        Item temp=a.get(i);
-                        fileWriter.append(temp.toString());
-                    fileWriter.append(System.getProperty("line.separator"));
-
-                    }
-                    
- //closes buffered writer
-            fileWriter.close();
-            JOptionPane.showMessageDialog(null, "Export successful");
-            }
-            else
-            {
-            JOptionPane.showMessageDialog(null, "Program shit the bed");
-            }
-         
-         }catch(FileNotFoundException io){
-             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
-             
-         }catch(IOException ioe){
-             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
-             
-         }catch(HeadlessException e){
-             JOptionPane.showMessageDialog(null, "An error has occurred.  Please please try again.", "Error", JOptionPane.ERROR_MESSAGE);
-             
-         }finally
-         {
-         }
-} 
+          
      public String orderSummary(){
          
          int end=(order.size())-1;

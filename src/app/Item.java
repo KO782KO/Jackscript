@@ -11,10 +11,11 @@ public class Item implements Comparable<Item>{
 
 
     public Item(int itemId, String itemName, 
-            double sellingPrice) {
+            double sellingPrice, int quantity) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.sellingPrice = sellingPrice;
+        this.quantity=quantity;
     }
 
     public int getItemId() {
@@ -29,7 +30,17 @@ public class Item implements Comparable<Item>{
     public double getSellingPrice() {
         return sellingPrice;
     }
-    
+    public int getQuantity(){
+        return quantity;
+    }
+    public boolean inStock(){
+        if(getQuantity()>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     @Override
     public int compareTo(Item item) {
         if (this.getItemId() < item.getItemId()) {
@@ -61,14 +72,6 @@ public class Item implements Comparable<Item>{
     public void setSellingPrice(double sellingPrice) {
         this.sellingPrice = sellingPrice;
     }
-
-    /**
-     * @return the quantity
-     */
-    public int getQuantity() {
-        return quantity;
-    }
-
     /**
      * @param quantity the quantity to set
      */

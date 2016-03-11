@@ -26,8 +26,7 @@ public class JavaApplication10 {
         try {
             //loads customer
             db.loadCustomer();
-            //prepares inventory 
-            oItems.initInventory();
+
             //prepares items
             oItems.initItems();
         } catch (FileNotFoundException ex) {

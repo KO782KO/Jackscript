@@ -1,7 +1,7 @@
-12,Circular saw ,125
-235,Cooking range ,850
-301,Table saw ,300
-302,Stapler ,49
-303,Lawn Tractor ,650
-400,Pencils (gross) ,29.95
-999,Pens(gross) ,39.95
+12,Circular saw ,125,16
+235,Cooking range ,850,5
+301,Table saw ,300,4
+302,Stapler ,49,20
+303,Lawn Tractor ,650,3
+400,Pencils (gross) ,29.95,40
+999,Pens(gross) ,39.95,50
