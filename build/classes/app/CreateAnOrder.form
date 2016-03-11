@@ -7,7 +7,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -55,7 +55,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="OrderDetails" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="OrderSummary" min="-2" max="-2" attributes="0"/>
+                          <Component id="OrderSummary" max="32767" attributes="0"/>
                       </Group>
                       <Component id="IdkField" alignment="0" min="-2" pref="775" max="-2" attributes="0"/>
                   </Group>
@@ -80,7 +80,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="IdkField" min="-2" pref="64" max="-2" attributes="0"/>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace pref="36" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,10 +104,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="OrderSummaryScrollPane" min="-2" pref="211" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PriceLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="SnHLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="PriceLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="TotalCostLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -643,6 +643,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Submit"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="focusPainted" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubmitButtonActionPerformed"/>

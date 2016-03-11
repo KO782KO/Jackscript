@@ -79,6 +79,7 @@ public class AMenu extends javax.swing.JFrame {
 
             jButton2.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             jButton2.setText("Inventory Report");
+            jButton2.setFocusPainted(false);
             jButton2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     jButton2ActionPerformed(evt);
@@ -93,6 +94,7 @@ public class AMenu extends javax.swing.JFrame {
 
             jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             jButton3.setText("Exit");
+            jButton3.setFocusPainted(false);
             jButton3.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     jButton3ActionPerformed(evt);
@@ -141,10 +143,11 @@ public class AMenu extends javax.swing.JFrame {
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             );
 
             pack();
+            setLocationRelativeTo(null);
         }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -71,6 +71,8 @@ public class FileChooser extends javax.swing.JFrame {
                 //Image img=	image.getImage("/resources/GameIcon2.jpg");
             }};
 
+            setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
             jFileChooser1.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
             jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +98,7 @@ public class FileChooser extends javax.swing.JFrame {
             );
 
             pack();
+            setLocationRelativeTo(null);
         }// </editor-fold>//GEN-END:initComponents
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed

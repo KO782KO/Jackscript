@@ -244,10 +244,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                 .add(org.jdesktop.layout.GroupLayout.TRAILING, OrderSummaryLayout.createSequentialGroup()
                                     .addContainerGap()
                                     .add(OrderSummaryScrollPane, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 211, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(18, 18, 18)
                                     .add(OrderSummaryLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(PriceLabel)
                                         .add(SnHLabel)
+                                        .add(PriceLabel)
                                         .add(TotalCostLabel))
                                     .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .add(OrderSummaryLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
@@ -501,6 +501,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             SubmitButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
                             SubmitButton.setText("Submit");
                             SubmitButton.setToolTipText("");
+                            SubmitButton.setFocusPainted(false);
                             SubmitButton.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     SubmitButtonActionPerformed(evt);
@@ -579,7 +580,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                         .add(jPanel3Layout.createSequentialGroup()
                                             .add(OrderDetails, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                             .add(30, 30, 30)
-                                            .add(OrderSummary, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                            .add(OrderSummary, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 775, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                     .addContainerGap(30, Short.MAX_VALUE))
                             );
@@ -598,7 +599,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                         .add(OrderDetails, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                     .add(18, 18, 18)
                                     .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(35, Short.MAX_VALUE))
+                                    .addContainerGap(36, Short.MAX_VALUE))
                             );
 
                             org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -613,6 +614,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             );
 
                             pack();
+                            setLocationRelativeTo(null);
                         }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
