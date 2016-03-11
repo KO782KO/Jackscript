@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
  */
 public class CustomerDatabase {
 
-    public static ArrayList<Customer> customer=new ArrayList<Customer>();
+    private ArrayList<Customer> customers=new ArrayList<Customer>();
 
     //reads customer information from file, instantiates customer & populates customer's variables
     public void loadCustomer() throws FileNotFoundException, IOException{
@@ -32,7 +32,7 @@ public class CustomerDatabase {
             @SuppressWarnings("UnusedAssignment")
             StringTokenizer nextItem=null;     
             Customer cust=new CashCustomer();
-            customer.add(cust);
+            customers.add(cust);
             //EOF loop to read file and calculate variables
             while(line!=null){
                
@@ -53,12 +53,12 @@ public class CustomerDatabase {
                     CreditCustomer cmer=new CreditCustomer(customerNumber, customerName, address, type);
 
 
-                    customer.add((CreditCustomer)cmer);}
+                    customers.add((CreditCustomer)cmer);}
                 else if(type.equalsIgnoreCase(cash)){
                     CashCustomer smarty=new CashCustomer(customerNumber, customerName, address, type);
 
                     
-                    customer.add((CashCustomer)smarty);
+                    customers.add((CashCustomer)smarty);
                 }
                 else{
                     continue;
@@ -97,9 +97,12 @@ public class CustomerDatabase {
         return result;
     }
     public boolean checkCust(int CustomerID){
-        for(int i:customer){
-            
+        for(Customer custard:customers){
+        if(custard.getCustomerID()==CustomerID){
+            return false;
         }
+    }
+        return true;
     }
     public void addNewCustomer(int ID){
             
@@ -108,22 +111,22 @@ public class CustomerDatabase {
     public void list(){
         Customer p;
 
-        for(int i=0; i<customer.size(); i++){
-            p=customer.get(i);
+        for(int i=0; i<customers.size(); i++){
+            p=customers.get(i);
         }
     }
     
     //searches for customer's index on customer arraylist
     public int searchCustomer(int searchedCustomer){
         int result=-1;
-        Iterator iterate=customer.iterator();
+        Iterator iterate=customers.iterator();
             while(iterate.hasNext()){
                 Object temp;
                 temp=iterate.next();
                 int sCustomerID=((Customer)temp).getCustomerID();
                 if(sCustomerID==searchedCustomer){
                     
-                        result=customer.indexOf(temp);
+                        result=customers.indexOf(temp);
                     }
             
         }
@@ -137,19 +140,21 @@ public class CustomerDatabase {
     //determines if cash or credit customer
    public boolean creditCustomer(int customerID){
         boolean credit=false;
-        if(customer.get(customerID) instanceof CreditCustomer){
+        if(customers.get(customerID) instanceof CreditCustomer){
             credit=true;
         }
         return credit;
     }
-    
+    public ArrayList<Customer> getCustomerList(){
+        return customers;
+    }
     
 
     
     //approves transaction based on final price and credit limit (if credit customer)
     public boolean approveTransaction(int customerLocation, double creditLimit, double finalPrice){
         boolean approved=false;
-        if((customer.get(customerLocation) instanceof CashCustomer)||((customer.get(customerLocation) instanceof CreditCustomer) && (creditLimit>=finalPrice))){
+        if((customers.get(customerLocation) instanceof CashCustomer)||((customers.get(customerLocation) instanceof CreditCustomer) && (creditLimit>=finalPrice))){
             approved=true;
         }
         
