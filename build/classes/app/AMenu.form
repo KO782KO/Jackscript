@@ -75,9 +75,9 @@
                   <Component id="InventoryReport" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="CreateOrder" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="Exit" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
+                  <EmptySpace pref="194" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

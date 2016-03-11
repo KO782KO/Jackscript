@@ -126,9 +126,9 @@ public class AMenu extends javax.swing.JFrame {
                     .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(40, 40, 40)
                     .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 39, Short.MAX_VALUE)
+                    .add(40, 40, 40)
                     .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(195, 195, 195))
+                    .addContainerGap(194, Short.MAX_VALUE))
             );
 
             Title.getAccessibleContext().setAccessibleDescription("Main Menu");
