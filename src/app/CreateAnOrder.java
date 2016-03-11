@@ -33,7 +33,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         initComponents();
 
         
-        Iterator a=CustomerDatabase.customer.iterator();
+        Iterator a=JavaApplication10.db.getCustomerList().iterator();
         
         
         ArrayList<Integer> customerIDList=new ArrayList<Integer>();
@@ -621,7 +621,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // selects customer & item to submit order
-        Customer customer=CustomerDatabase.customer.get(SelCustomer_ComboBox.getSelectedIndex());
+        Customer customer=JavaApplication10.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
         Items oItem=new Items();
         
@@ -711,8 +711,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private void SelCustomer_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelCustomer_ComboBoxActionPerformed
         // fetches customer information
 
-        Collections.sort(CustomerDatabase.customer);
-        Customer customers=CustomerDatabase.customer.get(SelCustomer_ComboBox.getSelectedIndex());
+        Collections.sort(JavaApplication10.db.getCustomerList());
+        Customer customers=JavaApplication10.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
         
         IdkField.setVisible(false);
         NameField.setText(customers.getCustomerName());
