@@ -705,9 +705,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void IdkFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdkFieldActionPerformed
         
-        
     }//GEN-LAST:event_IdkFieldActionPerformed
-
+    
     private void SnHFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SnHFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SnHFieldActionPerformed
@@ -717,7 +716,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
         Collections.sort(CustomerDatabase.customer);
         Customer customers=CustomerDatabase.customer.get(SelCustomer_ComboBox.getSelectedIndex());
-
+        
         IdkField.setVisible(false);
         NameField.setText(customers.getCustomerName());
         AddressField.setText(customers.getAddress());
@@ -772,7 +771,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_NameFieldActionPerformed
 
     private void TotalCostFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalCostFieldActionPerformed
