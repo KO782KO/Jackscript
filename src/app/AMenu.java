@@ -54,16 +54,16 @@ public class AMenu extends javax.swing.JFrame {
                 g2d1.fill(p1);
                 //Image img=	image.getImage("/resources/GameIcon2.jpg");
             }};
-            jLabel1 = new javax.swing.JLabel();
-            jButton2 = new javax.swing.JButton();
+            Title = new javax.swing.JLabel();
+            InventoryReport = new javax.swing.JButton();
             try {
-                jButton1 =(javax.swing.JButton)java.beans.Beans.instantiate(getClass().getClassLoader(), "app.AMenu_jButton1");
+                CreateOrder =(javax.swing.JButton)java.beans.Beans.instantiate(getClass().getClassLoader(), "app.AMenu_jButton1");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (java.io.IOException e) {
                 e.printStackTrace();
             }
-            jButton3 = new javax.swing.JButton();
+            Exit = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(153, 255, 0));
@@ -71,33 +71,33 @@ public class AMenu extends javax.swing.JFrame {
             jPanel1.setBackground(new java.awt.Color(255, 255, 255));
             jPanel1.setName("Point of Sale System"); // NOI18N
 
-            jLabel1.setFont(new java.awt.Font("Courier New", 1, 80)); // NOI18N
-            jLabel1.setForeground(new java.awt.Color(200, 30, 60));
-            jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel1.setText("Jackscript");
-            jLabel1.setAlignmentX(0.5F);
+            Title.setFont(new java.awt.Font("Courier New", 1, 80)); // NOI18N
+            Title.setForeground(new java.awt.Color(200, 30, 60));
+            Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            Title.setText("Jackscript");
+            Title.setAlignmentX(0.5F);
 
-            jButton2.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
-            jButton2.setText("Inventory Report");
-            jButton2.setFocusPainted(false);
-            jButton2.addActionListener(new java.awt.event.ActionListener() {
+            InventoryReport.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            InventoryReport.setText("Inventory Report");
+            InventoryReport.setFocusPainted(false);
+            InventoryReport.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton2ActionPerformed(evt);
+                    InventoryReportActionPerformed(evt);
                 }
             });
 
-            jButton1.addActionListener(new java.awt.event.ActionListener() {
+            CreateOrder.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton1ActionPerformed(evt);
+                    CreateOrderActionPerformed(evt);
                 }
             });
 
-            jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
-            jButton3.setText("Exit");
-            jButton3.setFocusPainted(false);
-            jButton3.addActionListener(new java.awt.event.ActionListener() {
+            Exit.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            Exit.setText("Exit");
+            Exit.setFocusPainted(false);
+            Exit.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton3ActionPerformed(evt);
+                    ExitActionPerformed(evt);
                 }
             });
 
@@ -105,35 +105,33 @@ public class AMenu extends javax.swing.JFrame {
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .add(0, 0, Short.MAX_VALUE)
+                .add(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(jPanel1Layout.createSequentialGroup()
-                            .add(166, 166, 166)
-                            .add(jLabel1))
-                        .add(jPanel1Layout.createSequentialGroup()
-                            .add(291, 291, 291)
-                            .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                    .add(170, 170, 170))
+                        .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(295, 295, 295))
+                .add(jPanel1Layout.createSequentialGroup()
+                    .add(168, 168, 168)
+                    .add(Title)
+                    .addContainerGap(168, Short.MAX_VALUE))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .add(jLabel1)
+                    .add(Title)
                     .add(116, 116, 116)
-                    .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(40, 40, 40)
-                    .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 39, Short.MAX_VALUE)
-                    .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(195, 195, 195))
             );
 
-            jLabel1.getAccessibleContext().setAccessibleDescription("Main Menu");
+            Title.getAccessibleContext().setAccessibleDescription("Main Menu");
 
             org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -150,7 +148,7 @@ public class AMenu extends javax.swing.JFrame {
             setLocationRelativeTo(null);
         }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CreateOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateOrderActionPerformed
         //initializes order form interface
         CreateAnOrder order;
         try{
@@ -167,9 +165,9 @@ public class AMenu extends javax.swing.JFrame {
             System.out.println("javaapplication10.AMenu.jButton1ActionPerformed()");  
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CreateOrderActionPerformed
 //Creates exportable Inventory Report
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void InventoryReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventoryReportActionPerformed
         try {
             // Initializes Item class instance
             Items stuff=new Items();
@@ -178,12 +176,12 @@ public class AMenu extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(AMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_InventoryReportActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // Exits System
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,10 +197,10 @@ public class AMenu extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton CreateOrder;
+    private javax.swing.JButton Exit;
+    private javax.swing.JButton InventoryReport;
+    private javax.swing.JLabel Title;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
