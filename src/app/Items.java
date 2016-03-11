@@ -113,18 +113,18 @@ public Items getItems(){
     //Updates product.csv, used when adding a new inventory item to the file.
     private void addItemToFile(Item i){
          try{
-                String selection="C://Users/Kevin/Desktop/Product.csv";
-                if(selection!=null){
-                                                                            //boolean true makes it append to end of file
-                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection,true));
-        
+               // String selection="C://Users/Kevin/Desktop/Product.txt";
+                String selection="F://Jekscript//Jackscript//Product.csv";
+                java.io.File file=new java.io.File(selection);
+                if(selection!=null){              //boolean true makes it append to end of file
+                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(file,true));
+                    
 
                     //for (int i=0; i<a.size()-1; i++) {
                     String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity()+",";
-                        
-                    fileWriter.append(System.getProperty("line.separator"));
+                        fileWriter.newLine();
                         fileWriter.write(item);
-                    
+                    //fileWriter.write(item);
  //closes buffered writer
             fileWriter.close();
             JOptionPane.showMessageDialog(null, "Export successful");
