@@ -11,7 +11,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
@@ -21,7 +20,6 @@ public class Items {
     // define the array list header. Note that it is an instance variable
     public static ArrayList<Item> a= new ArrayList<Item>();
     public static ArrayList<Order> order=new ArrayList<Order>();
-    //public static ArrayList<Inventory> inStock=new ArrayList<Inventory>();
 
 //Item object variables for the inventory 
 public void initItems() throws FileNotFoundException, IOException{
@@ -54,47 +52,12 @@ public void initItems() throws FileNotFoundException, IOException{
     
     readItem.close();
     
-    /*Iterator loading=a.iterator();
-    
-    while(loading.hasNext()){
-        Object item;
-        item=loading.next();
-        int itemID=((Item)item).getItemId();
-        int inStock=inventoryMatch(itemID);
-        ((Item)item).setQuantity(inStock);
-        
-    }*/
 
 }
 public Items getItems(){
     return this;
 }
-/*public void initInventory() throws FileNotFoundException, IOException{
-    
-    
-    BufferedReader readInventory=new BufferedReader(new FileReader("Inventory.csv"));
-    
-    String line=readInventory.readLine();
-    
-    StringTokenizer nextItem;
-    
-    while(line!=null){
-        nextItem=new StringTokenizer(line, ",");
-        
-        while(nextItem.hasMoreTokens()){
-            int productID=Integer.parseInt(nextItem.nextToken());
-            int quantity=Integer.parseInt(nextItem.nextToken());
-            
-            Inventory inventory=new Inventory(productID, quantity);
-            inStock.add(inventory);
-        
-        line=readInventory.readLine();
-    
-        }
-    }
-    readInventory.close();
 
-}*/
     //checks items for specified id
     public boolean checkItems(int id){
         for(Item i:a){
@@ -113,14 +76,13 @@ public Items getItems(){
     //Updates product.csv, used when adding a new inventory item to the file.
     private void addItemToFile(Item i){
          try{
-               // String selection="C://Users/Kevin/Desktop/Product.txt";
+               
                 String selection="F://Jekscript//Jackscript//Product.csv";
                 java.io.File file=new java.io.File(selection);
                 if(selection!=null){              //boolean true makes it append to end of file
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(file,true));
                     
 
-                    //for (int i=0; i<a.size()-1; i++) {
                     String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity();
                         fileWriter.newLine();
                         fileWriter.write(item);

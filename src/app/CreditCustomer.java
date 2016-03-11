@@ -11,7 +11,7 @@ package app;
 public class CreditCustomer extends Customer{
     
     
-    private double CREDIT_MARKUP=.02;
+    private final double CREDIT_MARKUP=.02;
     
     public CreditCustomer(){
         
