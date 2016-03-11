@@ -108,12 +108,12 @@ public Items getItems(){
     public void addItem(int id, String name, double price, int quantity){
         Item temp=new Item(id,name,price,quantity);
         a.add(temp);
-        updateItemList(temp);
+        addItemToFile(temp);
     }
     //Updates product.csv, used when adding a new inventory item to the file.
-    public void updateItemList(Item i){
+    private void addItemToFile(Item i){
          try{
-                String selection="%Jackscript%/Product.csv";
+                String selection="C://Users/Kevin/Desktop/Product.csv";
                 if(selection!=null){
                                                                             //boolean true makes it append to end of file
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection,true));
@@ -121,10 +121,9 @@ public Items getItems(){
 
                     //for (int i=0; i<a.size()-1; i++) {
                     String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity()+",";
+                        
+                    fileWriter.append(System.getProperty("line.separator"));
                         fileWriter.write(item);
-                   // fileWriter.append(System.getProperty("line.separator"));
-
-                    //}
                     
  //closes buffered writer
             fileWriter.close();
