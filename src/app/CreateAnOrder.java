@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.WindowConstants;
+
 
 /**
  *
@@ -49,16 +49,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
         SelCustomer_ComboBox.setModel(new DefaultComboBoxModel(customerIDList.toArray()));
         
         
-        Iterator b=Items.a.iterator();
+        Iterator b=JavaApplication10.oItems.a.iterator();
         
         ArrayList<Integer> productIDList=new ArrayList<Integer>();
         
-        while(b.hasNext()){
-            Object temp;
-            temp=b.next();
-            int productID=((Item)temp).getItemId();
-            productIDList.add(productID);
-        }
+        for(Item i:JavaApplication10.oItems.a){
+            productIDList.add(i.getItemId());
+       }
         
         Collections.sort(productIDList);
         SelProduct_ComboBox.setModel(new DefaultComboBoxModel(productIDList.toArray()));
@@ -731,13 +728,12 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed
         // TODO add your handling code here:
         Collections.sort(Items.a);
-        Item oItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
-        Items oItems=new Items();
+        Item item=JavaApplication10.oItems.a.get(SelProduct_ComboBox.getSelectedIndex());
         
         IdkField.setVisible(false);
-        ProductNameField.setText(oItem.getItemName());
-        QuantityField.setText(""+oItem.getQuantity());
-        PricePerUnitField.setText("$"+oItem.getSellingPrice());
+        ProductNameField.setText(item.getItemName());
+        QuantityField.setText(""+item.getQuantity());
+        PricePerUnitField.setText("$"+item.getSellingPrice());
         ProductNameField.setVisible(true);
         ProductNameField.setVisible(true);
         PricePerUnitField.setVisible(true);
@@ -753,12 +749,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void OrderType_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderType_ComboBoxActionPerformed
         // TODO add your handling code here:
-        //gets inventory items for display
-        Items oItems=new Items();
         IdkField.setVisible(false);
         //gets item information
         int orderType=OrderType_ComboBox.getSelectedIndex();
-        boolean shippingCharged=oItems.addShipping(orderType);
+        boolean shippingCharged=JavaApplication10.oItems.addShipping(orderType);
         double shippingFee=4.00;
         String shipping="$"+shippingFee+"0";
         if(shippingCharged){
