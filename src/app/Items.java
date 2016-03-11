@@ -121,7 +121,7 @@ public Items getItems(){
                     
 
                     //for (int i=0; i<a.size()-1; i++) {
-                    String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity()+",";
+                    String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity();
                         fileWriter.newLine();
                         fileWriter.write(item);
                     //fileWriter.write(item);

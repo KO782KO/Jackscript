@@ -27,171 +27,197 @@ public class ManageInventory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        BackButton = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        CreateNewItem = new javax.swing.JPanel();
-        IDLabel = new javax.swing.JLabel();
-        NameLabel = new javax.swing.JLabel();
-        PriceLabel = new javax.swing.JLabel();
-        QuantityLabel = new javax.swing.JLabel();
-        IDNumField = new javax.swing.JTextField();
-        NameField = new javax.swing.JTextField();
-        PriceField = new javax.swing.JTextField();
-        QuantityField = new javax.swing.JTextField();
-        AddItemButton = new javax.swing.JButton();
-        AddExistingItems = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel(){
+            @Override
+            protected void paintComponent(java.awt.Graphics g) {
+                java.awt.Graphics2D g2d1 = (java.awt.Graphics2D) g.create();
+                java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                    java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                java.awt.RenderingHints render1 = new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING, java.awt.RenderingHints.VALUE_RENDER_SPEED);
+                hints1.add(render1);
+                g2d1.setRenderingHints(hints1);
+                java.awt.Polygon p1 = new java.awt.Polygon();
+                p1.addPoint(0, 0);
+                p1.addPoint(0, 200);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Create Item");
+                p1.addPoint(this.getWidth() + 50, 200);
+                p1.addPoint(this.getWidth() + 50, 0);
+                java.awt.GradientPaint gp1 = new java.awt.GradientPaint(0.0f, 200.0f, new java.awt.Color(20, 60, 100),
+                    0.0f, 0.0f, new java.awt.Color(100, 200, 200, 255), true);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 153));
+                g2d1.setColor(new java.awt.Color(20, 60, 100));
+                g2d1.fill(getBounds());
+                g2d1.setPaint(gp1);
+                g2d1.fill(p1);
+                //Image img=	image.getImage("/resources/GameIcon2.jpg");
+            }};
+            BackButton = new javax.swing.JButton();
+            jTabbedPane1 = new javax.swing.JTabbedPane();
+            CreateNewItem = new javax.swing.JPanel();
+            IDLabel = new javax.swing.JLabel();
+            NameLabel = new javax.swing.JLabel();
+            PriceLabel = new javax.swing.JLabel();
+            QuantityLabel = new javax.swing.JLabel();
+            IDNumField = new javax.swing.JTextField();
+            NameField = new javax.swing.JTextField();
+            PriceField = new javax.swing.JTextField();
+            QuantityField = new javax.swing.JTextField();
+            AddItemButton = new javax.swing.JButton();
+            AddExistingItems = new javax.swing.JPanel();
 
-        BackButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
-        BackButton.setText("Back to Menu");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackButtonActionPerformed(evt);
-            }
-        });
+            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            setTitle("Create Item");
 
-        jTabbedPane1.setName(""); // NOI18N
+            jPanel1.setBackground(new java.awt.Color(0, 102, 153));
 
-        CreateNewItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+            BackButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            BackButton.setText("Back to Menu");
+            BackButton.setFocusPainted(false);
+            BackButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    BackButtonActionPerformed(evt);
+                }
+            });
 
-        IDLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        IDLabel.setText("Item ID Number");
+            jTabbedPane1.setOpaque(false);
+            jTabbedPane1.setName(""); // NOI18N
 
-        NameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        NameLabel.setText("Item Name");
+            CreateNewItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        PriceLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        PriceLabel.setText("Selling Price");
+            IDLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            IDLabel.setText("Item ID Number");
 
-        QuantityLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-        QuantityLabel.setText("Quantity");
+            NameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            NameLabel.setText("Item Name");
 
-        IDNumField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IDNumFieldActionPerformed(evt);
-            }
-        });
+            PriceLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            PriceLabel.setText("Selling Price");
 
-        NameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameFieldActionPerformed(evt);
-            }
-        });
+            QuantityLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            QuantityLabel.setText("Quantity");
 
-        AddItemButton.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        AddItemButton.setText("Add New Item");
-        AddItemButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddItemButtonActionPerformed(evt);
-            }
-        });
+            IDNumField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    IDNumFieldActionPerformed(evt);
+                }
+            });
 
-        javax.swing.GroupLayout CreateNewItemLayout = new javax.swing.GroupLayout(CreateNewItem);
-        CreateNewItem.setLayout(CreateNewItemLayout);
-        CreateNewItemLayout.setHorizontalGroup(
-            CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateNewItemLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IDLabel)
-                    .addComponent(NameLabel)
-                    .addComponent(PriceLabel)
-                    .addComponent(QuantityLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(QuantityField)
-                    .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PriceField, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-            .addGroup(CreateNewItemLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-        CreateNewItemLayout.setVerticalGroup(
-            CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateNewItemLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IDNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IDLabel))
-                .addGap(18, 18, 18)
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel))
-                .addGap(18, 18, 18)
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PriceLabel))
-                .addGap(18, 18, 18)
-                .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(QuantityLabel)
-                    .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-        );
+            NameField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    NameFieldActionPerformed(evt);
+                }
+            });
 
-        jTabbedPane1.addTab("Create New Item", null, CreateNewItem, "");
-        CreateNewItem.getAccessibleContext().setAccessibleName("");
+            AddItemButton.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+            AddItemButton.setText("Add New Item");
+            AddItemButton.setFocusPainted(false);
+            AddItemButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    AddItemButtonActionPerformed(evt);
+                }
+            });
 
-        AddExistingItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+            javax.swing.GroupLayout CreateNewItemLayout = new javax.swing.GroupLayout(CreateNewItem);
+            CreateNewItem.setLayout(CreateNewItemLayout);
+            CreateNewItemLayout.setHorizontalGroup(
+                CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateNewItemLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(IDLabel)
+                        .addComponent(NameLabel)
+                        .addComponent(PriceLabel)
+                        .addComponent(QuantityLabel))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(QuantityField)
+                        .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                        .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(PriceField, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addContainerGap())
+                .addGroup(CreateNewItemLayout.createSequentialGroup()
+                    .addGap(103, 103, 103)
+                    .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(111, Short.MAX_VALUE))
+            );
+            CreateNewItemLayout.setVerticalGroup(
+                CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CreateNewItemLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(IDNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(IDLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NameLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PriceLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(QuantityLabel)
+                        .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                    .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(25, 25, 25))
+            );
 
-        javax.swing.GroupLayout AddExistingItemsLayout = new javax.swing.GroupLayout(AddExistingItems);
-        AddExistingItems.setLayout(AddExistingItemsLayout);
-        AddExistingItemsLayout.setHorizontalGroup(
-            AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
-        );
-        AddExistingItemsLayout.setVerticalGroup(
-            AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
-        );
+            jTabbedPane1.addTab("Create New Item", null, CreateNewItem, "");
+            CreateNewItem.getAccessibleContext().setAccessibleName("");
 
-        jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
+            AddExistingItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BackButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BackButton)
-                .addGap(46, 46, 46)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
+            javax.swing.GroupLayout AddExistingItemsLayout = new javax.swing.GroupLayout(AddExistingItems);
+            AddExistingItems.setLayout(AddExistingItemsLayout);
+            AddExistingItemsLayout.setHorizontalGroup(
+                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 358, Short.MAX_VALUE)
+            );
+            AddExistingItemsLayout.setVerticalGroup(
+                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 266, Short.MAX_VALUE)
+            );
 
-        jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
+            jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jTabbedPane1)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(BackButton)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(BackButton)
+                    .addGap(46, 46, 46)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(228, Short.MAX_VALUE))
+            );
 
-        pack();
-        setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+            jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
+
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+            getContentPane().setLayout(layout);
+            layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            );
+            layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            );
+
+            pack();
+            setLocationRelativeTo(null);
+        }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // exit
