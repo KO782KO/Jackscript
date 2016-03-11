@@ -29,8 +29,8 @@ public class CustomerDatabase {
             BufferedReader read=new BufferedReader(new FileReader("Customer.csv"));
             
             String line=read.readLine();
-            StringTokenizer nextItem=null;
-                   
+            @SuppressWarnings("UnusedAssignment")
+            StringTokenizer nextItem=null;     
             Customer cust=new CashCustomer();
             customer.add(cust);
             //EOF loop to read file and calculate variables
@@ -95,6 +95,11 @@ public class CustomerDatabase {
             int result=Integer.parseInt(str2);
         
         return result;
+    }
+    public boolean checkCust(int CustomerID){
+        for(int i:customer){
+            
+        }
     }
     public void addNewCustomer(int ID){
             
