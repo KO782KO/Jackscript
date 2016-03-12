@@ -1,2 +1,2 @@
 # Jackscript
-Inventory management system in Java. Any suggestions are welcome!
+Inventory management, data cross analysis and POS system in pure Java(Netbeans). Any suggestions are welcome!
