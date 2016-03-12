@@ -86,7 +86,8 @@ public abstract class Customer implements Comparable<Customer> {
     }
 
     /**
-     * @return the creditLimit
+     * @param customer
+     * @return numbers
      */
     @Override
         public int compareTo(Customer customer) {
