@@ -56,13 +56,7 @@ public class AMenu extends javax.swing.JFrame {
             }};
             Title = new javax.swing.JLabel();
             InventoryReport = new javax.swing.JButton();
-            try {
-                CreateOrder =(javax.swing.JButton)java.beans.Beans.instantiate(getClass().getClassLoader(), "app.AMenu_jButton1");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (java.io.IOException e) {
-                e.printStackTrace();
-            }
+            CreateOrder = new javax.swing.JButton();
             Exit = new javax.swing.JButton();
             ManageInventory = new javax.swing.JButton();
             ManageCustomers = new javax.swing.JButton();
@@ -88,6 +82,10 @@ public class AMenu extends javax.swing.JFrame {
                 }
             });
 
+            CreateOrder.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            CreateOrder.setText("Create Order");
+            CreateOrder.setToolTipText("");
+            CreateOrder.setFocusPainted(false);
             CreateOrder.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     CreateOrderActionPerformed(evt);
