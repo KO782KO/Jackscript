@@ -65,6 +65,7 @@ public class AMenu extends javax.swing.JFrame {
             }
             Exit = new javax.swing.JButton();
             ManageInventory = new javax.swing.JButton();
+            ManageCustomers = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(153, 255, 0));
@@ -112,6 +113,16 @@ public class AMenu extends javax.swing.JFrame {
                 }
             });
 
+            ManageCustomers.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            ManageCustomers.setText("Manage Customers");
+            ManageCustomers.setToolTipText("");
+            ManageCustomers.setFocusPainted(false);
+            ManageCustomers.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ManageCustomersActionPerformed(evt);
+                }
+            });
+
             org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
@@ -123,6 +134,7 @@ public class AMenu extends javax.swing.JFrame {
                 .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -134,15 +146,17 @@ public class AMenu extends javax.swing.JFrame {
                 .add(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .add(Title)
-                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 96, Short.MAX_VALUE)
+                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 49, Short.MAX_VALUE)
+                    .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(40, 40, 40)
                     .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(45, 45, 45)
+                    .add(40, 40, 40)
                     .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(45, 45, 45)
+                    .add(40, 40, 40)
                     .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(45, 45, 45)
+                    .add(40, 40, 40)
                     .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(114, 114, 114))
+                    .add(91, 91, 91))
             );
 
             Title.getAccessibleContext().setAccessibleDescription("Main Menu");
@@ -202,6 +216,11 @@ public class AMenu extends javax.swing.JFrame {
         inventory.setVisible(true);
     }//GEN-LAST:event_ManageInventoryActionPerformed
 
+    private void ManageCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCustomersActionPerformed
+        ManageCustomers mc= new ManageCustomers();
+        mc.setVisible(true);
+    }//GEN-LAST:event_ManageCustomersActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -219,6 +238,7 @@ public class AMenu extends javax.swing.JFrame {
     private javax.swing.JButton CreateOrder;
     private javax.swing.JButton Exit;
     private javax.swing.JButton InventoryReport;
+    private javax.swing.JButton ManageCustomers;
     private javax.swing.JButton ManageInventory;
     private javax.swing.JLabel Title;
     private javax.swing.JPanel jPanel1;
