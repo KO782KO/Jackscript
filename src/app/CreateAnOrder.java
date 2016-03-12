@@ -33,7 +33,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         initComponents();
 
         
-        Iterator a=JavaApplication10.db.getCustomerList().iterator();
+        Iterator a=MainThread.db.getCustomerList().iterator();
         
         
         ArrayList<Integer> customerIDList=new ArrayList<Integer>();
@@ -49,11 +49,11 @@ public class CreateAnOrder extends javax.swing.JFrame {
         SelCustomer_ComboBox.setModel(new DefaultComboBoxModel(customerIDList.toArray()));
         
         
-        Iterator b=JavaApplication10.oItems.a.iterator();
+        Iterator b=MainThread.oItems.a.iterator();
         
         ArrayList<Integer> productIDList=new ArrayList<Integer>();
         
-        for(Item i:JavaApplication10.oItems.a){
+        for(Item i:MainThread.oItems.a){
             productIDList.add(i.getItemId());
        }
         
@@ -621,7 +621,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // selects customer & item to submit order
-        Customer customer=JavaApplication10.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
+        Customer customer=MainThread.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
         Items oItem=new Items();
         
@@ -711,8 +711,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private void SelCustomer_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelCustomer_ComboBoxActionPerformed
         // fetches customer information
 
-        Collections.sort(JavaApplication10.db.getCustomerList());
-        Customer customers=JavaApplication10.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
+        Collections.sort(MainThread.db.getCustomerList());
+        Customer customers=MainThread.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
         
         IdkField.setVisible(false);
         NameField.setText(customers.getCustomerName());
@@ -728,7 +728,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed
         // TODO add your handling code here:
         Collections.sort(Items.a);
-        Item item=JavaApplication10.oItems.a.get(SelProduct_ComboBox.getSelectedIndex());
+        Item item=MainThread.oItems.a.get(SelProduct_ComboBox.getSelectedIndex());
         
         IdkField.setVisible(false);
         ProductNameField.setText(item.getItemName());
@@ -752,7 +752,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         IdkField.setVisible(false);
         //gets item information
         int orderType=OrderType_ComboBox.getSelectedIndex();
-        boolean shippingCharged=JavaApplication10.oItems.addShipping(orderType);
+        boolean shippingCharged=MainThread.oItems.addShipping(orderType);
         double shippingFee=4.00;
         String shipping="$"+shippingFee+"0";
         if(shippingCharged){
