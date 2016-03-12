@@ -8,8 +8,6 @@ public class Item implements Comparable<Item>{
     
     public Item(){};
 
-
-
     public Item(int itemId, String itemName, 
             double sellingPrice, int quantity) {
         this.itemId = itemId;
@@ -25,7 +23,6 @@ public class Item implements Comparable<Item>{
     public String getItemName() {
         return itemName;
     }
-
 
     public double getSellingPrice() {
         return sellingPrice;
@@ -89,9 +86,7 @@ public class Item implements Comparable<Item>{
         inventory.append(",");
         inventory.append(quantity);
         inventory.append(",");
-        
-        return inventory.toString();
-        
+        return inventory.toString(); 
     }
 }
 

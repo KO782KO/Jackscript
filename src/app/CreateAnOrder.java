@@ -33,18 +33,23 @@ public class CreateAnOrder extends javax.swing.JFrame {
         initComponents();
 
         
-        Iterator a=MainThread.db.getCustomerList().iterator();
+        //Iterator a=MainThread.db.getCustomerList().iterator();
         
         
         ArrayList<Integer> customerIDList=new ArrayList<Integer>();
         
-        
-        while(a.hasNext()){
+        //Fills array with list of customers to be used with the drop down menu
+        MainThread.db.getCustomers();
+        for(Customer c: MainThread.db.getCustomers()){
+            customerIDList.add(c.getCustomerID());
+        }
+        /*while(a.hasNext()){
+            
             Object temp;
             temp=a.next();
             int customerID=((Customer)temp).getCustomerID();
             customerIDList.add(customerID);
-        }
+        }*/
         Collections.sort(customerIDList);
         SelCustomer_ComboBox.setModel(new DefaultComboBoxModel(customerIDList.toArray()));
         
@@ -139,13 +144,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
                     }};
                     SelCustomer_ComboBox = new javax.swing.JComboBox();
                     NameField = new javax.swing.JTextField();
-                    AddressField = new javax.swing.JTextField();
-                    CustomerTypeField = new javax.swing.JTextField();
+                    PhoneNumField = new javax.swing.JTextField();
+                    EmailField = new javax.swing.JTextField();
                     CustInfoTitle = new javax.swing.JLabel();
                     SelCustLabel = new javax.swing.JLabel();
                     NameLabel = new javax.swing.JLabel();
-                    AddressLabel = new javax.swing.JLabel();
-                    TypeLabel = new javax.swing.JLabel();
+                    PhoneNumLabel = new javax.swing.JLabel();
+                    EmailLabel = new javax.swing.JLabel();
                     BackButton = new javax.swing.JButton();
                     ProductDetails = new javax.swing.JPanel(){
                         @Override
@@ -299,33 +304,34 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                 }
                             });
 
-                            AddressField.setEditable(false);
-                            AddressField.addActionListener(new java.awt.event.ActionListener() {
+                            PhoneNumField.setEditable(false);
+                            PhoneNumField.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                    AddressFieldActionPerformed(evt);
+                                    PhoneNumFieldActionPerformed(evt);
                                 }
                             });
 
-                            CustomerTypeField.setEditable(false);
-                            CustomerTypeField.addActionListener(new java.awt.event.ActionListener() {
+                            EmailField.setEditable(false);
+                            EmailField.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                    CustomerTypeFieldActionPerformed(evt);
+                                    EmailFieldActionPerformed(evt);
                                 }
                             });
 
                             CustInfoTitle.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
-                            CustInfoTitle.setText("Customer Information");
+                            CustInfoTitle.setText("Member Customer Information");
 
+                            SelCustLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
                             SelCustLabel.setText("Select a customer");
 
                             NameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
                             NameLabel.setText("Name:");
 
-                            AddressLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-                            AddressLabel.setText("Address:");
+                            PhoneNumLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+                            PhoneNumLabel.setText("Phone Number:");
 
-                            TypeLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-                            TypeLabel.setText("Customer Type:");
+                            EmailLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+                            EmailLabel.setText("Email:");
 
                             org.jdesktop.layout.GroupLayout CustomerInfoLayout = new org.jdesktop.layout.GroupLayout(CustomerInfo);
                             CustomerInfo.setLayout(CustomerInfoLayout);
@@ -338,23 +344,17 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                         .add(CustomerInfoLayout.createSequentialGroup()
                                             .add(6, 6, 6)
                                             .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                                .add(CustomerInfoLayout.createSequentialGroup()
-                                                    .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                                        .add(NameLabel)
-                                                        .add(AddressLabel)
-                                                        .add(TypeLabel))
-                                                    .add(37, 37, 37)
-                                                    .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                                        .add(NameField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 225, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                        .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                                            .add(org.jdesktop.layout.GroupLayout.TRAILING, CustomerTypeField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                                            .add(org.jdesktop.layout.GroupLayout.TRAILING, AddressField))))
-                                                .add(CustomerInfoLayout.createSequentialGroup()
-                                                    .add(SelCustLabel)
-                                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 224, Short.MAX_VALUE)
-                                                    .add(SelCustomer_ComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                    .add(13, 13, 13)))))
-                                    .addContainerGap(20, Short.MAX_VALUE))
+                                                .add(NameLabel)
+                                                .add(PhoneNumLabel)
+                                                .add(EmailLabel)
+                                                .add(SelCustLabel))
+                                            .add(37, 37, 37)
+                                            .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                                .add(NameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                                .add(PhoneNumField)
+                                                .add(EmailField)
+                                                .add(SelCustomer_ComboBox, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addContainerGap(26, Short.MAX_VALUE))
                             );
                             CustomerInfoLayout.setVerticalGroup(
                                 CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -365,19 +365,19 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                     .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                         .add(SelCustomer_ComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(SelCustLabel))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(31, 31, 31)
                                     .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                         .add(NameField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(NameLabel))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(18, 18, 18)
                                     .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(AddressField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(AddressLabel))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(PhoneNumField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(PhoneNumLabel))
+                                    .add(18, 18, 18)
                                     .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(CustomerTypeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(TypeLabel))
-                                    .addContainerGap(107, Short.MAX_VALUE))
+                                        .add(EmailField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(EmailLabel))
+                                    .addContainerGap(58, Short.MAX_VALUE))
                             );
 
                             BackButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
@@ -623,9 +623,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // selects customer & item to submit order
-        Customer customer=MainThread.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
+        Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
-        Items oItem=new Items();
         
         IdkField.setVisible(false);
         String entry=(AmtField.getText()).trim();
@@ -664,11 +663,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
         }else if((quantityRequested<=quantity)&&(quantityRequested!=-1)){
             IdkField.setVisible(false);
             //gets price
-            double price=oItem.getOrderPrice(customer, tempItem, quantityRequested);
+            double price;
+            price = MainThread.oItems.getOrderPrice(customer, tempItem, quantityRequested);
             //sets final price of item ordered
             double finalPrice=price;
             //adds shipping to price
-            Boolean shippingCharged=oItem.addShipping(OrderType_ComboBox.getSelectedIndex());
+            Boolean shippingCharged;
+            shippingCharged = MainThread.oItems.addShipping(OrderType_ComboBox.getSelectedIndex());
             SnHField.setText("$0.00");
             //calcualates shipping charge 
             if(shippingCharged){
@@ -682,9 +683,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
             TotalCostField.setVisible(true);
             TotalCostField.setText("$"+finalPrice);
             //makes sale of item and sends to inventory file
-            oItem.sellAnItem(shippingCharged, tempItem, customer, quantityRequested, finalPrice);
+            MainThread.oItems.sellAnItem(shippingCharged, tempItem, customer, quantityRequested, finalPrice);
             //summarizes order
-            ScrollPaneTextArea.setText(oItem.orderSummary());
+            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary());
             int qoh=Integer.parseInt(QuantityField.getText());
             int updated=qoh-quantityRequested;
             QuantityField.setText(""+updated);
@@ -713,17 +714,17 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private void SelCustomer_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelCustomer_ComboBoxActionPerformed
         // fetches customer information
 
-        Collections.sort(MainThread.db.getCustomerList());
-        Customer customers=MainThread.db.getCustomerList().get(SelCustomer_ComboBox.getSelectedIndex());
+        Collections.sort(MainThread.db.getCustomers());
+        Customer customers=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         
         IdkField.setVisible(false);
-        NameField.setText(customers.getCustomerName());
-        AddressField.setText(customers.getAddress());
-        CustomerTypeField.setText(customers.getType());
+        NameField.setText(customers.getFirstName()+" "+customers.getLastName());
+        PhoneNumField.setText(customers.getPhoneNumber());
+        EmailField.setText(customers.getEmail());
         if(SelCustomer_ComboBox.getSelectedIndex()>=0){
             NameField.setVisible(true);
-            AddressField.setVisible(true);
-            CustomerTypeField.setVisible(true);
+            PhoneNumField.setVisible(true);
+            EmailField.setVisible(true);
         }
     }//GEN-LAST:event_SelCustomer_ComboBoxActionPerformed
 
@@ -773,13 +774,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TotalCostFieldActionPerformed
 
-    private void AddressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddressFieldActionPerformed
+    private void PhoneNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AddressFieldActionPerformed
+    }//GEN-LAST:event_PhoneNumFieldActionPerformed
 
-    private void CustomerTypeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerTypeFieldActionPerformed
+    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CustomerTypeFieldActionPerformed
+    }//GEN-LAST:event_EmailFieldActionPerformed
 
     private void QuantityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityFieldActionPerformed
         // TODO add your handling code here:
@@ -826,14 +827,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AddressField;
-    private javax.swing.JLabel AddressLabel;
     private javax.swing.JTextField AmtField;
     private javax.swing.JLabel AmtLabel;
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel CustInfoTitle;
     private javax.swing.JPanel CustomerInfo;
-    private javax.swing.JTextField CustomerTypeField;
+    private javax.swing.JTextField EmailField;
+    private javax.swing.JLabel EmailLabel;
     private javax.swing.JTextField IdkField;
     private javax.swing.JTextField NameField;
     private javax.swing.JLabel NameLabel;
@@ -842,6 +842,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JScrollPane OrderSummaryScrollPane;
     private javax.swing.JLabel OrderTypeLabel;
     private javax.swing.JComboBox OrderType_ComboBox;
+    private javax.swing.JTextField PhoneNumField;
+    private javax.swing.JLabel PhoneNumLabel;
     private javax.swing.JTextField PriceField;
     private javax.swing.JLabel PriceLabel;
     private javax.swing.JTextField PricePerUnitField;
@@ -862,7 +864,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField TotalCostField;
     private javax.swing.JLabel TotalCostLabel;
-    private javax.swing.JLabel TypeLabel;
     private javax.swing.JLabel jLabel1;
     javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

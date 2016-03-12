@@ -15,6 +15,7 @@ public class CashCustomer extends Customer {
     public CashCustomer(){}
     
     public CashCustomer(int customerID, String customerName, String address, String type){
+        super(customerID)
         this.customerID=customerID;
         this.customerName=customerName;
         this.address=address;

@@ -247,31 +247,21 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="NameLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="AddressLabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TypeLabel" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="NameField" min="-2" pref="225" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="CustomerTypeField" alignment="1" pref="180" max="32767" attributes="0"/>
-                                              <Component id="AddressField" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="SelCustLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="224" max="32767" attributes="0"/>
-                                      <Component id="SelCustomer_ComboBox" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="NameLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PhoneNumLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EmailLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SelCustLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="NameField" pref="225" max="32767" attributes="0"/>
+                                  <Component id="PhoneNumField" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="EmailField" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="SelCustomer_ComboBox" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -285,22 +275,22 @@
                           <Component id="SelCustomer_ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SelCustLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="NameField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="AddressField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AddressLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PhoneNumField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PhoneNumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CustomerTypeField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EmailField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EmailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="107" max="32767" attributes="0"/>
+                      <EmptySpace pref="58" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -334,20 +324,20 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameFieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="AddressField">
+            <Component class="javax.swing.JTextField" name="PhoneNumField">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddressFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PhoneNumFieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="CustomerTypeField">
+            <Component class="javax.swing.JTextField" name="EmailField">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CustomerTypeFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="CustInfoTitle">
@@ -355,11 +345,14 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Sans" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Customer Information"/>
+                <Property name="text" type="java.lang.String" value="Member Customer Information"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="SelCustLabel">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Select a customer"/>
               </Properties>
             </Component>
@@ -371,20 +364,20 @@
                 <Property name="text" type="java.lang.String" value="Name:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="AddressLabel">
+            <Component class="javax.swing.JLabel" name="PhoneNumLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Sans" size="13" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Address:"/>
+                <Property name="text" type="java.lang.String" value="Phone Number:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="TypeLabel">
+            <Component class="javax.swing.JLabel" name="EmailLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Lucida Sans" size="13" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Customer Type:"/>
+                <Property name="text" type="java.lang.String" value="Email:"/>
               </Properties>
             </Component>
           </SubComponents>

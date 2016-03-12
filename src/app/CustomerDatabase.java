@@ -24,50 +24,31 @@ public class CustomerDatabase {
     //reads customer information from file, instantiates customer & populates customer's variables
     public void loadCustomer() throws FileNotFoundException, IOException{
         try{
-        
             //invokes buffered reader to read file
             BufferedReader read=new BufferedReader(new FileReader("Customer.csv"));
             
             String line=read.readLine();
             @SuppressWarnings("UnusedAssignment")
             StringTokenizer nextItem=null;     
-            Customer cust=new CashCustomer();
+            Customer cust=new Customer();
             customers.add(cust);
             //EOF loop to read file and calculate variables
             while(line!=null){
-               
+                
                 nextItem=new StringTokenizer(line, ",");
                 
                 while(nextItem.hasMoreTokens()){
                 //assigns file data to variables to be displayed and used
                 //in calculations
                 int customerNumber=Integer.parseInt(nextItem.nextToken());
-                String customerName=nextItem.nextToken();
-                String address=nextItem.nextToken();
-                String type=(nextItem.nextToken()).trim();
-                
-                String credit="CreditCustomer";
-                String cash="CashCustomer";
-                
-                if(type.equalsIgnoreCase(credit)){
-                    CreditCustomer cmer=new CreditCustomer(customerNumber, customerName, address, type);
-
-
-                    customers.add((CreditCustomer)cmer);}
-                else if(type.equalsIgnoreCase(cash)){
-                    CashCustomer smarty=new CashCustomer(customerNumber, customerName, address, type);
-
-                    
-                    customers.add((CashCustomer)smarty);
-                }
-                else{
-                    continue;
-                }
-                   
-
-                
+                String firstName=nextItem.nextToken();
+                String lastName=nextItem.nextToken();
+                int phoneNum=Integer.parseInt(nextItem.nextToken());
+                String email=(nextItem.nextToken());
+                customers.add(new Customer(customerNumber,firstName,lastName,phoneNum,email));
                 //primes pump for next line
                 line = read.readLine();
+                
                 }
                 //Collections.sort(CustomerDatabase.customer);
             }
@@ -107,6 +88,9 @@ public class CustomerDatabase {
     public void addNewCustomer(int ID){
             
     }
+    public ArrayList<Customer> getCustomers(){
+        return customers;
+    }
     
     public void list(){
         Customer p;
@@ -133,10 +117,7 @@ public class CustomerDatabase {
         
         return result;
     }
-
-
     
-
     //determines if cash or credit customer
    public boolean creditCustomer(int customerID){
         boolean credit=false;
@@ -145,11 +126,6 @@ public class CustomerDatabase {
         }
         return credit;
     }
-    public ArrayList<Customer> getCustomerList(){
-        return customers;
-    }
-    
-
     
     //approves transaction based on final price and credit limit (if credit customer)
     public boolean approveTransaction(int customerLocation, double creditLimit, double finalPrice){

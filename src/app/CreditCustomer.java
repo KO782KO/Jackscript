@@ -8,8 +8,7 @@ package app;
  * Creates Credit Customer Object (inherits from Customer Object)
  * @author Nolan
  */
-public class CreditCustomer extends Customer{
-    
+public class CreditCustomer extends Customer{   
     
     private final double CREDIT_MARKUP=.02;
     
@@ -23,14 +22,9 @@ public class CreditCustomer extends Customer{
         this.address=address;
         this.type=type;
 
-        
     }
     
-    
-
-
     public double getCREDIT_MARKUP() {
         return CREDIT_MARKUP;
     }
-    
 }
