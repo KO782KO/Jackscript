@@ -20,52 +20,36 @@ import java.util.StringTokenizer;
 public class CustomerDatabase {
 
     private ArrayList<Customer> customers=new ArrayList<Customer>();
-
-    //reads customer information from file, instantiates customer & populates customer's variables
-    public void loadCustomer() throws FileNotFoundException, IOException{
-        try{
-            //invokes buffered reader to read file
-            BufferedReader read=new BufferedReader(new FileReader("Customer.csv"));
-            
-            String line=read.readLine();
-            @SuppressWarnings("UnusedAssignment")
-            StringTokenizer nextItem=null;     
-            Customer cust=new Customer();
-            customers.add(cust);
-            //EOF loop to read file and calculate variables
-            while(line!=null){
+    
+public void initCustomers() throws FileNotFoundException, IOException{
+    if(customers.size()>=1)
+        customers.clear();
+    
+    BufferedReader readItem=new BufferedReader(new FileReader("Customer.csv"));
+    
+    String line=readItem.readLine();
+    @SuppressWarnings("UnusedAssignment")
+    StringTokenizer nextItem=null;
+    
+    Customer index=new Customer();
+    customers.add(index);
+    while(line!=null){
+        nextItem=new StringTokenizer(line, ",");
                 
-                nextItem=new StringTokenizer(line, ",");
-                
-                while(nextItem.hasMoreTokens()){
-                //assigns file data to variables to be displayed and used
-                //in calculations
+        while(nextItem.hasMoreTokens()){
                 int customerNumber=Integer.parseInt(nextItem.nextToken());
                 String firstName=nextItem.nextToken();
                 String lastName=nextItem.nextToken();
-                int phoneNum=Integer.parseInt(nextItem.nextToken());
+                long phoneNum=Long.valueOf(nextItem.nextToken());
                 String email=(nextItem.nextToken());
-                customers.add(new Customer(customerNumber,firstName,lastName,phoneNum,email));
-                //primes pump for next line
-                line = read.readLine();
-                
-                }
-                //Collections.sort(CustomerDatabase.customer);
-            }
-            read.close();//closes buffered reader
-            
-    }catch(FileNotFoundException fnfe){
-        System.out.printf("Sorry, the file appears to be missing.  Please contact IT.");
-    }catch(IOException ioe){
-        System.out.printf("An error has occurred.  Please contact IT.");
-    }catch(NumberFormatException e){
-        System.out.printf("Number Format Exception: please contact IT.");
-    }catch(Exception e){
-        System.out.printf("Something weird happened, please contact IT.");
-    }
-    finally{}
-
-    }
+            Customer product=new Customer(customerNumber, firstName, lastName, phoneNum,email);
+            customers.add(product);        
+        
+        line=readItem.readLine();
+        }
+    }   
+    readItem.close();
+}
     
     public int customerEntry(){
 

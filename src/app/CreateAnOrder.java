@@ -39,7 +39,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         ArrayList<Integer> customerIDList=new ArrayList<Integer>();
         
         //Fills array with list of customers to be used with the drop down menu
-        MainThread.db.getCustomers();
+        MainThread.db.initCustomers();
         for(Customer c: MainThread.db.getCustomers()){
             customerIDList.add(c.getCustomerID());
         }
@@ -712,20 +712,19 @@ public class CreateAnOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_SnHFieldActionPerformed
 
     private void SelCustomer_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelCustomer_ComboBoxActionPerformed
-        // fetches customer information
 
-        Collections.sort(MainThread.db.getCustomers());
-        Customer customers=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
-        
-        IdkField.setVisible(false);
-        NameField.setText(customers.getFirstName()+" "+customers.getLastName());
-        PhoneNumField.setText(customers.getPhoneNumber());
-        EmailField.setText(customers.getEmail());
-        if(SelCustomer_ComboBox.getSelectedIndex()>=0){
-            NameField.setVisible(true);
-            PhoneNumField.setVisible(true);
-            EmailField.setVisible(true);
-        }
+// fetches customer information
+            
+            Customer customers=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
+            IdkField.setVisible(false);
+            NameField.setText(customers.getFirstName()+" "+customers.getLastName());
+            PhoneNumField.setText(Long.toString(customers.getPhoneNumber()));
+            EmailField.setText(customers.getEmail());
+            if(SelCustomer_ComboBox.getSelectedIndex()>=0){
+                NameField.setVisible(true);
+                PhoneNumField.setVisible(true);
+                EmailField.setVisible(true);
+            }
     }//GEN-LAST:event_SelCustomer_ComboBoxActionPerformed
 
     private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed

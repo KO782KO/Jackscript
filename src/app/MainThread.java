@@ -25,7 +25,7 @@ public class MainThread {
         
         try {
             //loads customer
-            db.loadCustomer();
+            db.initCustomers();
 
             //prepares items
             oItems.initItems();

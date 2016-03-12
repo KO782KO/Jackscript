@@ -12,13 +12,13 @@ public class Customer implements Comparable<Customer> {
     private int customerID;
     private String firstName;
     private String lastName;
-    private int phoneNum;
+    private long phoneNum;
     private String email;
     
     public Customer(){
         
     };
-    public Customer(int customerID, String fName, String lName, int phoneNum, String email){
+    public Customer(int customerID, String fName, String lName, long phoneNum, String email){
         this.customerID=customerID;
         this.firstName=fName;
         this.lastName=lName;
@@ -67,8 +67,8 @@ public class Customer implements Comparable<Customer> {
     /**
      * @return the Phone Number
      */
-    public String getPhoneNumber() {
-        return Integer.toUnsignedString(this.phoneNum);
+    public long getPhoneNumber() {
+        return this.phoneNum;
     }
 
     /**
