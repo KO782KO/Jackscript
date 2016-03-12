@@ -103,8 +103,14 @@ public class FileChooser extends javax.swing.JFrame {
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         // TODO add your handling code here:
+        if (jFileChooser1.getSelectedFile()!=null){
         File file=jFileChooser1.getSelectedFile();
-        
+        try{
+        MainThread.oItems.itemReport(this);
+        }catch(java.io.IOException e){
+            System.out.println("IO Exception");
+        }
+        }
         
         
         

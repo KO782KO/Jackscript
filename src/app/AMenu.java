@@ -197,10 +197,8 @@ public class AMenu extends javax.swing.JFrame {
 //Creates exportable Inventory Report
     private void InventoryReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventoryReportActionPerformed
         try {
-            // Initializes Item class instance
-            Items stuff=new Items();
             // Calls Item Report Method
-            stuff.itemReport();
+            FileChooser filechooser=new FileChooser();
         } catch (Exception ex) {
             Logger.getLogger(AMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
