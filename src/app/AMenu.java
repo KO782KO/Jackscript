@@ -73,6 +73,7 @@ public class AMenu extends javax.swing.JFrame {
 
             InventoryReport.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             InventoryReport.setText("Inventory Report");
+            InventoryReport.setToolTipText("Create Excel compatible inventory report.");
             InventoryReport.setFocusPainted(false);
             InventoryReport.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +83,7 @@ public class AMenu extends javax.swing.JFrame {
 
             CreateOrder.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             CreateOrder.setText("Create Order");
-            CreateOrder.setToolTipText("");
+            CreateOrder.setToolTipText("Create orders and interface the customer and item list.");
             CreateOrder.setFocusPainted(false);
             CreateOrder.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +102,7 @@ public class AMenu extends javax.swing.JFrame {
 
             ManageInventory.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             ManageInventory.setText("Manage Inventory");
-            ManageInventory.setToolTipText("");
+            ManageInventory.setToolTipText("Add Inventory items and edit stored product data.");
             ManageInventory.setFocusPainted(false);
             ManageInventory.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +112,8 @@ public class AMenu extends javax.swing.JFrame {
 
             ManageCustomers.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             ManageCustomers.setText("Manage Customers");
-            ManageCustomers.setToolTipText("");
+            ManageCustomers.setToolTipText("Add Customers and edit stored customer data.");
+            ManageCustomers.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
             ManageCustomers.setFocusPainted(false);
             ManageCustomers.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,16 +132,12 @@ public class AMenu extends javax.swing.JFrame {
                 .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(jPanel1Layout.createSequentialGroup()
-                            .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(295, 295, 295))
-                        .add(jPanel1Layout.createSequentialGroup()
-                            .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(24, 24, 24))))
+                        .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(295, 295, 295))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
