@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package app;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -15,12 +14,11 @@ import java.awt.Polygon;
 import java.awt.RenderingHints;
 
 public class AMenu extends javax.swing.JFrame {
-
  // Creates Main Menu Form
     public AMenu() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,13 +54,7 @@ public class AMenu extends javax.swing.JFrame {
             }};
             Title = new javax.swing.JLabel();
             InventoryReport = new javax.swing.JButton();
-            try {
-                CreateOrder =(javax.swing.JButton)java.beans.Beans.instantiate(getClass().getClassLoader(), "app.AMenu_jButton1");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (java.io.IOException e) {
-                e.printStackTrace();
-            }
+            CreateOrder = new javax.swing.JButton();
             Exit = new javax.swing.JButton();
             ManageInventory = new javax.swing.JButton();
             ManageCustomers = new javax.swing.JButton();
@@ -88,6 +80,10 @@ public class AMenu extends javax.swing.JFrame {
                 }
             });
 
+            CreateOrder.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            CreateOrder.setText("Create Order");
+            CreateOrder.setToolTipText("");
+            CreateOrder.setFocusPainted(false);
             CreateOrder.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     CreateOrderActionPerformed(evt);
@@ -134,12 +130,16 @@ public class AMenu extends javax.swing.JFrame {
                 .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(295, 295, 295))
+                        .add(jPanel1Layout.createSequentialGroup()
+                            .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(295, 295, 295))
+                        .add(jPanel1Layout.createSequentialGroup()
+                            .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(24, 24, 24))))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
