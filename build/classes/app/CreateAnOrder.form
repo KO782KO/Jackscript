@@ -35,6 +35,14 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel3">
+<<<<<<< HEAD
+=======
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="66" red="0" type="rgb"/>
+        </Property>
+      </Properties>
+>>>>>>> refs/remotes/origin/dev
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;&#x9;@Override&#xa;&#x9;protected void paintComponent(Graphics g){&#xa;&#x9;&#x9;Graphics2D g2d1=(Graphics2D)g.create();&#xa;&#x9;     RenderingHints hints1 = new RenderingHints(&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;RenderingHints render1 =new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;hints1.add(render1);&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;g2d1.setRenderingHints(hints1);&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;java.awt.Polygon p1 = new java.awt.Polygon();&#xa;&#x9;&#x9;&#x9;&#x9;    p1.addPoint(0,0);&#xa;&#x9;&#x9;&#x9;&#x9;    p1.addPoint(0,200);&#xa;&#x9;&#x9;&#x9;&#x9;   &#xa;&#x9;&#x9;&#x9;&#x9;    p1.addPoint(this.getWidth()+50, 200);&#xa;&#x9;&#x9;&#x9;&#x9;    p1.addPoint(this.getWidth()+50,0);&#xa;&#x9;&#x9;&#x9;&#x9;    java.awt.GradientPaint gp1 = new java.awt.GradientPaint(0.0f,200.0f,new java.awt.Color(20,60,100),&#xa;&#x9;&#x9;&#x9;&#x9;             0.0f, 0.0f,new java.awt.Color(100,200,200,255), true);&#xa;&#x9;&#x9;&#x9;&#x9;    &#xa;&#x9;&#x9;&#x9;&#x9;    g2d1.setColor(new java.awt.Color(20,60,100));&#xa;&#x9;&#x9;&#x9;&#x9;    g2d1.fill(getBounds());&#xa;&#x9;&#x9;&#x9;&#x9;    g2d1.setPaint(gp1);&#xa;&#x9;&#x9;&#x9;&#x9;    g2d1.fill(p1);&#xa;&#x9;}}"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>

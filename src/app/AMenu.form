@@ -111,6 +111,7 @@
               <Font name="Lucida Sans" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Inventory Report"/>
+            <Property name="toolTipText" type="java.lang.String" value="Create Excel compatible inventory report."/>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -123,7 +124,7 @@
               <Font name="Lucida Sans" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Create Order"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Create orders and interface the customer and item list."/>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -151,7 +152,7 @@
               <Font name="Lucida Sans" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Inventory"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Add Inventory items and edit stored product data."/>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -164,7 +165,10 @@
               <Font name="Lucida Sans" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Manage Customers"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Add Customers and edit stored customer data."/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
