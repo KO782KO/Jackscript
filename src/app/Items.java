@@ -223,11 +223,9 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
     }
 
    //displays a report of current inventory 
-     public void itemReport() throws IOException{
+     public void itemReport(FileChooser fc) throws IOException{
          try{
-                FileChooser fr=new FileChooser();
-                fr.setVisible(false);
-                String selection=fr.fileName();
+                String selection=fc.fileName();
                 if(selection!=null){
 
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv"));
