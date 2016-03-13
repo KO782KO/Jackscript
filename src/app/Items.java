@@ -30,9 +30,6 @@ public void initItems() throws FileNotFoundException, IOException{
     String line=readItem.readLine();
     @SuppressWarnings("UnusedAssignment")
     StringTokenizer nextItem=null;
-    
-    Item index=new Item();
-    a.add(index);
     while(line!=null){
         nextItem=new StringTokenizer(line, ",");
                 

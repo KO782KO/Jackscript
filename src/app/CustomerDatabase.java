@@ -31,8 +31,6 @@ public void initCustomers() throws FileNotFoundException, IOException{
     @SuppressWarnings("UnusedAssignment")
     StringTokenizer nextItem=null;
     
-    Customer index=new Customer();
-    customers.add(index);
     while(line!=null){
         nextItem=new StringTokenizer(line, ",");
                 
