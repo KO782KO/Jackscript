@@ -28,6 +28,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     /**
      * Creates new form CreateAnOrder
+     * @throws java.io.FileNotFoundException
      */
     public CreateAnOrder() throws FileNotFoundException, IOException {
         initComponents();

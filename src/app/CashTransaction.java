@@ -8,13 +8,13 @@ package app;
  * Creates Cash Customer Object (inherits from Customer Object)
  * @author Nolan
  */
-public class CashCustomer extends Customer {
+public class CashTransaction extends Customer {
     
     private static double CASH_DISCOUNT=.05;
 
-    public CashCustomer(){}
+    public CashTransaction(){}
     
-    public CashCustomer(int customerID, String customerName, String address, String type){
+    public CashTransaction(int customerID, String customerName, String address, String type){
         super(customerID)
         this.customerID=customerID;
         this.customerName=customerName;

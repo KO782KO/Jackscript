@@ -126,13 +126,13 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             double finalCost;
             double pricePerItem=item.getSellingPrice();
             double preCost=units*pricePerItem;
-            if(customer instanceof CreditCustomer){
-                CreditCustomer cust=(CreditCustomer) customer;
+            if(customer instanceof CreditTranaction){
+                CreditTranaction cust=(CreditTranaction) customer;
                 
                 finalCost=preCost+(preCost*cust.getCREDIT_MARKUP());
             }
-            else if(customer instanceof CashCustomer){
-                CashCustomer custCash=(CashCustomer) customer;
+            else if(customer instanceof CashTransaction){
+                CashTransaction custCash=(CashTransaction) customer;
                 finalCost=preCost-(preCost*custCash.getCASH_DISCOUNT());
                 
             }
