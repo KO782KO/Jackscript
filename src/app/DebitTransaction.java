@@ -8,23 +8,16 @@ package app;
  * Creates Credit Customer Object (inherits from Customer Object)
  * @author Nolan
  */
-public class DebitTransaction extends Customer{   
+public class DebitTransaction extends Transaction{   
     
-    private final double CREDIT_MARKUP=.02;
+    private final double DEBIT_MARKUP=.02;
     
-    public DebitTransaction(){
-        
+    public DebitTransaction(int itemID,int customrerID,int quantity,String date,double price,String orderType){
+        super(itemID,customrerID,quantity,date,price,orderType);
+        super.setPrice(price+(price*DEBIT_MARKUP));
     }
     
-    public DebitTransaction(int customerID, String customerName, String address, String type){
-        this.customerID=customerID;
-        this.customerName=customerName;
-        this.address=address;
-        this.type=type;
-
-    }
-    
-    public double getCREDIT_MARKUP() {
-        return CREDIT_MARKUP;
+    public double getDEBIT_MARKUP() {
+        return DEBIT_MARKUP;
     }
 }
