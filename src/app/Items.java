@@ -18,7 +18,6 @@ public class Items {
     // define the array list header. Note that it is an instance variable
     public static ArrayList<Item> a= new ArrayList<Item>();
     public static ArrayList<Order> order=new ArrayList<Order>();
-    //public static ArrayList<Inventory> inStock=new ArrayList<Inventory>();
 
 //Item object variables for the inventory 
 public void initItems() throws FileNotFoundException, IOException{
@@ -114,7 +113,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             
         Order newOrder=new Order(customerID, itemID, quantityOrdered, finalPrice, type);
         order.add(newOrder);
-    }    
+    }
 }
 
     //gets price of order before additional fees
@@ -123,8 +122,8 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             double finalCost;
             double pricePerItem=item.getSellingPrice();
             double preCost=units*pricePerItem;
-            if(customer instanceof CreditTranaction){
-                CreditTranaction cust=(CreditTranaction) customer;
+            if(customer instanceof CreditTransaction){
+                CreditTransaction cust=(CreditTransaction) customer;
                 
                 finalCost=preCost+(preCost*cust.getCREDIT_MARKUP());
             }

@@ -15,5 +15,4 @@ public class GiftCardTransaction extends Transaction {
         super(itemID,customrerID,quantity,date,price,orderType);
         this.GiftCardUPC=GiftCardUPC;
     }
-    
 }
