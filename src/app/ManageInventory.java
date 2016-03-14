@@ -5,15 +5,17 @@
  */
 package app;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.UnsupportedLookAndFeelException;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author Kevin
+ * @author Kevin+Jack
  */
-public class ManageInventory extends javax.swing.JFrame {
+public class ManageInventory extends javax.swing.JFrame implements Comparable<Item>{
+
+    private Object ItemsSoldField;
 
     /**
      * Creates new form CreateItem
@@ -398,7 +400,7 @@ public class ManageInventory extends javax.swing.JFrame {
                 NameField.getText(),
                 Double.parseDouble(PriceField.getText()),
                 Integer.parseInt(QuantityField.getText()));
-            Integer.parseInt(ItemsSoldField.getText());
+           // Integer.parseInt(ItemsSoldField.getText());
         }
     }//GEN-LAST:event_AddItemButtonActionPerformed
 
@@ -411,7 +413,9 @@ public class ManageInventory extends javax.swing.JFrame {
     }//GEN-LAST:event_IDNumFieldActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+
         // TODO add your handling code here:
+        //System.out.println(itemsSold);
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
@@ -481,4 +485,9 @@ public class ManageInventory extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public int compareTo(Item o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
