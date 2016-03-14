@@ -70,7 +70,8 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
             QuantityField = new javax.swing.JTextField();
             AddItemButton = new javax.swing.JButton();
             jLabel2 = new javax.swing.JLabel();
-            jTextField2 = new javax.swing.JTextField();
+            jScrollPane1 = new javax.swing.JScrollPane();
+            jTextArea1 = new javax.swing.JTextArea();
             AddExistingItems = new javax.swing.JPanel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -127,12 +128,9 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
 
             jLabel2.setText("Items Sold");
 
-            jTextField2.setText("jTextField2");
-            jTextField2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jTextField2ActionPerformed(evt);
-                }
-            });
+            jTextArea1.setColumns(20);
+            jTextArea1.setRows(5);
+            jScrollPane1.setViewportView(jTextArea1);
 
             javax.swing.GroupLayout CreateNewItemLayout = new javax.swing.GroupLayout(CreateNewItem);
             CreateNewItem.setLayout(CreateNewItemLayout);
@@ -141,25 +139,29 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                 .addGroup(CreateNewItemLayout.createSequentialGroup()
                     .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(CreateNewItemLayout.createSequentialGroup()
-                            .addGap(103, 103, 103)
-                            .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 183, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateNewItemLayout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(IDLabel)
                                 .addComponent(NameLabel)
                                 .addComponent(PriceLabel)
                                 .addComponent(QuantityLabel)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addGap(103, 103, 103)
+                            .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(QuantityField)
                                 .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                 .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(PriceField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField2))))
-                    .addContainerGap())
+                                .addComponent(QuantityField)
+                                .addComponent(PriceField))
+                            .addContainerGap())
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(157, Short.MAX_VALUE))))
             );
             CreateNewItemLayout.setVerticalGroup(
                 CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,12 +183,15 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                         .addComponent(QuantityLabel)
                         .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                    .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(25, 25, 25))
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                            .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(25, 25, 25))
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             );
 
             jTabbedPane1.addTab("Create New Item", null, CreateNewItem, "");
@@ -198,7 +203,7 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
             AddExistingItems.setLayout(AddExistingItemsLayout);
             AddExistingItemsLayout.setHorizontalGroup(
                 AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 440, Short.MAX_VALUE)
+                .addGap(0, 493, Short.MAX_VALUE)
             );
             AddExistingItemsLayout.setVerticalGroup(
                 AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,12 +288,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
         // TODO add your handling code here:
     }//GEN-LAST:event_IDNumFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-
-        // TODO add your handling code here:
-        //System.out.println(itemsSold);
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -340,8 +339,9 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
     private javax.swing.JLabel QuantityLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
     @Override
