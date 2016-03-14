@@ -13,17 +13,18 @@ public class Order {
     private int itemID;
     private int quantity;
     private double totalPrice;
+    private double tax;
     private String type;
 
     public Order(){
-        
     }
     
-    public Order(int customerID, int itemID, int quantity, double totalPrice, String type){
+    public Order(int customerID, int itemID, int quantity, double totalPrice,double tax, String type){
         this.customerID=customerID;
         this.itemID=itemID;
         this.quantity=quantity;
         this.totalPrice=totalPrice;
+        this.tax=tax;
         this.type=type;
     }
     
@@ -33,7 +34,6 @@ public class Order {
     public int getCustomerID() {
         return customerID;
     }
-
     /**
      * @param customerID the customerID to set
      */

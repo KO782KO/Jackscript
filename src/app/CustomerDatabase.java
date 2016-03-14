@@ -101,19 +101,19 @@ public void initCustomers() throws FileNotFoundException, IOException{
     }
     
     //determines if cash or credit customer
-   public boolean creditCustomer(int customerID){
+   public boolean creditCustomer(int customerID, Customer CreditTransaction){
         boolean credit=false;
-        if(customers.get(customerID) instanceof CreditTransaction){
+        if(customers.get(customerID) == CreditTransaction){
             credit=true;
         }
         return credit;
     }
     
     //approves transaction based on final price and credit limit (if credit customer)
-    public boolean approveTransaction(int customerLocation, double creditLimit, double finalPrice){
+    public boolean approveTransaction(int customerLocation, double creditLimit, double finalPrice, Customer CreditTransaction, Customer CashTransaction){
         boolean approved=false;
-        if((customers.get(customerLocation) instanceof CashTransaction)||((customers.get(customerLocation) instanceof CreditTransaction) && (creditLimit>=finalPrice))){
-            approved=true;
+        if((customers.get(customerLocation) != CashTransaction)&&((customers.get(customerLocation) != CreditTransaction) || (creditLimit<finalPrice))){
+        approved=true;
         }
         
         return approved;

@@ -15,6 +15,7 @@ public  class Transaction {
     private int quantity;
     private String date;
     private double price;
+    private final double tax=0.065;
     private String orderType;//eg. in store, online, etc.
 
 public Transaction(int itemID,int customerID,int quantity,String date,double price,String orderType){
@@ -22,6 +23,7 @@ public Transaction(int itemID,int customerID,int quantity,String date,double pri
     this.customerID=customerID;
     this.quantity=quantity;
     this.date=date;
+    //this.tax=tax;
     this.price=price;
     this.orderType=orderType;
     }
@@ -45,6 +47,9 @@ public double getPrice(){
 }
 public String getOrderType(){
     return this.orderType;
+}
+public double getTax(double tax){
+    return this.tax;
 }
 public void setPrice(double price){
     this.price=price;

@@ -19,7 +19,6 @@ if(transactions.size()>=1)
     java.io.BufferedReader readItem=new java.io.BufferedReader(new java.io.FileReader("Product.csv"));
     
     String line=readItem.readLine();
-    //@SuppressWarnings("UnusedAssignment")
     java.util.StringTokenizer nextItem=null;
     while(line!=null){
         nextItem=new java.util.StringTokenizer(line, ",");

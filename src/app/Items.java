@@ -160,7 +160,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
 
                     String header=("ItemId,Item Name,Pieces in Store,SellingPrice,\n");
                     fileWriter.append(header);
-                    for (int i=0; i<a.size()-1; i++) {
+                    for (int i=0; i<a.size(); i++) {
                         Item temp=a.get(i);
                         fileWriter.append(temp.toString());
                     fileWriter.append(System.getProperty("line.separator"));
