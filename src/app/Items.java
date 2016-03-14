@@ -110,8 +110,6 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
         }
     
     if(quantityOrdered>0&&itemID>0&&quantityOrdered>0){
-            
-        Order newOrder=new Order(customerID, itemID, quantityOrdered, finalPrice, type);
         order.add(newOrder);
     }
 }
