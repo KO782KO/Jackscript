@@ -8,18 +8,13 @@ package app;
  * Creates Cash Customer Object (inherits from Customer Object)
  * @author Nolan
  */
-public class CashTransaction extends Customer {
+public class CashTransaction extends Transaction {
     
     private static double CASH_DISCOUNT=.05;
-
-    public CashTransaction(){}
     
-    public CashTransaction(int customerID, String customerName, String address, String type){
-        super(customerID)
-        this.customerID=customerID;
-        this.customerName=customerName;
-        this.address=address;
-        this.type=type;
+    public CashTransaction(int itemID,int customrerID,int quantity,String date,double price,String orderType){
+        super(itemID,customrerID,quantity,date,price,orderType);
+        super.setPrice(price-(price*CASH_DISCOUNT));
     }
     public static double getCASH_DISCOUNT() {
         return CASH_DISCOUNT;
@@ -27,5 +22,4 @@ public class CashTransaction extends Customer {
     public static void setCASH_DISCOUNT(double aCASH_DISCOUNT) {
         CASH_DISCOUNT = aCASH_DISCOUNT;
     }
-    
 }
