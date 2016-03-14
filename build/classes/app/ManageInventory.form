@@ -24,12 +24,22 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="344" max="32767" attributes="0"/>
+          </Group>
+=======
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+>>>>>>> parent of 020a57e... Started to make an items sold category
       </Group>
     </DimensionLayout>
   </Layout>
@@ -50,8 +60,19 @@
               <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="BackButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+=======
                   <Component id="BackButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+>>>>>>> parent of 020a57e... Started to make an items sold category
               </Group>
           </Group>
         </DimensionLayout>
@@ -62,7 +83,11 @@
                   <Component id="BackButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="jTabbedPane1" min="-2" pref="298" max="-2" attributes="0"/>
+<<<<<<< HEAD
+                  <EmptySpace max="32767" attributes="0"/>
+=======
                   <EmptySpace pref="228" max="32767" attributes="0"/>
+>>>>>>> parent of 020a57e... Started to make an items sold category
               </Group>
           </Group>
         </DimensionLayout>
@@ -119,6 +144,39 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="IDLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PriceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="QuantityLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="AddItemButton" min="-2" pref="144" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="IDNumField" alignment="1" pref="230" max="32767" attributes="0"/>
+                                      <Component id="NameField" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="QuantityField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="PriceField" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <EmptySpace pref="157" max="32767" attributes="0"/>
+                              </Group>
+=======
                               <Component id="IDLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="NameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="PriceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -130,8 +188,8 @@
                               <Component id="IDNumField" alignment="1" pref="230" max="32767" attributes="0"/>
                               <Component id="NameField" alignment="1" max="32767" attributes="0"/>
                               <Component id="PriceField" alignment="1" max="32767" attributes="0"/>
+>>>>>>> parent of 020a57e... Started to make an items sold category
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
@@ -161,11 +219,27 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="QuantityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="QuantityField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="QuantityField" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                                  <Component id="AddItemButton" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jScrollPane1" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+=======
                           <EmptySpace pref="56" max="32767" attributes="0"/>
                           <Component id="AddItemButton" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+>>>>>>> parent of 020a57e... Started to make an items sold category
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -229,6 +303,50 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddItemButtonActionPerformed"/>
                   </Events>
                 </Component>
+<<<<<<< HEAD
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Items Sold"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="jTextArea1">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="AddExistingItems">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder thickness="2"/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Add Existing Items">
+                    <Property name="tabTitle" type="java.lang.String" value="Add Existing Items"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="493" max="32767" attributes="0"/>
+=======
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="AddExistingItems">
@@ -251,6 +369,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <EmptySpace min="0" pref="358" max="32767" attributes="0"/>
+>>>>>>> parent of 020a57e... Started to make an items sold category
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
