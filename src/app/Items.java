@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class Items {
     // define the array list header. Note that it is an instance variable
     public static ArrayList<Item> a= new ArrayList<Item>();
-    public static ArrayList<Order> order=new ArrayList<Order>();
+  //  public static ArrayList<Order> order=new ArrayList<Order>();
 
 //Item object variables for the inventory 
 public void initItems() throws FileNotFoundException, IOException{
@@ -110,14 +110,12 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
         }
     
     if(quantityOrdered>0&&itemID>0&&quantityOrdered>0){
-            
-        Order newOrder=new Order(customerID, itemID, quantityOrdered, finalPrice, type);
-        order.add(newOrder);
+       // order.add(newOrder);
     }
 }
 
     //gets price of order before additional fees
-    public double getOrderPrice(Customer customer, Item item, int units){
+  /*  public double getOrderPrice(Customer customer, Item item, int units){
 
             double finalCost;
             double pricePerItem=item.getSellingPrice();
@@ -137,7 +135,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             }
 
         return finalCost;
-    }
+    }*/
                     
 //adds shipping
     
@@ -192,11 +190,11 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
      public String orderSummary(){
          
          int end=(order.size())-1;
-         Order reviewedOrder=order.get(end);
+       /*  Order reviewedOrder=order.get(end);
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuant()+"\nPrice: "+reviewedOrder.getTotalPrice()+
                  "\nOrder Type:"+reviewedOrder.getType();
-         
+         */
          return orderSummary;
      }   
 } 
