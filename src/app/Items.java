@@ -129,7 +129,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             }
             else if(customer instanceof CashTransaction){
                 CashTransaction custCash=(CashTransaction) customer;
-                finalCost=preCost-(preCost*custCash.getCASH_DISCOUNT());
+                finalCost=preCost-(preCost*CashTransaction.getCASH_DISCOUNT());
                 
             }
             else{
