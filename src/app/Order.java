@@ -54,7 +54,11 @@ public class Order {
     public void setItemID(int itemID) {
         this.itemID = itemID;
     }
-
+    //returns change in quantity after order
+    public int orderHistory(int quantity){
+        return Math.abs(getQuant()-quantity);
+    }
+    
     /**
      * @return the quantity
      */

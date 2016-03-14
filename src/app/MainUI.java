@@ -30,7 +30,7 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author Kevin
+ * @author Kevin+Jack
  */
 public class MainUI extends JFrame implements ActionListener, ItemListener, ComponentListener, MouseListener {
 
@@ -340,10 +340,6 @@ package app;
         loadProj.setLocation(centerX(loadProj), centerY(loadProj, 320));
         info.setLocation(centerX(info), centerY(info, 390));
 
-        //Title.setLocation(centerX(Title),(int)(50*Ymult));
-        //newProj.setLocation(centerX(newProj),(int)(250*Ymult));
-        //loadProj.setLocation(centerX(loadProj),(int)(320*Ymult));
-        //info.setLocation(centerX(info),(int)(390*Ymult));
         repaint();
     }
 

@@ -11,7 +11,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
@@ -21,7 +20,6 @@ public class Items {
     // define the array list header. Note that it is an instance variable
     public static ArrayList<Item> a= new ArrayList<Item>();
     public static ArrayList<Order> order=new ArrayList<Order>();
-    //public static ArrayList<Inventory> inStock=new ArrayList<Inventory>();
 
 //Item object variables for the inventory 
 public void initItems() throws FileNotFoundException, IOException{
@@ -44,7 +42,8 @@ public void initItems() throws FileNotFoundException, IOException{
             String productName=nextItem.nextToken();
             double salePrice=Double.parseDouble(nextItem.nextToken());
             int quantity=Integer.parseInt(nextItem.nextToken());
-            Item product=new Item(productID, productName, salePrice, quantity);
+            int itemsSold=Integer.parseInt(nextItem.nextToken());
+            Item product=new Item(productID, productName, salePrice, quantity, itemsSold);
             a.add(product);
         
         
@@ -53,17 +52,9 @@ public void initItems() throws FileNotFoundException, IOException{
     }
     
     readItem.close();
-    
+}
     /*Iterator loading=a.iterator();
     
-    while(loading.hasNext()){
-        Object item;
-        item=loading.next();
-        int itemID=((Item)item).getItemId();
-        int inStock=inventoryMatch(itemID);
-        ((Item)item).setQuantity(inStock);
-        
-    }*/
 
 }
 public Items getItems(){
@@ -105,26 +96,26 @@ public Items getItems(){
         return false;
     }
 //adds an item to the array and then writes it to the file
-    public void addItem(int id, String name, double price, int quantity){
-        Item temp=new Item(id,name,price,quantity);
+    public void addItem(int id, String name, double price, int quantity, int itemsSold){
+        Item temp=new Item(id,name,price,quantity,itemsSold);
         a.add(temp);
         addItemToFile(temp);
     }
     //Updates product.csv, used when adding a new inventory item to the file.
+    @SuppressWarnings("null")
     private void addItemToFile(Item i){
          try{
-               // String selection="C://Users/Kevin/Desktop/Product.txt";
                 String selection="Product.csv";
                 java.io.File file=new java.io.File(selection);
                 if(selection!=null){              //boolean true makes it append to end of file
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(file,true));
                     
 
-                    //for (int i=0; i<a.size()-1; i++) {
+                    
                     String item =i.getItemId()+","+i.getItemName()+","+i.getSellingPrice()+","+i.getQuantity();
                         fileWriter.newLine();
                         fileWriter.write(item);
-                    //fileWriter.write(item);
+                    
  //closes buffered writer
             fileWriter.close();
             JOptionPane.showMessageDialog(null, "Export successful");
@@ -202,7 +193,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             }
             else if(customer instanceof CashCustomer){
                 CashCustomer custCash=(CashCustomer) customer;
-                finalCost=preCost-(preCost*custCash.getCASH_DISCOUNT());
+                finalCost=preCost-(preCost*CashCustomer.getCASH_DISCOUNT());
                 
             }
             else{
@@ -273,4 +264,8 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          
          return orderSummary;
      }   
+
+    void addItem(int parseInt, String text, double parseDouble, int parseInt0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 } 
