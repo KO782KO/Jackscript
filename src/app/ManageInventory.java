@@ -5,9 +5,9 @@
  */
 package app;
 
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//import javax.swing.UnsupportedLookAndFeelException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -255,7 +255,17 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
             pack();
             setLocationRelativeTo(null);
         }// </editor-fold>//GEN-END:initComponents
+        private void IDNumField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNumField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDNumField1ActionPerformed
 
+    private void NameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameField1ActionPerformed
+
+    private void AddItemButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddItemButton1ActionPerformed
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // exit
         dispose();
