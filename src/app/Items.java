@@ -114,8 +114,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
     }
 }
 
-    //gets price of order before additional fees
-  /*  public double getOrderPrice(Customer customer, Item item, int units){
+    public double getOrderPrice(Customer customer, Item item, int units){
 
             double finalCost;
             double pricePerItem=item.getSellingPrice();
@@ -135,7 +134,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
             }
 
         return finalCost;
-    }*/
+    }
                     
 //adds shipping
     
