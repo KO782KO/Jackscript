@@ -7,7 +7,7 @@ package app;
 
 /**
  *
- * @author Kevin
+ * @author Kevin+Jack
  */
 public class TransactionClient {
     private java.util.ArrayList<Transaction> transactions=new java.util.ArrayList<Transaction>();
@@ -60,10 +60,10 @@ public java.util.ArrayList<Transaction> getList(){
          public String orderSummary(){
          
          int end=(transactions.size())-1;
-         transactions reviewedOrder=transactions.get(end);
-         String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
-                 "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getTotalPrice()+
-                 "\nOrder Type:"+reviewedOrder.getType();
+         Transaction reviewedOrder=transactions.get(end);
+         String orderSummary="\nCustomerID: "+reviewedOrder.getcustomerID()+
+                 "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getPrice()+
+                 "\nOrder Type:"+reviewedOrder.getOrderType();
          
          return orderSummary;
      }
