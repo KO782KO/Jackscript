@@ -57,4 +57,14 @@ if(transactions.size()>=1)
 public java.util.ArrayList<Transaction> getList(){
     return transactions;
     }
+         public String orderSummary(){
+         
+         int end=(transactions.size())-1;
+         transactions reviewedOrder=transactions.get(end);
+         String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
+                 "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getTotalPrice()+
+                 "\nOrder Type:"+reviewedOrder.getType();
+         
+         return orderSummary;
+     }
 }
