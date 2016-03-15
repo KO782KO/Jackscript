@@ -197,4 +197,8 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          
          return orderSummary;
 */
+
+    double get(Customer customer, Item tempItem, int quantityRequested) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }   
