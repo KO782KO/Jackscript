@@ -187,14 +187,14 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          {
          }
 }
-     public String orderSummary(){
+   /*  public String orderSummary(){
          
-         int end=(order.size())-1;
+         int end=(a.size())-1;
        /*  Order reviewedOrder=order.get(end);
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuant()+"\nPrice: "+reviewedOrder.getTotalPrice()+
                  "\nOrder Type:"+reviewedOrder.getType();
-         */
+         
          return orderSummary;
-     }   
-} 
+*/
+}   
