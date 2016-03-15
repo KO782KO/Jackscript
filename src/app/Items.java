@@ -114,18 +114,18 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
     }
 }
 
-    public double getOrderPrice(Customer customer, Item item, int units){
+    public double getOrderPrice(Transaction transaction, Item item, int units){
 
             double finalCost;
             double pricePerItem=item.getSellingPrice();
             double preCost=units*pricePerItem;
-            if(customer instanceof CreditTransaction){
-                CreditTransaction cust=(CreditTransaction) customer;
+            if(transaction instanceof CreditTransaction){
+                CreditTransaction cust=(CreditTransaction) transaction;
                 
                 finalCost=preCost+(preCost*cust.getCREDIT_MARKUP());
             }
-            else if(customer instanceof CashTransaction){
-                CashTransaction custCash=(CashTransaction) customer;
+            else if(transaction instanceof CashTransaction){
+                CashTransaction custCash=(CashTransaction) transaction;
                 finalCost=preCost-(preCost*CashTransaction.getCASH_DISCOUNT());
                 
             }
@@ -196,4 +196,8 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          
          return orderSummary;
 */
+
+    double get(Customer customer, Item tempItem, int quantityRequested) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }   

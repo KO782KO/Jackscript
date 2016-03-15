@@ -44,13 +44,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
         for(Customer c: MainThread.db.getCustomers()){
             customerIDList.add(c.getCustomerID());
         }
-        /*while(a.hasNext()){
-            
-            Object temp;
-            temp=a.next();
-            int customerID=((Customer)temp).getCustomerID();
-            customerIDList.add(customerID);
-        }*/
         Collections.sort(customerIDList);
         SelCustomer_ComboBox.setModel(new DefaultComboBoxModel(customerIDList.toArray()));
         
@@ -665,7 +658,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             IdkField.setVisible(false);
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(customer, tempItem, quantityRequested);
+            price = MainThread.oItems.get(customer, tempItem, quantityRequested);
             //sets final price of item ordered
             double finalPrice=price;
             //adds shipping to price
