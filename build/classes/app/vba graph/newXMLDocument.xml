@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- THIS IS VBA. THERE IS NO OPTION FOR THAT SO I USED XML TO COMMIT
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+Option Explicit
+
+Sub OpenCSVFileAndPlotData()
+  Dim sCSVFullName As String, sWbkFullName As String, sFileRoot As String
+  Dim wb As Workbook, ws As Worksheet, rng As Range, vRng As Variant
+  Dim rCht As Range, cht As Chart, srs As Series
+  Dim iRows As Long, iCols As Long, iRow As Long, iCol As Long
+  Dim sTemp As String
+  Dim vChartData As Variant
+  Dim bFirstRowHeaders As Boolean
+  Dim myChartType As XlChartType
+  Dim vX As Variant, vY As Variant
+  Dim iX As Long, iY As Long, iSrs As Long
+  Dim nX As Long, nY As Long, nSrs As Long
+  Dim frmChartFromCSVFile As FChartFromCSVFile
+  
+  ' get csv file name
+  sCSVFullName = Application.GetOpenFilename("CSV Files (*.csv), *.csv", , "Select a CSV file", , False)
+
+  ' open CSV file
+  Workbooks.Open sCSVFullName
+  Set wb = ActiveWorkbook
+  
+  ' Save as workbook
+  sFileRoot = Left$(sCSVFullName, InStrRev(sCSVFullName, ".") - 1)
+  sWbkFullName = sFileRoot & ".xlsx"
+  wb.SaveAs sWbkFullName, xlWorkbookDefault
+  
+  ' Parse file
+  Set ws = wb.Worksheets(1)
+  Set rng = ws.UsedRange
+  vRng = rng.Value2
+  iRows = rng.Rows.Count
+  iCols = rng.Columns.Count
+  
+  ' info to display: column number, first few rows of column
+  ReDim vChartData(1 To iCols, 1 To 2)
+  For iCol = 1 To iCols
+    vChartData(iCol, 1) = iCol
+    sTemp = ""
+    For iRow = 1 To 4
+      If iRow > iRows Then Exit For
+      sTemp = sTemp & vRng(iRow, iCol) & ", "
+    Next
+    sTemp = Left$(sTemp, Len(sTemp) - 2)
+    vChartData(iCol, 2) = sTemp
+  Next
+  
+  '  Show dialog (get chart type, X values, Y values)
+  Set frmChartFromCSVFile = New FChartFromCSVFile
+  With frmChartFromCSVFile
+    '' pass in information we know
+    .ChartData = vChartData
+    
+    .Show
+    
+    myChartType = .ChartType
+    bFirstRowHeaders = .FirstRowHeaders
+    vX = .Xcolumns
+    vY = .YColumns
+  End With
+  Unload frmChartFromCSVFile
+  
+  If IsEmpty(vX) Then
+    nX = 0
+  Else
+    nX = UBound(vX, 1) + 1 - LBound(vX, 1)
+  End If
+  nY = UBound(vY, 1) + 1 - LBound(vY, 1)
+  nSrs = nY
+  If nX > nY Then nSrs = nX
+  If bFirstRowHeaders Then
+    Set rCht = rng.Offset(1).Resize(iRows - 1)
+  Else
+    Set rCht = rng
+  End If
+  
+  '' select blank cell before inserting chart
+  rng.Offset(iRows + 1, iCols + 1).Resize(1, 1).Select
+  
+  Set cht = ws.Shapes.AddChart.Chart
+  
+  '' chart type
+  With cht
+    .ChartType = myChartType
+    
+    '' add series
+    For iSrs = 1 To nSrs
+      Set srs = .SeriesCollection.NewSeries
+      With srs
+        ' X values
+        If nX = 0 Then
+          ' no X values specified
+        ElseIf nX = 1 Then
+          ' all series share X values
+          .XValues = rCht.Columns(CLng(vX(0, 0)))
+        Else
+          ' each series has unique X values
+          .XValues = rCht.Columns(CLng(vX(iSrs - 1, 0)))
+        End If
+        ' Y values
+        If nY = 1 Then
+          ' all series share Y values
+          .Values = rCht.Columns(CLng(vY(0, 0)))
+        Else
+          ' each series has unique Y values
+          .Values = rCht.Columns(CLng(vY(iSrs - 1, 0)))
+        End If
+        ' series name
+        If bFirstRowHeaders Then
+          If nSrs = nY Then
+            .Name = "=" & rng.Cells(1, CLng(vY(iSrs - 1, 0))).Address(True, True, xlA1, True)
+          ElseIf nSrs = nX Then
+            .Name = "=" & rng.Cells(1, CLng(vX(iSrs - 1, 0))).Address(True, True, xlA1, True)
+          End If
+        End If
+      End With
+    Next
+  End With
+  
+' save
+wb.Save
+ExitProcedure:
+End Sub
+</root>
