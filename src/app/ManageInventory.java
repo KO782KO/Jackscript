@@ -69,13 +69,13 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
             PriceField = new javax.swing.JTextField();
             QuantityField = new javax.swing.JTextField();
             AddItemButton = new javax.swing.JButton();
-<<<<<<< HEAD
             jLabel2 = new javax.swing.JLabel();
             jScrollPane1 = new javax.swing.JScrollPane();
             jTextArea1 = new javax.swing.JTextArea();
-=======
->>>>>>> parent of 020a57e... Started to make an items sold category
             AddExistingItems = new javax.swing.JPanel();
+            jLabel1 = new javax.swing.JLabel();
+            jLabel2 = new javax.swing.JLabel();
+            jLabel3 = new javax.swing.JLabel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setTitle("Create Item");
@@ -129,15 +129,12 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                 }
             });
 
-<<<<<<< HEAD
             jLabel2.setText("Items Sold");
 
             jTextArea1.setColumns(20);
             jTextArea1.setRows(5);
             jScrollPane1.setViewportView(jTextArea1);
 
-=======
->>>>>>> parent of 020a57e... Started to make an items sold category
             javax.swing.GroupLayout CreateNewItemLayout = new javax.swing.GroupLayout(CreateNewItem);
             CreateNewItem.setLayout(CreateNewItemLayout);
             CreateNewItemLayout.setHorizontalGroup(
@@ -145,7 +142,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateNewItemLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                         .addGroup(CreateNewItemLayout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,23 +166,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                             .addGap(18, 18, 18)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap(157, Short.MAX_VALUE))))
-=======
-                        .addComponent(IDLabel)
-                        .addComponent(NameLabel)
-                        .addComponent(PriceLabel)
-                        .addComponent(QuantityLabel))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(QuantityField)
-                        .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                        .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(PriceField, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addContainerGap())
-                .addGroup(CreateNewItemLayout.createSequentialGroup()
-                    .addGap(103, 103, 103)
-                    .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(111, Short.MAX_VALUE))
->>>>>>> parent of 020a57e... Started to make an items sold category
             );
             CreateNewItemLayout.setVerticalGroup(
                 CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +186,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                     .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(QuantityLabel)
                         .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
                     .addGap(18, 18, 18)
                     .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(CreateNewItemLayout.createSequentialGroup()
@@ -218,11 +196,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                         .addGroup(CreateNewItemLayout.createSequentialGroup()
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-=======
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                    .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(25, 25, 25))
->>>>>>> parent of 020a57e... Started to make an items sold category
             );
 
             jTabbedPane1.addTab("Create New Item", null, CreateNewItem, "");
@@ -230,19 +203,229 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
 
             AddExistingItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
+            jLabel1.setText("jLabel1");
+
+            jLabel2.setText("jLabel2");
+
+            jLabel3.setText("jLabel3");
+
             javax.swing.GroupLayout AddExistingItemsLayout = new javax.swing.GroupLayout(AddExistingItems);
             AddExistingItems.setLayout(AddExistingItemsLayout);
             AddExistingItemsLayout.setHorizontalGroup(
                 AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel(){
+            @Override
+            protected void paintComponent(java.awt.Graphics g) {
+                java.awt.Graphics2D g2d1 = (java.awt.Graphics2D) g.create();
+                java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                    java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                java.awt.RenderingHints render1 = new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING, java.awt.RenderingHints.VALUE_RENDER_SPEED);
+                hints1.add(render1);
+                g2d1.setRenderingHints(hints1);
+                java.awt.Polygon p1 = new java.awt.Polygon();
+                p1.addPoint(0, 0);
+                p1.addPoint(0, 200);
+
+                p1.addPoint(this.getWidth() + 50, 200);
+                p1.addPoint(this.getWidth() + 50, 0);
+                java.awt.GradientPaint gp1 = new java.awt.GradientPaint(0.0f, 200.0f, new java.awt.Color(20, 60, 100),
+                    0.0f, 0.0f, new java.awt.Color(100, 200, 200, 255), true);
+
+                g2d1.setColor(new java.awt.Color(20, 60, 100));
+                g2d1.fill(getBounds());
+                g2d1.setPaint(gp1);
+                g2d1.fill(p1);
+                //Image img=	image.getImage("/resources/GameIcon2.jpg");
+            }};
+            BackButton = new javax.swing.JButton();
+            jTabbedPane1 = new javax.swing.JTabbedPane();
+            CreateNewItem = new javax.swing.JPanel();
+            IDLabel = new javax.swing.JLabel();
+            NameLabel = new javax.swing.JLabel();
+            PriceLabel = new javax.swing.JLabel();
+            QuantityLabel = new javax.swing.JLabel();
+            IDNumField = new javax.swing.JTextField();
+            NameField = new javax.swing.JTextField();
+            PriceField = new javax.swing.JTextField();
+            QuantityField = new javax.swing.JTextField();
+            AddItemButton = new javax.swing.JButton();
+            jLabel2 = new javax.swing.JLabel();
+            jScrollPane1 = new javax.swing.JScrollPane();
+            jTextArea1 = new javax.swing.JTextArea();
+            AddExistingItems = new javax.swing.JPanel();
+            jLabel1 = new javax.swing.JLabel();
+            jLabel2 = new javax.swing.JLabel();
+            jLabel3 = new javax.swing.JLabel();
+
+            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            setTitle("Create Item");
+
+            jPanel1.setBackground(new java.awt.Color(0, 102, 153));
+
+            BackButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            BackButton.setText("Back to Menu");
+            BackButton.setFocusPainted(false);
+            BackButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    BackButtonActionPerformed(evt);
+                }
+            });
+
+            jTabbedPane1.setOpaque(false);
+            jTabbedPane1.setName(""); // NOI18N
+
+            CreateNewItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+            IDLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            IDLabel.setText("Item ID Number");
+
+            NameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            NameLabel.setText("Item Name");
+
+            PriceLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            PriceLabel.setText("Selling Price");
+
+            QuantityLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            QuantityLabel.setText("Quantity");
+
+            IDNumField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    IDNumFieldActionPerformed(evt);
+                }
+            });
+
+            NameField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    NameFieldActionPerformed(evt);
+                }
+            });
+
+            AddItemButton.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+            AddItemButton.setText("Add New Item");
+            AddItemButton.setFocusPainted(false);
+            AddItemButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    AddItemButtonActionPerformed(evt);
+                }
+            });
+
+            jLabel2.setText("Items Sold");
+
+            jTextArea1.setColumns(20);
+            jTextArea1.setRows(5);
+            jScrollPane1.setViewportView(jTextArea1);
+
+            javax.swing.GroupLayout CreateNewItemLayout = new javax.swing.GroupLayout(CreateNewItem);
+            CreateNewItem.setLayout(CreateNewItemLayout);
+            CreateNewItemLayout.setHorizontalGroup(
+                CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateNewItemLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(IDLabel)
+                                .addComponent(NameLabel)
+                                .addComponent(PriceLabel)
+                                .addComponent(QuantityLabel)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addGap(103, 103, 103)
+                            .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(QuantityField)
+                                .addComponent(PriceField))
+                            .addContainerGap())
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(157, Short.MAX_VALUE))))
+            );
+            CreateNewItemLayout.setVerticalGroup(
+                CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CreateNewItemLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(IDNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(IDLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NameLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PriceLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(QuantityLabel)
+                        .addComponent(QuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(CreateNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                            .addComponent(AddItemButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(25, 25, 25))
+                        .addGroup(CreateNewItemLayout.createSequentialGroup()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            );
+
+            jTabbedPane1.addTab("Create New Item", null, CreateNewItem, "");
+            CreateNewItem.getAccessibleContext().setAccessibleName("");
+
+            AddExistingItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+            jLabel1.setText("jLabel1");
+
+            jLabel2.setText("jLabel2");
+
+            jLabel3.setText("jLabel3");
+
+            javax.swing.GroupLayout AddExistingItemsLayout = new javax.swing.GroupLayout(AddExistingItems);
+            AddExistingItems.setLayout(AddExistingItemsLayout);
+            AddExistingItemsLayout.setHorizontalGroup(
+                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                 .addGap(0, 493, Short.MAX_VALUE)
 =======
                 .addGap(0, 358, Short.MAX_VALUE)
->>>>>>> parent of 020a57e... Started to make an items sold category
+                .addGroup(AddExistingItemsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                        .addGroup(AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(241, Short.MAX_VALUE))
             );
             AddExistingItemsLayout.setVerticalGroup(
                 AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 266, Short.MAX_VALUE)
+                .addGroup(AddExistingItemsLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(32, 32, 32)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(122, Short.MAX_VALUE))
             );
 
             jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
@@ -254,17 +437,8 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                 .addComponent(jTabbedPane1)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-<<<<<<< HEAD
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(BackButton)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addComponent(jTabbedPane1))
-                    .addContainerGap())
-=======
                     .addComponent(BackButton)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> parent of 020a57e... Started to make an items sold category
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,11 +447,7 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                     .addComponent(BackButton)
                     .addGap(46, 46, 46)
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                     .addContainerGap(228, Short.MAX_VALUE))
->>>>>>> parent of 020a57e... Started to make an items sold category
             );
 
             jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
@@ -292,60 +462,18 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 344, Short.MAX_VALUE))
-=======
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> parent of 020a57e... Started to make an items sold category
             );
 
             pack();
             setLocationRelativeTo(null);
         }// </editor-fold>//GEN-END:initComponents
-<<<<<<< HEAD
-        private void IDNumField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNumField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IDNumField1ActionPerformed
 
-    private void NameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NameField1ActionPerformed
-
-    private void AddItemButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AddItemButton1ActionPerformed
-=======
-
->>>>>>> parent of 020a57e... Started to make an items sold category
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // exit
         dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-<<<<<<< HEAD
-    private void AddItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButtonActionPerformed
-
-        System.out.println(MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
-        if(
-            (!MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())))
-            &&NameField.getText().length()>=1
-            &&PriceField.toString().length()>=1
-            &&QuantityField.getText().length()>=1
-            ){
-            /////////////////////////////////>>>>
-            MainThread.oItems.addItem(
-                Integer.parseInt(IDNumField.getText()),
-                NameField.getText(),
-                Double.parseDouble(PriceField.getText()),
-                Integer.parseInt(QuantityField.getText()));
-           // Integer.parseInt(ItemsSoldField.getText());
-        }
-    }//GEN-LAST:event_AddItemButtonActionPerformed
-
-=======
->>>>>>> parent of 020a57e... Started to make an items sold category
     private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NameFieldActionPerformed
@@ -354,8 +482,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
         // TODO add your handling code here:
     }//GEN-LAST:event_IDNumFieldActionPerformed
 
-<<<<<<< HEAD
-=======
     private void AddItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButtonActionPerformed
     
        System.out.println(MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
@@ -373,7 +499,6 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
        }
     }//GEN-LAST:event_AddItemButtonActionPerformed
 
->>>>>>> parent of 020a57e... Started to make an items sold category
     /**
      * @param args the command line arguments
      */
@@ -423,17 +548,12 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
     private javax.swing.JLabel PriceLabel;
     private javax.swing.JTextField QuantityField;
     private javax.swing.JLabel QuantityLabel;
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel2;
 =======
->>>>>>> parent of 020a57e... Started to make an items sold category
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-<<<<<<< HEAD
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextArea jTextArea1;
-=======
->>>>>>> parent of 020a57e... Started to make an items sold category
     // End of variables declaration//GEN-END:variables
 
     @Override

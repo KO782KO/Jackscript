@@ -59,6 +59,7 @@ public class MainUI extends JFrame implements ActionListener, ItemListener, Comp
      *
      * @param title
      */
+    @SuppressWarnings({"OverridableMethodCallInConstructor", "LeakingThisInConstructor"})
     public MainUI(String title) {
         super(title);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -127,14 +128,12 @@ public class MainUI extends JFrame implements ActionListener, ItemListener, Comp
                 backg.addPoint(0, 0);
                 backg.addPoint(0, 40);
                 backg.addPoint(200, 40);
-                //backg.addPoint(200, 0);
                 GradientPaint gp = new GradientPaint(0.0f, 40.0f, new Color(20, 60, 120),
                         0.0f, 0.0f, new Color(0, 130, 200), true);
 
                 g2d1.setPaint(gp);
                 g2d1.fillRect(0, 0, 200, 40);
                 super.paintComponent(g);
-                // g2d1.fill(backg);
             }
         };
         loadProj.setSize(200, 40);
@@ -165,7 +164,6 @@ public class MainUI extends JFrame implements ActionListener, ItemListener, Comp
                 backg.addPoint(0, 0);
                 backg.addPoint(0, 40);
                 backg.addPoint(200, 40);
-                //backg.addPoint(200, 0);
                 GradientPaint gp = new GradientPaint(0.0f, 40.0f, new Color(20, 60, 120),
                         0.0f, 0.0f, new Color(0, 130, 200), true);
 
@@ -209,7 +207,6 @@ public class MainUI extends JFrame implements ActionListener, ItemListener, Comp
                 g2d1.fill(getBounds());
                 g2d1.setPaint(gp1);
                 g2d1.fill(p1);
-                //Image img=	image.getImage("/resources/GameIcon2.jpg");
             }
         };
         panel.setBackground(new Color(0, 0, 80));

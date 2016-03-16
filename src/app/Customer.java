@@ -8,26 +8,21 @@ package app;
  *
  * @author Nolan
  */
-public abstract class Customer implements Comparable<Customer> {
-    public int customerID;
-    public String customerName;
-    public String address;
-    public String type;
-    
-
+public class Customer implements Comparable<Customer> {
+    private int customerID;
+    private String firstName;
+    private String lastName;
+    private long phoneNum;
+    private String email;
     
     public Customer(){
-
         
-
     };
-    public Customer(int customerID, String customerName, String address, String type){
+    public Customer(int customerID, String fName, String lName, long phoneNum, String email){
         this.customerID=customerID;
-        this.customerName=customerName;
-        this.address=address;
-        this.type=type;
-        
-        
+        this.firstName=fName;
+        this.lastName=lName;
+        this.email=email;
     }
     /**
      * @return the customerID
@@ -35,7 +30,6 @@ public abstract class Customer implements Comparable<Customer> {
     public int getCustomerID() {
         return customerID;
     }
-
     /**
      * @param customerID the customerID to set
      */
@@ -44,45 +38,58 @@ public abstract class Customer implements Comparable<Customer> {
     }
 
     /**
-     * @return the customerName
+     * @return the firstName
      */
-    public String getCustomerName() {
-        return customerName;
+    public String getFirstName() {
+        return firstName;
+    }
+    
+    /**
+     * @return the lastName
+     */
+    public String getLastName() {
+        return lastName;
+    }
+    /**
+     * @param firstName the firstName to set
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
-     * @param customerName the customerName to set
+     * @param lastName the lastName to set
      */
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
-     * @return the address
+     * @return the Phone Number
      */
-    public String getAddress() {
-        return address;
+    public long getPhoneNumber() {
+        return this.phoneNum;
     }
 
     /**
-     * @param address the address to set
+     * @param phoneNum the the Phone Number to set
      */
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPhoneNumber(int phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     /**
-     * @return the type
+     * @return the Email
      */
-    public String getType() {
-        return type;
+    public String getEmail() {
+        return this.email;
     }
 
     /**
-     * @param type the type to set
+     * @param email the Email to set
      */
-    public void setType(String type) {
-        this.type = type;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
@@ -99,8 +106,5 @@ public abstract class Customer implements Comparable<Customer> {
             return 0;
         }
     }
-
-    
-    
 
 }

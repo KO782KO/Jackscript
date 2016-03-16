@@ -20,71 +20,34 @@ import java.util.StringTokenizer;
 public class CustomerDatabase {
 
     private ArrayList<Customer> customers=new ArrayList<Customer>();
-
-    //reads customer information from file, instantiates customer & populates customer's variables
-    public void loadCustomer() throws FileNotFoundException, IOException{
-        try{
-        
-            //invokes buffered reader to read file
-            BufferedReader read=new BufferedReader(new FileReader("Customer.csv"));
-            
-            String line=read.readLine();
-            @SuppressWarnings("UnusedAssignment")
-            StringTokenizer nextItem=null;     
-            Customer cust=new CashCustomer();
-            customers.add(cust);
-            //EOF loop to read file and calculate variables
-            while(line!=null){
-               
-                nextItem=new StringTokenizer(line, ",");
+    
+public void initCustomers() throws FileNotFoundException, IOException{
+    if(customers.size()>=1)
+        customers.clear();
+    
+    BufferedReader readItem=new BufferedReader(new FileReader("Customer.csv"));
+    
+    String line=readItem.readLine();
+    @SuppressWarnings("UnusedAssignment")
+    StringTokenizer nextItem=null;
+    
+    while(line!=null){
+        nextItem=new StringTokenizer(line, ",");
                 
-                while(nextItem.hasMoreTokens()){
-                //assigns file data to variables to be displayed and used
-                //in calculations
+        while(nextItem.hasMoreTokens()){
                 int customerNumber=Integer.parseInt(nextItem.nextToken());
-                String customerName=nextItem.nextToken();
-                String address=nextItem.nextToken();
-                String type=(nextItem.nextToken()).trim();
-                
-                String credit="CreditCustomer";
-                String cash="CashCustomer";
-                
-                if(type.equalsIgnoreCase(credit)){
-                    CreditCustomer cmer=new CreditCustomer(customerNumber, customerName, address, type);
-
-
-                    customers.add((CreditCustomer)cmer);}
-                else if(type.equalsIgnoreCase(cash)){
-                    CashCustomer smarty=new CashCustomer(customerNumber, customerName, address, type);
-
-                    
-                    customers.add((CashCustomer)smarty);
-                }
-                else{
-                    continue;
-                }
-                   
-
-                
-                //primes pump for next line
-                line = read.readLine();
-                }
-                //Collections.sort(CustomerDatabase.customer);
-            }
-            read.close();//closes buffered reader
-            
-    }catch(FileNotFoundException fnfe){
-        System.out.printf("Sorry, the file appears to be missing.  Please contact IT.");
-    }catch(IOException ioe){
-        System.out.printf("An error has occurred.  Please contact IT.");
-    }catch(NumberFormatException e){
-        System.out.printf("Number Format Exception: please contact IT.");
-    }catch(Exception e){
-        System.out.printf("Something weird happened, please contact IT.");
-    }
-    finally{}
-
-    }
+                String firstName=nextItem.nextToken();
+                String lastName=nextItem.nextToken();
+                long phoneNum=Long.valueOf(nextItem.nextToken());
+                String email=(nextItem.nextToken());
+            Customer product=new Customer(customerNumber, firstName, lastName, phoneNum,email);
+            customers.add(product);        
+        
+        line=readItem.readLine();
+        }
+    }   
+    readItem.close();
+}
     
     public int customerEntry(){
 
@@ -106,6 +69,9 @@ public class CustomerDatabase {
     }
     public void addNewCustomer(int ID){
             
+    }
+    public ArrayList<Customer> getCustomers(){
+        return customers;
     }
     
     public void list(){
@@ -133,29 +99,21 @@ public class CustomerDatabase {
         
         return result;
     }
-
-
     
-
     //determines if cash or credit customer
-   public boolean creditCustomer(int customerID){
+   public boolean creditCustomer(int customerID, Customer CreditTransaction){
         boolean credit=false;
-        if(customers.get(customerID) instanceof CreditCustomer){
+        if(customers.get(customerID) == CreditTransaction){
             credit=true;
         }
         return credit;
     }
-    public ArrayList<Customer> getCustomerList(){
-        return customers;
-    }
-    
-
     
     //approves transaction based on final price and credit limit (if credit customer)
-    public boolean approveTransaction(int customerLocation, double creditLimit, double finalPrice){
+    public boolean approveTransaction(int customerLocation, double creditLimit, double finalPrice, Customer CreditTransaction, Customer CashTransaction){
         boolean approved=false;
-        if((customers.get(customerLocation) instanceof CashCustomer)||((customers.get(customerLocation) instanceof CreditCustomer) && (creditLimit>=finalPrice))){
-            approved=true;
+        if((customers.get(customerLocation) != CashTransaction)&&((customers.get(customerLocation) != CreditTransaction) || (creditLimit<finalPrice))){
+        approved=true;
         }
         
         return approved;
