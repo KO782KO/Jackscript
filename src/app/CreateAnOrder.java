@@ -38,7 +38,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         
         
         ArrayList<Integer> customerIDList=new ArrayList<Integer>();
-        
+        //ArrayList<type> orderType=new ArrayList<type>();
         //Fills array with list of customers to be used with the drop down menu
         MainThread.db.initCustomers();
         for(Customer c: MainThread.db.getCustomers()){
@@ -172,6 +172,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
                         QuantityInStockLabel = new javax.swing.JLabel();
                         PricePerUnitLabel = new javax.swing.JLabel();
                         OrderTypeLabel = new javax.swing.JLabel();
+                        jComboBox1 = new javax.swing.JComboBox<>();
+                        jLabel3 = new javax.swing.JLabel();
                         OrderDetails = new javax.swing.JPanel(){
                             @Override
                             protected void paintComponent(Graphics g){
@@ -192,9 +194,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             AmtField = new javax.swing.JTextField();
                             AmtLabel = new javax.swing.JLabel();
                             jLabel1 = new javax.swing.JLabel();
-                            jLabel2 = new javax.swing.JLabel();
-                            jButton1 = new javax.swing.JButton();
-                            jComboBox1 = new javax.swing.JComboBox<>();
                             IdkField = new javax.swing.JTextField();
 
                             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -431,6 +430,16 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             OrderTypeLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
                             OrderTypeLabel.setText("Order Type:");
 
+                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                            jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+                                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                    jComboBox1ActionPerformed(evt);
+                                }
+                            });
+
+                            jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+                            jLabel3.setText("Payment Type:");
+
                             org.jdesktop.layout.GroupLayout ProductDetailsLayout = new org.jdesktop.layout.GroupLayout(ProductDetails);
                             ProductDetails.setLayout(ProductDetailsLayout);
                             ProductDetailsLayout.setHorizontalGroup(
@@ -438,10 +447,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                 .add(ProductDetailsLayout.createSequentialGroup()
                                     .addContainerGap()
                                     .add(ProductDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                        .add(ProductDetailsLayout.createSequentialGroup()
-                                            .add(OrderTypeLabel)
-                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .add(OrderType_ComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                         .add(ProductDetailsLayout.createSequentialGroup()
                                             .add(SelProductLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 137, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -460,7 +465,15 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                         .add(org.jdesktop.layout.GroupLayout.LEADING, ProductDetailsLayout.createSequentialGroup()
                                             .add(ProductNameLabel)
                                             .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .add(ProductNameField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                            .add(ProductNameField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .add(ProductDetailsLayout.createSequentialGroup()
+                                            .add(ProductDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                                .add(OrderTypeLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .add(ProductDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                                .add(jComboBox1, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .add(OrderType_ComboBox, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                     .addContainerGap())
                             );
                             ProductDetailsLayout.setVerticalGroup(
@@ -488,8 +501,14 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                     .add(ProductDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                         .add(OrderType_ComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(OrderTypeLabel))
-                                    .add(35, 35, 35))
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                    .add(ProductDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                        .add(jComboBox1)
+                                        .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addContainerGap())
                             );
+
+                            jComboBox1.getAccessibleContext().setAccessibleName("Sel_ordertypebox");
 
                             OrderDetails.setBackground(new java.awt.Color(255, 255, 255));
                             OrderDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -517,13 +536,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                             jLabel1.setText("Order Details");
 
-                            jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                            jLabel2.setText("Type of Transaction");
-
-                            jButton1.setText("jButton1");
-
-                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
                             org.jdesktop.layout.GroupLayout OrderDetailsLayout = new org.jdesktop.layout.GroupLayout(OrderDetails);
                             OrderDetails.setLayout(OrderDetailsLayout);
                             OrderDetailsLayout.setHorizontalGroup(
@@ -536,13 +548,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                     .add(26, 26, 26)
                                     .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                         .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 91, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jLabel2)
-                                        .add(AmtLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .add(AmtLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                     .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 7, Short.MAX_VALUE)
-                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                        .add(SubmitButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .add(SubmitButton)
                                     .addContainerGap())
                             );
                             OrderDetailsLayout.setVerticalGroup(
@@ -556,13 +564,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                     .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                         .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(SubmitButton))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                    .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                        .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                                        .add(jComboBox1))
-                                    .addContainerGap(19, Short.MAX_VALUE))
+                                    .addContainerGap(98, Short.MAX_VALUE))
                             );
 
                             IdkField.setEditable(false);
@@ -801,6 +803,12 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_QuantityFieldActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+                IdkField.setVisible(false);
+                int cType=jComboBox1.getSelectedIndex();
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -880,10 +888,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField TotalCostField;
     private javax.swing.JLabel TotalCostLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
