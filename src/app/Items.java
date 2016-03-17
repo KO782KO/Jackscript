@@ -186,16 +186,16 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          {
          }
 }
-   /*  public String orderSummary(){
+     public String orderSummary(){
          
          int end=(a.size())-1;
-       /*  Order reviewedOrder=order.get(end);
+         Order reviewedOrder=order.get(end);
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuant()+"\nPrice: "+reviewedOrder.getTotalPrice()+
                  "\nOrder Type:"+reviewedOrder.getType();
          
          return orderSummary;
-*/
+
 
     double get(Customer customer, Item tempItem, int quantityRequested) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
