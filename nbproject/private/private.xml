@@ -3,38 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/Inventory.csv</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/MainThread.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/Inventory.csv.csv</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/Product.csv</file>
+            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/ManageInventory.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/TransactionClient.java</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/Items.java</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/vba%20graph/newXMLDocument.xml</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/ManageCustomers.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/Customer.csv</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/CreateAnOrder.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/Transaction.java</file>
-=======
-            <file>file:/F:/Jekscript/Jackscript/src/app/ManageInventory.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/Inventory.java</file>
-            <file>file:/F:/Jekscript/Jackscript/Inventory.csv.csv</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/AMenu.java</file>
-            <file>file:/F:/Jekscript/Jackscript/New%20Text%20Document.txt</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/MainThread.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/Customer.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/MainUI.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/CustomerDatabase.java</file>
-            <file>file:/F:/Jekscript/Jackscript/Customer.csv</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/Items.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/ManageCustomers.java</file>
-            <file>file:/F:/Jekscript/Jackscript/Inventory.csv</file>
-            <file>file:/F:/Jekscript/Jackscript/Product.csv</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/MainUI1.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/CreateAnOrder.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/LoadImageApp.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/FileChooser.java</file>
->>>>>>> origin/dev
         </group>
     </open-files>
 </project-private>

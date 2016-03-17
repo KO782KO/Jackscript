@@ -192,6 +192,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             AmtField = new javax.swing.JTextField();
                             AmtLabel = new javax.swing.JLabel();
                             jLabel1 = new javax.swing.JLabel();
+                            jLabel2 = new javax.swing.JLabel();
+                            jButton1 = new javax.swing.JButton();
+                            jComboBox1 = new javax.swing.JComboBox<>();
                             IdkField = new javax.swing.JTextField();
 
                             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -514,23 +517,33 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                             jLabel1.setText("Order Details");
 
+                            jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                            jLabel2.setText("Type of Transaction");
+
+                            jButton1.setText("jButton1");
+
+                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
                             org.jdesktop.layout.GroupLayout OrderDetailsLayout = new org.jdesktop.layout.GroupLayout(OrderDetails);
                             OrderDetails.setLayout(OrderDetailsLayout);
                             OrderDetailsLayout.setHorizontalGroup(
                                 OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                 .add(OrderDetailsLayout.createSequentialGroup()
-                                    .add(26, 26, 26)
-                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(OrderDetailsLayout.createSequentialGroup()
-                                            .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 91, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 38, Short.MAX_VALUE)
-                                            .add(SubmitButton))
-                                        .add(AmtLabel))
-                                    .addContainerGap())
-                                .add(OrderDetailsLayout.createSequentialGroup()
                                     .add(73, 73, 73)
                                     .add(jLabel1)
                                     .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .add(OrderDetailsLayout.createSequentialGroup()
+                                    .add(26, 26, 26)
+                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                        .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 91, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jLabel2)
+                                        .add(AmtLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 7, Short.MAX_VALUE)
+                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                        .add(SubmitButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addContainerGap())
                             );
                             OrderDetailsLayout.setVerticalGroup(
                                 OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -543,7 +556,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                     .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                         .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(SubmitButton))
-                                    .addContainerGap(86, Short.MAX_VALUE))
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                    .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                        .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                                        .add(jComboBox1))
+                                    .addContainerGap(19, Short.MAX_VALUE))
                             );
 
                             IdkField.setEditable(false);
@@ -575,7 +594,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                             .add(30, 30, 30)
                                             .add(OrderSummary, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 775, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .addContainerGap(30, Short.MAX_VALUE))
+                                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             );
                             jPanel3Layout.setVerticalGroup(
                                 jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -592,14 +611,17 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                         .add(OrderDetails, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                     .add(18, 18, 18)
                                     .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(36, Short.MAX_VALUE))
+                                    .addContainerGap(24, Short.MAX_VALUE))
                             );
 
                             org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
                             getContentPane().setLayout(layout);
                             layout.setHorizontalGroup(
                                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addContainerGap())
                             );
                             layout.setVerticalGroup(
                                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -858,7 +880,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField TotalCostField;
     private javax.swing.JLabel TotalCostLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
