@@ -658,7 +658,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             IdkField.setVisible(false);
             //gets price
             double price;
-            price = MainThread.oItems.get(customer, tempItem, quantityRequested);
+            price = MainThread.oItems.get(transactions, tempItem, quantityRequested);
             //sets final price of item ordered
             double finalPrice=price;
             //adds shipping to price
