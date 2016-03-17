@@ -46,7 +46,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         }
         Collections.sort(customerIDList);
         SelCustomer_ComboBox.setModel(new DefaultComboBoxModel(customerIDList.toArray()));
-        
+        //jComboBox1.setModel(new DefaultComboBoxModel())
         
         Iterator b=MainThread.oItems.a.iterator();
         
@@ -430,7 +430,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             OrderTypeLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
                             OrderTypeLabel.setText("Order Type:");
 
-                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit", "Debit", "Check", "Gift Card" }));
                             jComboBox1.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     jComboBox1ActionPerformed(evt);
@@ -643,12 +643,12 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // selects customer & item to submit order
         Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
-        
+                int paymentType=jComboBox1.getSelectedIndex();
+
         IdkField.setVisible(false);
         String entry=(AmtField.getText()).trim();
         int quantityRequested=-1;
         int quantity=tempItem.getQuantity();
-        //while(quantityRequested==-1){
             try{
                 quantityRequested=Integer.parseInt(entry);
             
@@ -806,7 +806,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
                 IdkField.setVisible(false);
-                int cType=jComboBox1.getSelectedIndex();
+        //gets payment method
+
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
