@@ -643,8 +643,11 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // selects customer & item to submit order
         Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
+<<<<<<< HEAD
                 int paymentType=jComboBox1.getSelectedIndex();
 
+=======
+>>>>>>> origin/dev
         IdkField.setVisible(false);
         String entry=(AmtField.getText()).trim();
         int quantityRequested=-1;
@@ -682,7 +685,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             IdkField.setVisible(false);
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(transaction, tempItem, quantity);
+            price = MainThread.oItems.getOrderPrice(, tempItem, quantity);
             //sets final price of item ordered
             double finalPrice=price;
             //adds shipping to price

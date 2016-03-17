@@ -57,7 +57,11 @@ if(transactions.size()>=1)
 public java.util.ArrayList<Transaction> getList(){
     return transactions;
     }
-         public String orderSummary(){
+        public double getOrderPrice(Transaction t,String type,int amount){
+            t.getPrice();
+            
+        }
+        public String orderSummary(){
          
          int end=(transactions.size())-1;
          Transaction reviewedOrder=transactions.get(end);
