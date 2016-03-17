@@ -61,7 +61,7 @@ public java.util.ArrayList<Transaction> getList(){
          
          int end=(transactions.size())-1;
          Transaction reviewedOrder=transactions.get(end);
-         String orderSummary="\nCustomerID: "+reviewedOrder.getcustomerID()+
+         String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getPrice()+
                  "\nOrder Type:"+reviewedOrder.getOrderType();
          
