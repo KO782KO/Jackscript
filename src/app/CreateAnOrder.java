@@ -707,6 +707,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
             PriceField.setText("$"+price);
             TotalCostField.setVisible(true);
             TotalCostField.setText("$"+finalPrice);
+            //creating boolean for giftcard transaction
+            Boolean giftcardPay;
+           // giftcardPay = MainThread.oitems.addgiftCard()
             //makes sale of item and sends to inventory file
             MainThread.oItems.sellAnItem(shippingCharged, tempItem, customer, quantityRequested, finalPrice);
             //summarizes order

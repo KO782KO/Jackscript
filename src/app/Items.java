@@ -145,7 +145,12 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
         }
         return addShipping;
     }
-
+    public boolean addGiftCard(int position){
+        boolean subgift=false;
+        if(position==5)
+            subgift=true;
+        return subgift;
+    }
    //displays a report of current inventory 
      public void itemReport(FileChooser fc) throws IOException{
          try{
