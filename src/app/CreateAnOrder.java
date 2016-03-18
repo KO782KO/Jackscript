@@ -172,7 +172,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                         QuantityInStockLabel = new javax.swing.JLabel();
                         PricePerUnitLabel = new javax.swing.JLabel();
                         OrderTypeLabel = new javax.swing.JLabel();
-                        jComboBox1 = new javax.swing.JComboBox<>();
+                        jComboBox1 = new javax.swing.JComboBox();
                         jLabel3 = new javax.swing.JLabel();
                         OrderDetails = new javax.swing.JPanel(){
                             @Override
@@ -430,7 +430,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             OrderTypeLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
                             OrderTypeLabel.setText("Order Type:");
 
-                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit", "Debit", "Check", "Gift Card" }));
+                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cash", "Credit", "Debit", "Check", "Gift Card" }));
                             jComboBox1.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     jComboBox1ActionPerformed(evt);
@@ -897,7 +897,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField TotalCostField;
     private javax.swing.JLabel TotalCostLabel;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     javax.swing.JPanel jPanel3;
