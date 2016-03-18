@@ -17,6 +17,7 @@ public class MainThread {
         public static AMenu code=new AMenu();
         public static Items oItems=new Items();
         public static CustomerDatabase db=new CustomerDatabase();
+        public static TransactionClient transactions=new TransactionClient();
     /**
      * @param args the command line arguments
      */
@@ -26,7 +27,7 @@ public class MainThread {
         try {
             //loads customer
             db.initCustomers();
-
+            
             //prepares items
             oItems.initItems();
         } catch (FileNotFoundException ex) {

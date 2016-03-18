@@ -33,7 +33,7 @@ public void logTransaction(){
 public int getItemID(){
     return this.itemID;
 }
-public int getcustomerID(){
+public int getCustomerID(){
     return this.customerID;
 }
 public int getQuantity(){

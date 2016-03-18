@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/CashCustomer.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/META-INF/persistence.xml</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/MainThread.java</file>
@@ -22,16 +23,19 @@
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/CustomerDatabase.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/Graph.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/Inventory.csv</file>
+=======
+<<<<<<< HEAD
+            <file>file:/F:/Jekscript/Jackscript/src/app/CreateAnOrder.java</file>
+=======
+>>>>>>> refs/remotes/origin/dev
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/MainThread.java</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/Inventory.csv.csv</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/Product.csv</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/TransactionClient.java</file>
+            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/GiftCardTransaction.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/Items.java</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/vba%20graph/newXMLDocument.xml</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/ManageCustomers.java</file>
-            <file>file:/C:/Users/Nolan/Downloads/Jackscript/Customer.csv</file>
+            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/TransactionClient.java</file>
+            <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/CheckTransaction.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/CreateAnOrder.java</file>
             <file>file:/C:/Users/Nolan/Downloads/Jackscript/src/app/Transaction.java</file>
+<<<<<<< HEAD
 
 
 
@@ -39,3 +43,32 @@
 
 
 
+=======
+            <file>file:/I:/Jekscript/Jackscript/src/app/FileChooser.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/DebitTransaction.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/Items.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/MainThread.java</file>
+            <file>file:/I:/Jekscript/Jackscript/Inventory.csv</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/AMenu.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/ManageCustomers.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/MainUI.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/Item.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/Inventory.java</file>
+            <file>file:/I:/Jekscript/Jackscript/Inventory.csv.csv</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/Customer.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/LoadImageApp.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/CheckTransaction.java</file>
+            <file>file:/I:/Jekscript/Jackscript/Customer.csv</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/CustomerDatabase.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/ManageInventory.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/GiftCardTransaction.java</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/CashTransaction.java</file>
+            <file>file:/I:/Jekscript/Jackscript/nbproject/build-impl.xml</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/CreateAnOrder.java</file>
+            <file>file:/I:/Jekscript/Jackscript/Product.csv</file>
+            <file>file:/I:/Jekscript/Jackscript/src/app/MainUI1.java</file>
+>>>>>>> origin/dev
+        </group>
+    </open-files>
+</project-private>
+>>>>>>> refs/remotes/origin/dev

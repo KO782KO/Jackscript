@@ -159,18 +159,19 @@ public int inventoryMatch(int productID){
 }*/
 //sells item, updates inventory, and creates new order
 
-public void sellAnItem(boolean shippingCharged, Item item, Customer customer, int quantityOrdered, double finalPrice){
-    int customerID=customer.getCustomerID();
-    int itemID=item.getItemId();
-    int qoh=item.getQuantity();
+public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
+    int customerID=t.getCustomerID();
+    int itemID=t.getItemID();
+    int qoh=i.getQuantity();
     String type="in-store order";
-    int postSaleUnits=qoh-quantityOrdered;
-    item.setQuantity(postSaleUnits);
+    int postSaleUnits=qoh-t.getQuantity();
+    i.setQuantity(postSaleUnits);
     if(shippingCharged){
             type="online order";
         }
         
     
+<<<<<<< HEAD
     if(quantityOrdered>0&&itemID>0&&quantityOrdered>0){
             
         Order newOrder=new Order(customerID, itemID, quantityOrdered, finalPrice, type);
@@ -178,6 +179,11 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
     }    
     
 
+=======
+    if(t.getQuantity()>0&&itemID>0&&t.getQuantity()>0){
+       MainThread.transactions.getList().add(t);
+    }
+>>>>>>> refs/remotes/origin/dev
 }
 
     //gets price of order before additional fees
@@ -253,17 +259,28 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
          {
          }
 }
+<<<<<<< HEAD
           
      public String orderSummary(){
          
          int end=(order.size())-1;
          Order reviewedOrder=order.get(end);
+=======
+     public String orderSummary(){
+         
+         int end=(MainThread.transactions.getList().size())-1;
+         Transaction reviewedOrder=MainThread.transactions.getList().get(end);
+>>>>>>> refs/remotes/origin/dev
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
-                 "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuant()+"\nPrice: "+reviewedOrder.getTotalPrice()+
-                 "\nOrder Type:"+reviewedOrder.getType();
+                 "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getPrice()+
+                 "\nOrder Type:"+reviewedOrder.getOrderType();
          
          return orderSummary;
+<<<<<<< HEAD
      }   
+=======
+     }
+>>>>>>> refs/remotes/origin/dev
 
     void addItem(int parseInt, String text, double parseDouble, int parseInt0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
