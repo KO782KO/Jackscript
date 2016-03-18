@@ -57,8 +57,30 @@ if(transactions.size()>=1)
 public java.util.ArrayList<Transaction> getList(){
     return transactions;
     }
-        public double getOrderPrice(Transaction t,String type,int amount){
-            t.getPrice();
+    public Transaction generateTransactionType(int type,int itemID,int customrerID,int quantity,String date,double price,String orderType){
+        //Cash,Credit,Debit,Check,Gift Card
+        switch(type){
+            case(0):
+                return new CashTransaction(itemID,customrerID,quantity,date,price,orderType);
+            case(1):
+                 return new CreditTransaction(itemID,customrerID,quantity,date,price,orderType);
+            case(2):
+                return new DebitTransaction(itemID,customrerID,quantity,date,price,orderType);
+            case(3):
+                return new CheckTransaction(itemID,customrerID,quantity,date,price,orderType);
+            case(4):
+                return new GiftCardTransaction(itemID,customrerID,quantity,date,price,orderType,1);//need to write code for gift card UPC
+        }
+        return null;
+    }
+        public double getOrderPrice(Transaction t){
+            for(Item i:MainThread.oItems.a){
+                if(i.getItemId()==t.getItemID()){
+                    return i.getSellingPrice()*t.getQuantity();
+                }
+            }
+            System.out.print("Invalid Parameters");
+            return 0;
             
         }
         public String orderSummary(){

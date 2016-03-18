@@ -172,7 +172,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                         QuantityInStockLabel = new javax.swing.JLabel();
                         PricePerUnitLabel = new javax.swing.JLabel();
                         OrderTypeLabel = new javax.swing.JLabel();
-                        jComboBox1 = new javax.swing.JComboBox<>();
+                        jComboBox1 = new javax.swing.JComboBox();
                         jLabel3 = new javax.swing.JLabel();
                         OrderDetails = new javax.swing.JPanel(){
                             @Override
@@ -430,7 +430,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             OrderTypeLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
                             OrderTypeLabel.setText("Order Type:");
 
-                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit", "Debit", "Check", "Gift Card" }));
+                            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cash", "Credit", "Debit", "Check", "Gift Card" }));
                             jComboBox1.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     jComboBox1ActionPerformed(evt);
@@ -643,11 +643,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // selects customer & item to submit order
         Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
-<<<<<<< HEAD
-                int paymentType=jComboBox1.getSelectedIndex();
-
-=======
->>>>>>> origin/dev
+        int paymentType=jComboBox1.getSelectedIndex();
+        
+        
         IdkField.setVisible(false);
         String entry=(AmtField.getText()).trim();
         int quantityRequested=-1;
@@ -683,9 +681,15 @@ public class CreateAnOrder extends javax.swing.JFrame {
         //if quantity requested is within inventory amount
         }else if((quantityRequested<=quantity)&&(quantityRequested!=-1)){
             IdkField.setVisible(false);
+             java.text.DateFormat df = new java.text.SimpleDateFormat("dd/MM/yy HH:mm:ss");
+            java.util.Calendar date=java.util.Calendar.getInstance();
+            String DATE =df.format(date.getTime());
+            
+            Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantity, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(, tempItem, quantity);
+            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantity);
+            tempTransaction.setPrice(price);
             //sets final price of item ordered
             double finalPrice=price;
             //adds shipping to price
@@ -893,7 +897,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField TotalCostField;
     private javax.swing.JLabel TotalCostLabel;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     javax.swing.JPanel jPanel3;
