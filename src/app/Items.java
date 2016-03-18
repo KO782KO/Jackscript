@@ -98,19 +98,19 @@ public Items getItems(){
 }
 //sells item, updates inventory, and creates new order
 
-public void sellAnItem(boolean shippingCharged, Item item, Customer customer, int quantityOrdered, double finalPrice){
-    int customerID=customer.getCustomerID();
-    int itemID=item.getItemId();
-    int qoh=item.getQuantity();
+public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
+    int customerID=t.getCustomerID();
+    int itemID=t.getItemID();
+    int qoh=i.getQuantity();
     String type="in-store order";
-    int postSaleUnits=qoh-quantityOrdered;
-    item.setQuantity(postSaleUnits);
+    int postSaleUnits=qoh-t.getQuantity();
+    i.setQuantity(postSaleUnits);
     if(shippingCharged){
             type="online order";
         }
     
-    if(quantityOrdered>0&&itemID>0&&quantityOrdered>0){
-       // order.add(newOrder);
+    if(t.getQuantity()>0&&itemID>0&&t.getQuantity()>0){
+       MainThread.transactions.getList().add(t);
     }
 }
 
@@ -188,7 +188,7 @@ public void sellAnItem(boolean shippingCharged, Item item, Customer customer, in
 }
      public String orderSummary(){
          
-         int end=(a.size())-1;
+         int end=(MainThread.transactions.getList().size())-1;
          Transaction reviewedOrder=MainThread.transactions.getList().get(end);
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getPrice()+

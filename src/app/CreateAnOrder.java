@@ -689,7 +689,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             //gets price
             double price;
             price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantity);
-            tempTransaction.setPrice(price);
+           
             //sets final price of item ordered
             double finalPrice=price;
             //adds shipping to price
@@ -703,12 +703,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
                 SnHField.setText("$4.00");
                 SnHField.setVisible(true);
             }
+                    tempTransaction.setPrice(finalPrice);
             PriceField.setVisible(true);
             PriceField.setText("$"+price);
             TotalCostField.setVisible(true);
             TotalCostField.setText("$"+finalPrice);
             //makes sale of item and sends to inventory file
-            MainThread.oItems.sellAnItem(shippingCharged, tempItem, customer, quantityRequested, finalPrice);
+            MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
             //summarizes order
             ScrollPaneTextArea.setText(MainThread.oItems.orderSummary());
             int qoh=Integer.parseInt(QuantityField.getText());
