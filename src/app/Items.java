@@ -162,13 +162,12 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv"));
         
 
-                    String header=("ItemId,Item Name,Pieces in Store,SellingPrice,\n");
+                    String header=("ItemId,Item Name,SellingPrice,Pieces in Store,\n");
                     fileWriter.append(header);
                     for (int i=0; i<a.size(); i++) {
                         Item temp=a.get(i);
+                        fileWriter.append(System.getProperty("line.separator"));
                         fileWriter.append(temp.toString());
-                    fileWriter.append(System.getProperty("line.separator"));
-
                     }
                     
  //closes buffered writer
