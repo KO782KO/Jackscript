@@ -22,6 +22,7 @@ public class Customer implements Comparable<Customer> {
         this.customerID=customerID;
         this.firstName=fName;
         this.lastName=lName;
+        this.phoneNum=phoneNum;
         this.email=email;
     }
     /**
@@ -70,7 +71,11 @@ public class Customer implements Comparable<Customer> {
     public long getPhoneNumber() {
         return this.phoneNum;
     }
-
+    public String getStringPhoneNumber(){
+        String pnum=Long.toString(this.phoneNum);
+        return pnum.substring(0, 3)+"-"+pnum.substring(3,6)+"-"+pnum.substring(6,pnum.length());
+        
+    }
     /**
      * @param phoneNum the the Phone Number to set
      */

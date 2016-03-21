@@ -748,7 +748,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             Customer customers=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
             IdkField.setVisible(false);
             NameField.setText(customers.getFirstName()+" "+customers.getLastName());
-            PhoneNumField.setText(Long.toString(customers.getPhoneNumber()));
+            PhoneNumField.setText(customers.getStringPhoneNumber());
             EmailField.setText(customers.getEmail());
             if(SelCustomer_ComboBox.getSelectedIndex()>=0){
                 NameField.setVisible(true);
