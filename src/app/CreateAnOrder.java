@@ -714,7 +714,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             //makes sale of item and sends to inventory file
             MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
             //summarizes order
-            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary());
+            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
             int qoh=Integer.parseInt(QuantityField.getText());
             int updated=qoh-quantityRequested;
             QuantityField.setText(""+updated);

@@ -146,10 +146,10 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
         return addShipping;
     }
     public boolean addGiftCard(int position){
-        boolean subgift=false;
-        if(position==5)
-            subgift=true;
-        return subgift;
+        if(position==5){
+            return true;
+        }
+        return false;
     }
    //displays a report of current inventory 
      public void itemReport(FileChooser fc) throws IOException{
@@ -191,10 +191,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
          {
          }
 }
-     public String orderSummary(){
-         
-         int end=(MainThread.transactions.getList().size())-1;
-         Transaction reviewedOrder=MainThread.transactions.getList().get(end);
+     public String orderSummary(Transaction reviewedOrder){
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getPrice()+
                  "\nOrder Type:"+reviewedOrder.getOrderType();
