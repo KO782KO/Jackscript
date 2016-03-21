@@ -27,7 +27,9 @@ public class MainThread {
         try {
             //loads customer
             db.initCustomers();
-            
+            //prepares transaction database
+            transactions.loadTransactions();
+            transactions.printTransactions();
             //prepares items
             oItems.initItems();
         } catch (FileNotFoundException ex) {

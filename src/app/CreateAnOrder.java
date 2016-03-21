@@ -685,10 +685,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
             java.util.Calendar date=java.util.Calendar.getInstance();
             String DATE =df.format(date.getTime());
             
-            Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantity, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
+            Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantityRequested, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantity);
+            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
            
             //sets final price of item ordered
             double finalPrice=price;
@@ -718,6 +718,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             int qoh=Integer.parseInt(QuantityField.getText());
             int updated=qoh-quantityRequested;
             QuantityField.setText(""+updated);
+            
             
             
             
