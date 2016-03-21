@@ -132,7 +132,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
                 
             }
             else{
-                finalCost=0;
+                finalCost=preCost;
             }
 
         return finalCost;
