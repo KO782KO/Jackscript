@@ -3,3 +3,15 @@ app.CashTransaction,78,4,2,[21/03/16 10:03:03],16.863,Online ($4 S&H)
 app.CashTransaction,56,5,2,[21/03/16 10:05:26],172.881,-----------
 app.CreditTransaction,999,4,24,[21/03/16 10:07:33],977.9760000000001,In-Store
 app.CashTransaction,67,3,2,[21/03/16 10:10:50],170.981,In-Store
+app.CashTransaction,56,3,2,[21/03/16 10:22:34],172.881,In-Store
+app.CashTransaction,301,2,1,[21/03/16 10:24:07],289.0,Online ($4 S&H)
+app.CashTransaction,56,4,1,[21/03/16 10:25:25],86.4405,-----------
+app.CreditTransaction,78,4,2,[21/03/16 10:27:19],13.810799999999999,In-Store
+app.CashTransaction,56,5,2,[21/03/16 10:40:59],176.881,Online ($4 S&H)
+app.CashTransaction,90,6,3,[21/03/16 10:42:57],25.621499999999997,In-Store
+app.CashTransaction,7865,2,5,[21/03/16 10:43:19],0.0475,In-Store
+app.CreditTransaction,90,5,4,[21/03/16 10:48:49],40.6792,Online ($4 S&H)
+app.CashTransaction,12,4,2,[21/03/16 10:49:39],237.5,-----------
+app.CashTransaction,235,3,1,[21/03/16 10:52:55],807.5,In-Store
+app.CashTransaction,345,6,7,[21/03/16 10:55:23],17.755499999999998,In-Store
+app.CashTransaction,99,8,2,[21/03/16 10:56:11],18.991,Online ($4 S&H)

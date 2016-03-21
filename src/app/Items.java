@@ -200,29 +200,38 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
                  item=i;
              }
          }
-         String newData= item.toString();
+         
     try {
         // input the file content to the String "input"
-        BufferedReader file = new BufferedReader(new FileReader("Procuct.csv"));
-        String line;String input = "";
+       /* BufferedReader file = new BufferedReader(new FileReader("Procuct.csv"));
+        String line=null;String input = "";
 
         while ((line = file.readLine()) != null) input += line + '\n';
 
-        //file.close();
+        file.close();
 
         System.out.println(input); // check that it's inputted right
 
         // this if structure determines whether or not to replace "0" or "1"
-            input = input.replace(input, newData); 
-
+            input = input.replace(input, newData);
+*/      String newData=null;
+       for(Item i:MainThread.oItems.getItems().a){
+           newData+=i.toString()+"\n";
+       }
+       
         // check if the new input is right
-        System.out.println("----------------------------------"  + '\n' + input);
-
+       // System.out.println("----------------------------------"  + '\n' + input);
+        try{
         // write the new String with the replaced line OVER the same file
-        java.io.BufferedWriter fileOut = new java.io.BufferedWriter(new java.io.FileWriter("Product.csv"));
-        fileOut.write(input);
+   //     java.io.BufferedWriter fileOut = new java.io.BufferedWriter(new java.io.FileWriter("Product.csv"));
+          java.io.FileOutputStream fileOut=new java.io.FileOutputStream("Product.csv");
+        fileOut.write(newData.replace("null", "").getBytes());
         fileOut.close();
-
+        }catch(IOException e){
+            System.out.println("Error Writing file");
+        }catch(Exception e){
+            System.out.println("Agh");
+        }
     } catch (Exception e) {
         System.out.println("Problem reading file.");
     }
