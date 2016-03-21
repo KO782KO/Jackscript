@@ -96,7 +96,10 @@ public class Customer implements Comparable<Customer> {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    @Override
+    public String toString(){
+        return Integer.toString(this.customerID)+","+this.firstName+","+this.lastName+","+Long.toString(this.phoneNum)+","+this.email;
+    }
     /**
      * @param customer
      * @return numbers

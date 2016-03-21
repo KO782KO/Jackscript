@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -67,7 +68,9 @@ public void initCustomers() throws FileNotFoundException, IOException{
     }
         return true;
     }
-    public void addNewCustomer(int ID){
+    public void addNewCustomer(int ID,String fName,String lName,long pnum,String email){
+        customers.add(new Customer(ID,fName,lName,pnum,email));
+        updateCustomers();
             
     }
     public ArrayList<Customer> getCustomers(){
@@ -99,7 +102,47 @@ public void initCustomers() throws FileNotFoundException, IOException{
         
         return result;
     }
-    
+         public void updateCustomers() {
+         
+    try {
+        // input the file content to the String "input"
+       /* BufferedReader file = new BufferedReader(new FileReader("Procuct.csv"));
+        String line=null;String input = "";
+
+        while ((line = file.readLine()) != null) input += line + '\n';
+
+        file.close();
+
+        System.out.println(input); // check that it's inputted right
+
+        // this if structure determines whether or not to replace "0" or "1"
+            input = input.replace(input, newData);
+*/      String newData=null;
+       for(Customer c:MainThread.db.getCustomers()){
+           newData+=c.toString()+"\n";
+       }
+       
+        // check if the new input is right
+       // System.out.println("----------------------------------"  + '\n' + input);
+        try{
+        // write the new String with the replaced line OVER the same file
+   //     java.io.BufferedWriter fileOut = new java.io.BufferedWriter(new java.io.FileWriter("Product.csv"));
+          java.io.FileOutputStream fileOut=new java.io.FileOutputStream("Customer.csv");
+        fileOut.write(newData.replace("null", "").getBytes());
+        fileOut.close();
+        }catch(IOException e){
+            System.out.println("Error Writing file");
+            return;
+        }catch(Exception e){
+            System.out.println("Agh");
+            return;
+        }
+    } catch (Exception e) {
+        System.out.println("Problem reading file.");
+        return;
+    }
+JOptionPane.showMessageDialog(null, "Customer Added.");
+}
     //determines if cash or credit customer
    public boolean creditCustomer(int customerID, Customer CreditTransaction){
         boolean credit=false;

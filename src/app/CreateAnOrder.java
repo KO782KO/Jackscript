@@ -346,10 +346,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                                 .add(SelCustLabel))
                                             .add(37, 37, 37)
                                             .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                                .add(NameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                                .add(NameField)
                                                 .add(PhoneNumField)
                                                 .add(EmailField)
-                                                .add(SelCustomer_ComboBox, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                .add(SelCustomer_ComboBox, 0, 225, Short.MAX_VALUE))))
                                     .addContainerGap(26, Short.MAX_VALUE))
                             );
                             CustomerInfoLayout.setVerticalGroup(
@@ -596,7 +596,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                             .add(30, 30, 30)
                                             .add(OrderSummary, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 775, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addContainerGap(30, Short.MAX_VALUE))
                             );
                             jPanel3Layout.setVerticalGroup(
                                 jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -620,10 +620,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             getContentPane().setLayout(layout);
                             layout.setHorizontalGroup(
                                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addContainerGap())
+                                .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             );
                             layout.setVerticalGroup(
                                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)

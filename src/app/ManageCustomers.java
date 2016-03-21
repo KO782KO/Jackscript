@@ -55,14 +55,16 @@ public class ManageCustomers extends javax.swing.JFrame {
             jTabbedPane1 = new javax.swing.JTabbedPane();
             AddNewCustomer = new javax.swing.JPanel();
             IDLabel = new javax.swing.JLabel();
-            NameLabel = new javax.swing.JLabel();
-            AddressLabel = new javax.swing.JLabel();
-            PhoneNumberLabel = new javax.swing.JLabel();
+            FirstNameLabel = new javax.swing.JLabel();
+            EmailLabel = new javax.swing.JLabel();
             IDNumField = new javax.swing.JTextField();
-            NameField = new javax.swing.JTextField();
-            AddressField = new javax.swing.JTextField();
-            PhoneNumberField = new javax.swing.JTextField();
+            FirstNameField = new javax.swing.JTextField();
+            EmailField = new javax.swing.JTextField();
             AddCustomerButton = new javax.swing.JButton();
+            LastNameField = new javax.swing.JTextField();
+            LastNameLabel = new javax.swing.JLabel();
+            PhoneNumField = new javax.swing.JTextField();
+            PhoneNumLabel = new javax.swing.JLabel();
             AddExistingItems = new javax.swing.JPanel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,14 +89,11 @@ public class ManageCustomers extends javax.swing.JFrame {
             IDLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
             IDLabel.setText("ID Number");
 
-            NameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-            NameLabel.setText("Name");
+            FirstNameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            FirstNameLabel.setText("First Name");
 
-            AddressLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-            AddressLabel.setText("Address");
-
-            PhoneNumberLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
-            PhoneNumberLabel.setText("Phone #???");
+            EmailLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            EmailLabel.setText("Email");
 
             IDNumField.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,9 +101,15 @@ public class ManageCustomers extends javax.swing.JFrame {
                 }
             });
 
-            NameField.addActionListener(new java.awt.event.ActionListener() {
+            FirstNameField.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    NameFieldActionPerformed(evt);
+                    FirstNameFieldActionPerformed(evt);
+                }
+            });
+
+            EmailField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    EmailFieldActionPerformed(evt);
                 }
             });
 
@@ -117,28 +122,58 @@ public class ManageCustomers extends javax.swing.JFrame {
                 }
             });
 
+            LastNameField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    LastNameFieldActionPerformed(evt);
+                }
+            });
+
+            LastNameLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            LastNameLabel.setText("Last Name");
+
+            PhoneNumField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    PhoneNumFieldActionPerformed(evt);
+                }
+            });
+            PhoneNumField.addKeyListener(new java.awt.event.KeyAdapter() {
+                public void keyPressed(java.awt.event.KeyEvent evt) {
+                    PhoneNumFieldKeyPressed(evt);
+                }
+            });
+
+            PhoneNumLabel.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+            PhoneNumLabel.setText("Phone #");
+
             javax.swing.GroupLayout AddNewCustomerLayout = new javax.swing.GroupLayout(AddNewCustomer);
             AddNewCustomer.setLayout(AddNewCustomerLayout);
             AddNewCustomerLayout.setHorizontalGroup(
                 AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddNewCustomerLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(IDLabel)
-                        .addComponent(NameLabel)
-                        .addComponent(AddressLabel)
-                        .addComponent(PhoneNumberLabel))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                    .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(PhoneNumberField)
-                        .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                        .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(AddressField, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addContainerGap())
                 .addGroup(AddNewCustomerLayout.createSequentialGroup()
-                    .addGap(89, 89, 89)
-                    .addComponent(AddCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddNewCustomerLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(IDLabel)
+                                .addComponent(FirstNameLabel)
+                                .addComponent(LastNameLabel)
+                                .addComponent(PhoneNumLabel))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(PhoneNumField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(LastNameField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(IDNumField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                .addComponent(FirstNameField, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGroup(AddNewCustomerLayout.createSequentialGroup()
+                            .addGap(89, 89, 89)
+                            .addComponent(AddCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(AddNewCustomerLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(EmailLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                            .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap())
             );
             AddNewCustomerLayout.setVerticalGroup(
                 AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,17 +184,21 @@ public class ManageCustomers extends javax.swing.JFrame {
                         .addComponent(IDLabel))
                     .addGap(18, 18, 18)
                     .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NameLabel))
+                        .addComponent(FirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FirstNameLabel))
                     .addGap(18, 18, 18)
                     .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(AddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(AddressLabel))
+                        .addComponent(LastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LastNameLabel))
                     .addGap(18, 18, 18)
                     .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(PhoneNumberLabel)
-                        .addComponent(PhoneNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(PhoneNumField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PhoneNumLabel))
+                    .addGap(18, 18, 18)
+                    .addGroup(AddNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(EmailLabel)
+                        .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                     .addComponent(AddCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(31, 31, 31))
             );
@@ -177,7 +216,7 @@ public class ManageCustomers extends javax.swing.JFrame {
             );
             AddExistingItemsLayout.setVerticalGroup(
                 AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 266, Short.MAX_VALUE)
+                .addGap(0, 319, Short.MAX_VALUE)
             );
 
             jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
@@ -198,8 +237,8 @@ public class ManageCustomers extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(BackButton)
                     .addGap(46, 46, 46)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(228, Short.MAX_VALUE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(175, Short.MAX_VALUE))
             );
 
             jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
@@ -224,17 +263,39 @@ public class ManageCustomers extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
+    private void FirstNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameFieldActionPerformed
+    }//GEN-LAST:event_FirstNameFieldActionPerformed
 
     private void IDNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNumFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IDNumFieldActionPerformed
 
     private void AddCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomerButtonActionPerformed
-    
+        MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
     }//GEN-LAST:event_AddCustomerButtonActionPerformed
+
+    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailFieldActionPerformed
+
+    private void LastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LastNameFieldActionPerformed
+
+    private void PhoneNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PhoneNumFieldActionPerformed
+
+    private void PhoneNumFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PhoneNumFieldKeyPressed
+        // TODO add your handling code here:
+        if(PhoneNumField.getText().length()<10){
+            
+        }
+        else{
+            PhoneNumField.setText(PhoneNumField.getText().substring(0,PhoneNumField.getText().length()-1));
+        }
+    }//GEN-LAST:event_PhoneNumFieldKeyPressed
 
     /**
      * @param args the command line arguments
@@ -278,15 +339,17 @@ public class ManageCustomers extends javax.swing.JFrame {
     private javax.swing.JButton AddCustomerButton;
     private javax.swing.JPanel AddExistingItems;
     private javax.swing.JPanel AddNewCustomer;
-    private javax.swing.JTextField AddressField;
-    private javax.swing.JLabel AddressLabel;
     private javax.swing.JButton BackButton;
+    private javax.swing.JTextField EmailField;
+    private javax.swing.JLabel EmailLabel;
+    private javax.swing.JTextField FirstNameField;
+    private javax.swing.JLabel FirstNameLabel;
     private javax.swing.JLabel IDLabel;
     private javax.swing.JTextField IDNumField;
-    private javax.swing.JTextField NameField;
-    private javax.swing.JLabel NameLabel;
-    private javax.swing.JTextField PhoneNumberField;
-    private javax.swing.JLabel PhoneNumberLabel;
+    private javax.swing.JTextField LastNameField;
+    private javax.swing.JLabel LastNameLabel;
+    private javax.swing.JTextField PhoneNumField;
+    private javax.swing.JLabel PhoneNumLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
