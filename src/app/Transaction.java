@@ -5,6 +5,14 @@
  */
 package app;
 
+import static app.Items.a;
+import java.awt.HeadlessException;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kevin
@@ -27,9 +35,8 @@ public Transaction(int itemID,int customerID,int quantity,String date,double pri
     this.price=price;
     this.orderType=orderType;
     }
-public void logTransaction(){
-    
-}
+
+
 public int getItemID(){
     return this.itemID;
 }
@@ -57,4 +64,42 @@ public void setPrice(double price){
 public void setOrderType(String otype){
     this.orderType=otype;
 }
+//used only when the transaction is created: writes new transaction log to file 
+public void logTransaction(){
+
+         try{
+                String selection="Transactions_Log.csv";
+                java.io.File file=new java.io.File(selection);
+                if(selection!=null){              //boolean true makes it append to end of file
+                    BufferedWriter fileWriter=new BufferedWriter(new FileWriter(file,true));
+                    
+                        fileWriter.newLine();
+                        fileWriter.write(this.getClass().getName()+","+toString());
+ //closes buffered writer
+            fileWriter.close();
+            JOptionPane.showMessageDialog(null, "Export successful");
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(null, "Program shit the bed");
+            }
+         
+         }catch(FileNotFoundException io){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }catch(IOException ioe){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }catch(HeadlessException e){
+             JOptionPane.showMessageDialog(null, "An error has occurred.  Please please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+             
+         }finally
+         {
+         }
+}
+
+    @Override
+    public String toString(){
+        return this.itemID+","+this.customerID+","+this.quantity+",["+this.date+"],"+this.price+","+this.orderType;
+    }
 }

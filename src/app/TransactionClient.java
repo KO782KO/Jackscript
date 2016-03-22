@@ -16,7 +16,7 @@ public void loadTransactions()throws java.io.FileNotFoundException, java.io.IOEx
 if(transactions.size()>=1)
         transactions.clear();
     
-    java.io.BufferedReader readItem=new java.io.BufferedReader(new java.io.FileReader("Product.csv"));
+    java.io.BufferedReader readItem=new java.io.BufferedReader(new java.io.FileReader("Transactions_Log.csv"));
     
     String line=readItem.readLine();
     java.util.StringTokenizer nextItem=null;
@@ -33,26 +33,32 @@ if(transactions.size()>=1)
             String date=nextItem.nextToken();
             double price=Double.parseDouble(nextItem.nextToken());
             String orderType=nextItem.nextToken();
-            if(ttype.equalsIgnoreCase("cashtransaction")){
+            if(ttype.equalsIgnoreCase("app.cashtransaction")){
                 transactions.add(new CashTransaction(productID,customerID,quantity,date,price,orderType));
             }
-            else if(ttype.equalsIgnoreCase("credittransaction")){
+            else if(ttype.equalsIgnoreCase("app.credittransaction")){
                 transactions.add(new CreditTransaction(productID,customerID,quantity,date,price,orderType));
             }
-            else if(ttype.equalsIgnoreCase("debittransaction")){
+            else if(ttype.equalsIgnoreCase("app.debittransaction")){
                 transactions.add(new DebitTransaction(productID,customerID,quantity,date,price,orderType));
             }
-            else if(ttype.equalsIgnoreCase("checktransaction")){
+            else if(ttype.equalsIgnoreCase("app.checktransaction")){
                 transactions.add(new CheckTransaction(productID,customerID,quantity,date,price,orderType));
             }
             else{
-                int giftCardUPC=Integer.parseInt(nextItem.nextToken());
-                transactions.add(new GiftCardTransaction(productID,customerID,quantity,date,price,orderType,giftCardUPC));
+                transactions.add(new GiftCardTransaction(productID,customerID,quantity,date,price,orderType));
             }
         line=readItem.readLine();
         }
-    }   
+    }
     readItem.close();
+}
+
+
+public void printTransactions(){
+    for(Transaction t:transactions){
+        System.out.println(t.toString());
+    }
 }
 public java.util.ArrayList<Transaction> getList(){
     return transactions;
@@ -69,7 +75,7 @@ public java.util.ArrayList<Transaction> getList(){
             case(3):
                 return new CheckTransaction(itemID,customrerID,quantity,date,price,orderType);
             case(4):
-                return new GiftCardTransaction(itemID,customrerID,quantity,date,price,orderType,1);//need to write code for gift card UPC
+                return new GiftCardTransaction(itemID,customrerID,quantity,date,price,orderType);
         }
         return null;
     }

@@ -182,6 +182,8 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
 =======
     if(t.getQuantity()>0&&itemID>0&&t.getQuantity()>0){
        MainThread.transactions.getList().add(t);
+       t.logTransaction();
+       MainThread.oItems.getItems().updateQuantity(i.getItemId());
     }
 >>>>>>> refs/remotes/origin/dev
 }
@@ -203,7 +205,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
                 
             }
             else{
-                finalCost=0;
+                finalCost=preCost;
             }
 
         return finalCost;
@@ -218,7 +220,12 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
         }
         return addShipping;
     }
-
+    public boolean addGiftCard(int position){
+        if(position==5){
+            return true;
+        }
+        return false;
+    }
    //displays a report of current inventory 
      public void itemReport(FileChooser fc) throws IOException{
          try{
@@ -228,13 +235,12 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
                     BufferedWriter fileWriter=new BufferedWriter(new FileWriter(selection+".csv"));
         
 
-                    String header=("ItemId,Item Name,Pieces in Store,SellingPrice,\n");
+                    String header=("ItemId,Item Name,SellingPrice,Pieces in Store,\n");
                     fileWriter.append(header);
                     for (int i=0; i<a.size()-1; i++) {
                         Item temp=a.get(i);
+                        fileWriter.append(System.getProperty("line.separator"));
                         fileWriter.append(temp.toString());
-                    fileWriter.append(System.getProperty("line.separator"));
-
                     }
                     
  //closes buffered writer
@@ -260,6 +266,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
          }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
           
      public String orderSummary(){
          
@@ -270,6 +277,52 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
          
          int end=(MainThread.transactions.getList().size())-1;
          Transaction reviewedOrder=MainThread.transactions.getList().get(end);
+>>>>>>> refs/remotes/origin/dev
+=======
+     public void updateQuantity(int itemID) {
+         Item item=null;
+         for(Item i:MainThread.oItems.getItems().a){
+             if(i.getItemId()==itemID){
+                 item=i;
+             }
+         }
+         
+    try {
+        // input the file content to the String "input"
+       /* BufferedReader file = new BufferedReader(new FileReader("Procuct.csv"));
+        String line=null;String input = "";
+
+        while ((line = file.readLine()) != null) input += line + '\n';
+
+        file.close();
+
+        System.out.println(input); // check that it's inputted right
+
+        // this if structure determines whether or not to replace "0" or "1"
+            input = input.replace(input, newData);
+*/      String newData=null;
+       for(Item i:MainThread.oItems.getItems().a){
+           newData+=i.toString()+"\n";
+       }
+       
+        // check if the new input is right
+       // System.out.println("----------------------------------"  + '\n' + input);
+        try{
+        // write the new String with the replaced line OVER the same file
+   //     java.io.BufferedWriter fileOut = new java.io.BufferedWriter(new java.io.FileWriter("Product.csv"));
+          java.io.FileOutputStream fileOut=new java.io.FileOutputStream("Product.csv");
+        fileOut.write(newData.replace("null", "").getBytes());
+        fileOut.close();
+        }catch(IOException e){
+            System.out.println("Error Writing file");
+        }catch(Exception e){
+            System.out.println("Agh");
+        }
+    } catch (Exception e) {
+        System.out.println("Problem reading file.");
+    }
+}
+     public String orderSummary(Transaction reviewedOrder){
 >>>>>>> refs/remotes/origin/dev
          String orderSummary="\nCustomerID: "+reviewedOrder.getCustomerID()+
                  "\nItemID: "+reviewedOrder.getItemID()+"\nQuantity Ordered: "+reviewedOrder.getQuantity()+"\nPrice: "+reviewedOrder.getPrice()+
