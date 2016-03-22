@@ -48,6 +48,32 @@ public void initItems() throws FileNotFoundException, IOException{
 public Items getItems(){
     return this;
 }
+public Object[][] toStringArray(){
+    javax.swing.JLabel [][] iteminfo=new javax.swing.JLabel[(a.size())/4][4];
+    for(int r=0;r<iteminfo.length;r++){
+        for(int c=0;c<4;c++){
+            switch(c){
+                case(0):
+            iteminfo[r][c]=new javax.swing.JLabel(Integer.toString(a.get(r).getItemId()));
+                case(1):
+            iteminfo[r][c]=new javax.swing.JLabel(a.get(r).getItemName());
+                case(2):
+            iteminfo[r][c]=new javax.swing.JLabel(Double.toString(a.get(r).getSellingPrice()));
+                case(3):
+            iteminfo[r][c]=new javax.swing.JLabel(Integer.toString(a.get(r).getQuantity()));
+            }
+            
+        }}
+        return iteminfo;
+}
+/*public String[] toStringArray(){
+    String[] items=new String[a.size()];
+    int ct=0;
+    for(int i=0;i<items.length;i++){
+    items[i]=a.get(i).toString();
+    }
+    return items;
+}*/
     //checks items for specified id
     public boolean checkItems(int id){
         for(Item i:a){
