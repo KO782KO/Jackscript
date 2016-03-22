@@ -60,18 +60,18 @@ public class InventoryList extends javax.swing.JFrame {
         //tab.setUI();
         //Fill the table
         int count=0;
-        for(int r=ct-1;r>=0;r--){
+        for(int r=0;r<ct;r++){
 
-            for(int c=0;c<=4;c++){
+            for(int c=0;c<=3;c++){
                 switch(c){
-                    case 0:
-                    jTable1.setValueAt(Integer.toString(MainThread.oItems.a.get(r).getItemId()),count,c);
-                    case 1:
+                    case(0):
+                    jTable1.setValueAt(Integer.toString(MainThread.oItems.a.get(r).getItemId()),c,count);
+                    case(1):
                     jTable1.setValueAt(MainThread.oItems.a.get(r).getItemName(),count,c);
                     jTable1.getCellEditor(r,c).cancelCellEditing();
-                    case 2:
+                    case(2):
                     jTable1.setValueAt(Double.toString(MainThread.oItems.a.get(r).getSellingPrice()),count,c);
-                    case 3:
+                    case(3):
                     jTable1.setValueAt(Integer.toString(MainThread.oItems.a.get(r).getQuantity()), count, c);
                     count++;	}
 
