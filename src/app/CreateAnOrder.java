@@ -346,10 +346,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                                 .add(SelCustLabel))
                                             .add(37, 37, 37)
                                             .add(CustomerInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                                .add(NameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                                .add(NameField)
                                                 .add(PhoneNumField)
                                                 .add(EmailField)
-                                                .add(SelCustomer_ComboBox, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                .add(SelCustomer_ComboBox, 0, 225, Short.MAX_VALUE))))
                                     .addContainerGap(26, Short.MAX_VALUE))
                             );
                             CustomerInfoLayout.setVerticalGroup(
@@ -596,7 +596,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                             .add(30, 30, 30)
                                             .add(OrderSummary, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 775, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addContainerGap(30, Short.MAX_VALUE))
                             );
                             jPanel3Layout.setVerticalGroup(
                                 jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -620,10 +620,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             getContentPane().setLayout(layout);
                             layout.setHorizontalGroup(
                                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addContainerGap())
+                                .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             );
                             layout.setVerticalGroup(
                                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -685,10 +682,10 @@ public class CreateAnOrder extends javax.swing.JFrame {
             java.util.Calendar date=java.util.Calendar.getInstance();
             String DATE =df.format(date.getTime());
             
-            Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantity, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
+            Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantityRequested, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantity);
+            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
            
             //sets final price of item ordered
             double finalPrice=price;
@@ -714,10 +711,11 @@ public class CreateAnOrder extends javax.swing.JFrame {
             //makes sale of item and sends to inventory file
             MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
             //summarizes order
-            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary());
+            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
             int qoh=Integer.parseInt(QuantityField.getText());
             int updated=qoh-quantityRequested;
             QuantityField.setText(""+updated);
+            
             
             
             
@@ -747,7 +745,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             Customer customers=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
             IdkField.setVisible(false);
             NameField.setText(customers.getFirstName()+" "+customers.getLastName());
-            PhoneNumField.setText(Long.toString(customers.getPhoneNumber()));
+            PhoneNumField.setText(customers.getStringPhoneNumber());
             EmailField.setText(customers.getEmail());
             if(SelCustomer_ComboBox.getSelectedIndex()>=0){
                 NameField.setVisible(true);

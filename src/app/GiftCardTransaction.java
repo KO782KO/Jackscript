@@ -9,10 +9,8 @@ package app;
  * @author Nolan
  */
 public class GiftCardTransaction extends Transaction {
-    private int GiftCardUPC;
     
-    public GiftCardTransaction(int itemID,int customrerID,int quantity,String date,double price,String orderType,int GiftCardUPC){
+    public GiftCardTransaction(int itemID,int customrerID,int quantity,String date,double price,String orderType){
         super(itemID,customrerID,quantity,date,price,orderType);
-        this.GiftCardUPC=GiftCardUPC;
     }
 }

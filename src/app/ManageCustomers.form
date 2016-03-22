@@ -61,8 +61,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="BackButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                  <Component id="jTabbedPane1" min="-2" pref="298" max="-2" attributes="0"/>
-                  <EmptySpace pref="228" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" min="-2" pref="351" max="-2" attributes="0"/>
+                  <EmptySpace pref="175" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -116,27 +116,37 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="IDLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="NameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="PhoneNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="40" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="PhoneNumberField" max="32767" attributes="0"/>
-                              <Component id="IDNumField" alignment="1" pref="230" max="32767" attributes="0"/>
-                              <Component id="NameField" alignment="1" max="32767" attributes="0"/>
-                              <Component id="AddressField" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="IDLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FirstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PhoneNumLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="PhoneNumField" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="LastNameField" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="IDNumField" alignment="1" pref="230" max="32767" attributes="0"/>
+                                      <Component id="FirstNameField" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="AddCustomerButton" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="EmailLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="74" max="32767" attributes="0"/>
+                                  <Component id="EmailField" min="-2" pref="230" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                          <Component id="AddCustomerButton" min="-2" pref="180" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -150,20 +160,25 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="NameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FirstNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FirstNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="AddressField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddressLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LastNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LastNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="PhoneNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="PhoneNumberField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PhoneNumField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PhoneNumLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="50" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="EmailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="EmailField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="65" max="32767" attributes="0"/>
                           <Component id="AddCustomerButton" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
@@ -179,28 +194,20 @@
                     <Property name="text" type="java.lang.String" value="ID Number"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="NameLabel">
+                <Component class="javax.swing.JLabel" name="FirstNameLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lucida Sans" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Name"/>
+                    <Property name="text" type="java.lang.String" value="First Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="AddressLabel">
+                <Component class="javax.swing.JLabel" name="EmailLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lucida Sans" size="13" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Address"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="PhoneNumberLabel">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Lucida Sans" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Phone #???"/>
+                    <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="IDNumField">
@@ -208,14 +215,15 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IDNumFieldActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="NameField">
+                <Component class="javax.swing.JTextField" name="FirstNameField">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameFieldActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FirstNameFieldActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="AddressField">
-                </Component>
-                <Component class="javax.swing.JTextField" name="PhoneNumberField">
+                <Component class="javax.swing.JTextField" name="EmailField">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailFieldActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="AddCustomerButton">
                   <Properties>
@@ -228,6 +236,33 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCustomerButtonActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="LastNameField">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastNameFieldActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="LastNameLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Lucida Sans" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Last Name"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="PhoneNumField">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PhoneNumFieldActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PhoneNumFieldKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="PhoneNumLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Lucida Sans" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Phone #"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -255,7 +290,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="266" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="319" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>

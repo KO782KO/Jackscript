@@ -1,15 +1,16 @@
-12,Circular saw ,125,16
-235,Cooking range ,850,5
-301,Table saw ,300,4
-302,Stapler ,49,20
-303,Lawn Tractor ,650,3
-400,Pencils (gross) ,29.95,40
-999,Pens(gross) ,39.95,50
-45,Nachos,89.99,9
-56,Calideascope,90.99,5
-566,Light Sabre,99999.99,1
-67,Chicken,89.99,7
-78,Hat,6.77,6
-99,Cheese,7.89,4
-90,Turd,8.99,12
-7865,Jack's Code,0.01,13
+12,Circular saw ,125.0,10,
+45,Nachos,89.99,1,
+56,Calideascope,90.99,4,
+67,Chicken,89.99,7,
+78,Hat,6.77,6,
+90,Turd,8.99,12,
+99,Cheese,7.89,2,
+235,Cooking range ,850.0,5,
+301,Table saw ,300.0,4,
+302,Stapler ,49.0,20,
+303,Lawn Tractor ,650.0,3,
+345,Monster,2.67,23,
+400,Pencils (gross) ,29.95,40,
+566,Light Sabre,99999.99,1,
+999,Pens(gross) ,39.95,50,
+7865,Jack's Code,0.01,8,
