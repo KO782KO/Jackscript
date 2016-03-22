@@ -37,7 +37,7 @@ public class InventoryList extends javax.swing.JFrame {
         }catch(java.io.IOException e){
 
         }
-        jTable1 = new javax.swing.JTable(MainThread.oItems.a.size(),3);
+        jTable1 = new javax.swing.JTable(MainThread.oItems.a.size(),4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,10 +62,10 @@ public class InventoryList extends javax.swing.JFrame {
         int count=0;
         for(int r=0;r<ct;r++){
 
-            for(int c=0;c<=3;c++){
+            for(int c=0;c<=4;c++){
                 switch(c){
                     case(0):
-                    jTable1.setValueAt(Integer.toString(MainThread.oItems.a.get(r).getItemId()),c,count);
+                    jTable1.setValueAt(Integer.toString(MainThread.oItems.a.get(r).getItemId()),count,c);
                     case(1):
                     jTable1.setValueAt(MainThread.oItems.a.get(r).getItemName(),count,c);
                     jTable1.getCellEditor(r,c).cancelCellEditing();
