@@ -18,6 +18,7 @@ public class MainThread {
         public static Items oItems=new Items();
         public static CustomerDatabase db=new CustomerDatabase();
         public static TransactionClient transactions=new TransactionClient();
+        public static InventoryList list=new InventoryList();
     /**
      * @param args the command line arguments
      */
@@ -25,6 +26,7 @@ public class MainThread {
         // TODO code application logic here
         
         try {
+            
             //loads customer
             db.initCustomers();
             //prepares transaction database
@@ -39,8 +41,6 @@ public class MainThread {
         }finally{
             code.setVisible(true);
         }
-        
-        
 
         
         

@@ -58,6 +58,7 @@ public class AMenu extends javax.swing.JFrame {
             Exit = new javax.swing.JButton();
             ManageInventory = new javax.swing.JButton();
             ManageCustomers = new javax.swing.JButton();
+            ViewDatabaseButton = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(153, 255, 0));
@@ -121,6 +122,15 @@ public class AMenu extends javax.swing.JFrame {
                 }
             });
 
+            ViewDatabaseButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+            ViewDatabaseButton.setText("View Database");
+            ViewDatabaseButton.setFocusPainted(false);
+            ViewDatabaseButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ViewDatabaseButtonActionPerformed(evt);
+                }
+            });
+
             org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
@@ -131,13 +141,19 @@ public class AMenu extends javax.swing.JFrame {
                     .addContainerGap(168, Short.MAX_VALUE))
                 .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(295, 295, 295))
+                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                        .add(jPanel1Layout.createSequentialGroup()
+                            .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(Exit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(CreateOrder, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(295, 295, 295))
+                        .add(jPanel1Layout.createSequentialGroup()
+                            .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(ViewDatabaseButton)
+                            .add(67, 67, 67))))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -147,7 +163,9 @@ public class AMenu extends javax.swing.JFrame {
                     .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 49, Short.MAX_VALUE)
                     .add(ManageCustomers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(40, 40, 40)
-                    .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(ViewDatabaseButton))
                     .add(40, 40, 40)
                     .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(40, 40, 40)
@@ -217,6 +235,11 @@ public class AMenu extends javax.swing.JFrame {
         mc.setVisible(true);
     }//GEN-LAST:event_ManageCustomersActionPerformed
 
+    private void ViewDatabaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDatabaseButtonActionPerformed
+    InventoryList list=new InventoryList();
+            list.setVisible(true);
+    }//GEN-LAST:event_ViewDatabaseButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -237,6 +260,7 @@ public class AMenu extends javax.swing.JFrame {
     private javax.swing.JButton ManageCustomers;
     private javax.swing.JButton ManageInventory;
     private javax.swing.JLabel Title;
+    private javax.swing.JButton ViewDatabaseButton;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
