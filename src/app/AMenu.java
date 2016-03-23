@@ -63,6 +63,7 @@ public class AMenu extends javax.swing.JFrame {
             ManageInventory = new javax.swing.JButton();
             ManageCustomers = new javax.swing.JButton();
             ViewDatabaseButton = new javax.swing.JButton();
+            jButton1 = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setBackground(new java.awt.Color(153, 255, 0));
@@ -135,6 +136,14 @@ public class AMenu extends javax.swing.JFrame {
                 }
             });
 
+            jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+            jButton1.setText("Point of Sale");
+            jButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton1ActionPerformed(evt);
+                }
+            });
+
             org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
@@ -144,7 +153,9 @@ public class AMenu extends javax.swing.JFrame {
                     .add(Title)
                     .addContainerGap(168, Short.MAX_VALUE))
                 .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(57, 57, 57)
+                    .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                         .add(jPanel1Layout.createSequentialGroup()
                             .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -169,7 +180,8 @@ public class AMenu extends javax.swing.JFrame {
                     .add(40, 40, 40)
                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(ManageInventory, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(ViewDatabaseButton))
+                        .add(ViewDatabaseButton)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(40, 40, 40)
                     .add(InventoryReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(40, 40, 40)
@@ -244,6 +256,12 @@ public class AMenu extends javax.swing.JFrame {
             list.setVisible(true);
     }//GEN-LAST:event_ViewDatabaseButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        InventoryList list=new InventoryList();
+        list.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -265,6 +283,7 @@ public class AMenu extends javax.swing.JFrame {
     private javax.swing.JButton ManageInventory;
     private javax.swing.JLabel Title;
     private javax.swing.JButton ViewDatabaseButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -199,6 +199,7 @@
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ScrollPaneTextArea.setEditable(false);"/>
+                    <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="CreateAnOrder_ScrollPaneTextArea"/>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
                   </AuxValues>
                 </Component>
