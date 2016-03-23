@@ -19,3 +19,8 @@ app.CreditTransaction,7865,4,5,[21/03/16 11:47:15],0.051000000000000004,In-Store
 app.GiftCardTransaction,45,1,8,[21/03/16 11:55:30],719.92,In-Store
 app.CashTransaction,56,6,1,[21/03/16 11:56:57],86.4405,-----------
 app.CashTransaction,12,1,6,[21/03/16 13:27:07],712.5,In-Store
+app.CashTransaction,56,3,2,[23/03/16 10:21:00],172.881,In-Store
+app.CashTransaction,78,3,2,[23/03/16 10:21:30],12.863,In-Store
+app.CashTransaction,45,2,1,[23/03/16 10:25:40],89.4905,Online ($4 S&H)
+app.CashTransaction,56,6,2,[23/03/16 10:26:00],176.881,Online ($4 S&H)
+app.CashTransaction,67,5,3,[23/03/16 10:27:19],260.4715,Online ($4 S&H)

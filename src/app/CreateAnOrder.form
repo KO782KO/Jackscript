@@ -537,10 +537,9 @@
             <Component class="javax.swing.JComboBox" name="OrderType_ComboBox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="-----------"/>
-                    <StringItem index="1" value="In-Store"/>
-                    <StringItem index="2" value="Online ($4 S&amp;H)"/>
+                  <StringArray count="2">
+                    <StringItem index="0" value="In-Store"/>
+                    <StringItem index="1" value="Online ($4 S&amp;H)"/>
                   </StringArray>
                 </Property>
               </Properties>

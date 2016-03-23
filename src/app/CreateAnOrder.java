@@ -411,7 +411,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
                             PricePerUnitField.setEditable(false);
 
-                            OrderType_ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-----------", "In-Store", "Online ($4 S&H)" }));
+                            OrderType_ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "In-Store", "Online ($4 S&H)" }));
                             OrderType_ComboBox.addActionListener(new java.awt.event.ActionListener() {
                                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                                     OrderType_ComboBoxActionPerformed(evt);

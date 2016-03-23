@@ -82,7 +82,7 @@ public java.util.ArrayList<Transaction> getList(){
         public double getOrderPrice(Transaction t){
             for(Item i:MainThread.oItems.a){
                 if(i.getItemId()==t.getItemID()){
-                    return i.getSellingPrice()*t.getQuantity();
+                    return (100*Math.round(i.getSellingPrice()*t.getQuantity()))/100;
                 }
             }
             System.out.print("Invalid Parameters");

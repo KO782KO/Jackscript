@@ -168,7 +168,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
     
     public boolean addShipping(int position){
         boolean addShipping=false;
-        if(position==2){
+        if(position==1){
             addShipping=true;
         }
         return addShipping;
