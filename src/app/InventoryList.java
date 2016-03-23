@@ -43,7 +43,7 @@ public class InventoryList extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
         jLabel1.setText("Inventory Database");
 
-        int ct=MainThread.oItems.a.size()-1;
+        int ct=MainThread.oItems.a.size();
         jTable1.setCellSelectionEnabled(false);
         jTable1.setFont(new java.awt.Font("Monotype Corsiva",4,40));
         int count=0;
