@@ -23,7 +23,10 @@ import javax.swing.DefaultComboBoxModel;
  * @author Nolan
  */
 public class CreateAnOrder extends javax.swing.JFrame {
-
+    @Override
+    public void setDefaultCloseOperation(int operation) {
+        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
     /**
