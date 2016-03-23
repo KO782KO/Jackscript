@@ -16,8 +16,9 @@
             <file>file:/F:/Jekscript/Jackscript/src/app/Items.java</file>
             <file>file:/F:/Jekscript/Jackscript/Product.csv</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/vba%20graph/newXMLDocument.xml</file>
-            <file>file:/F:/Jekscript/Jackscript/nbproject/build-impl.xml</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/Transaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/nbproject/build-impl.xml</file>
+            <file>file:/F:/Jekscript/Jackscript/build.xml</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/CreateAnOrder.java</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/FileChooser.java</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/Inventory.java</file>
@@ -29,9 +30,8 @@
             <file>file:/F:/Jekscript/Jackscript/manifest.mf</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/CreditTransaction.java</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/ManageCustomers.java</file>
-            <file>file:/F:/Jekscript/Jackscript/src/app/DebitTransaction.java</file>
             <file>file:/F:/Jekscript/Jackscript/nbproject/private/private.xml</file>
-            <file>file:/F:/Jekscript/Jackscript/build/built-jar.properties</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/DebitTransaction.java</file>
             <file>file:/F:/Jekscript/Jackscript/Inventory.csv</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/CashTransaction.java</file>
             <file>file:/F:/Jekscript/Jackscript/src/app/Item.java</file>
