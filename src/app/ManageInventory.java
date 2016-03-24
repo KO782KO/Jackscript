@@ -260,7 +260,7 @@ public class ManageInventory extends javax.swing.JFrame {
 
     private void AddItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButtonActionPerformed
     
-       System.out.println(MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
+       //System.out.println(MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
                 if(
                (!MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())))
                &&NameField.getText().length()>=1

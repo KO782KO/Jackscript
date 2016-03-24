@@ -78,6 +78,7 @@ public Object[][] toStringArray(){
     public boolean checkItems(int id){
         for(Item i:a){
             if(i.getItemId()==id){
+                JOptionPane.showMessageDialog(null, "Sorry, that item ID is taken. Please select a different one.", "Error", JOptionPane.ERROR_MESSAGE);
                 return true;
             }
         }

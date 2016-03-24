@@ -275,7 +275,16 @@ public class ManageCustomers extends javax.swing.JFrame {
     }//GEN-LAST:event_IDNumFieldActionPerformed
 
     private void AddCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomerButtonActionPerformed
-        MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
+        if(
+                (!MainThread.db.checkCustomers(Integer.parseInt(IDNumField.getText())))
+                &&IDNumField.getText().length()>=1
+                &&FirstNameField.getText().length()>=1
+                &&LastNameField.getText().length()>=1
+                &&PhoneNumField.getText().length()>=1
+                &&EmailField.getText().length()>=1){
+   
+   MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
+        }
     }//GEN-LAST:event_AddCustomerButtonActionPerformed
 
     private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed

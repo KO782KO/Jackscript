@@ -258,8 +258,8 @@ public class AMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        InventoryList list=new InventoryList();
-        list.setVisible(true);
+        POS pos=new POS();
+        pos.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

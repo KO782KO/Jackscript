@@ -284,6 +284,7 @@ public class POS extends javax.swing.JFrame {
             );
 
             pack();
+            setLocationRelativeTo(null);
         }// </editor-fold>//GEN-END:initComponents
 
     private void SubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButton1ActionPerformed
