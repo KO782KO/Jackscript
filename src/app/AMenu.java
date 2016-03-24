@@ -16,7 +16,7 @@ import java.awt.RenderingHints;
 public class AMenu extends javax.swing.JFrame {   
     @Override
     public void setDefaultCloseOperation(int operation) {
-        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
+        super.setDefaultCloseOperation(EXIT_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
     }
  // Creates Main Menu Form
     public AMenu() {
