@@ -87,7 +87,7 @@ public class OpeningScreen extends javax.swing.JFrame {
 
             jLabel1.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
             jLabel1.setForeground(new java.awt.Color(200, 30, 60));
-            jLabel1.setText("Jackscript");
+            jLabel1.setText("jackScript");
 
             jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
             jButton1.setText("Enter");

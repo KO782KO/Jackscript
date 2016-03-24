@@ -90,7 +90,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="3c" green="1e" red="c8" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Jackscript"/>
+            <Property name="text" type="java.lang.String" value="jackScript"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
