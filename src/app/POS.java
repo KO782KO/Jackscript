@@ -35,11 +35,11 @@ public class POS extends javax.swing.JFrame {
         AmtField = new javax.swing.JTextField();
         ProductDetails = new javax.swing.JPanel(){
             @Override
-            protected void paintComponent(Graphics g){
-                Graphics2D g2d1=(Graphics2D)g.create();
-                RenderingHints hints1 = new RenderingHints(
-                    RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                RenderingHints render1 =new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);
+            protected void paintComponent(java.awt.Graphics g){
+                java.awt.Graphics2D g2d1=(java.awt.Graphics2D)g.create();
+                java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                    java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                java.awt.RenderingHints render1 =new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING,java.awt.RenderingHints.VALUE_RENDER_QUALITY);
                 hints1.add(render1);
                 g2d1.setRenderingHints(hints1);
                 g2d1.setColor(new java.awt.Color(240,240,240,150));
