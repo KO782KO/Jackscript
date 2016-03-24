@@ -5,6 +5,10 @@
  */
 package app;
 
+import java.awt.event.KeyEvent;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
 /**
  *
  * @author Kevin
@@ -21,7 +25,27 @@ public class OpeningScreen extends javax.swing.JFrame {
         
 	
         initComponents();
+       
 }
+    private void adminInput(){
+        java.util.Scanner scan=new java.util.Scanner(System.in);
+        System.out.println("console open");
+        String input=scan.nextLine();
+        if(input.equalsIgnoreCase("admin create new version")){
+            java.text.DateFormat df = new java.text.SimpleDateFormat("dd/MM/yy HH:mm:ss");
+            java.util.Calendar date=java.util.Calendar.getInstance();
+            String DATE =df.format(date.getTime());
+            try{
+             BufferedWriter fileWriter=new BufferedWriter(new FileWriter("lib\\Version.txt"));
+             fileWriter.write(DATE);
+             fileWriter.close();
+             System.out.println("new version created");
+                    }catch(java.io.IOException e){
+                        System.out.println("IO Exception.");
+                }
+                    }
+            
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,6 +81,7 @@ public class OpeningScreen extends javax.swing.JFrame {
             }};
             jLabel1 = new javax.swing.JLabel();
             jButton1 = new javax.swing.JButton();
+            jTextField1 = new javax.swing.JTextField();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,9 +92,35 @@ public class OpeningScreen extends javax.swing.JFrame {
             jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
             jButton1.setText("Enter");
             jButton1.setToolTipText("");
+            jButton1.grabFocus();
             jButton1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     jButton1ActionPerformed(evt);
+                }
+            });
+            jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+                public void keyPressed(java.awt.event.KeyEvent evt) {
+                    jButton1KeyPressed(evt);
+                }
+            });
+
+            jTextField1.setText("jTextField1");
+            try{
+                java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("lib//Version.txt"));
+                jTextField1.setText("Version: "+read.readLine().toString());
+            }catch(java.io.FileNotFoundException e){
+                System.out.println("File not found.");
+            }catch(java.io.IOException e){
+                System.out.println("IOException");
+            }
+            jTextField1.setOpaque(false);
+            jTextField1.setBorder(null);
+            jTextField1.setBackground(new java.awt.Color(20, 60, 100));
+            jTextField1.setForeground(new java.awt.Color(255,255,255));
+            jTextField1.setEditable(false);
+            jTextField1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jTextField1ActionPerformed(evt);
                 }
             });
 
@@ -78,13 +129,18 @@ public class OpeningScreen extends javax.swing.JFrame {
             jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(206, 206, 206))
-                .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(151, 151, 151)
                     .addComponent(jLabel1)
                     .addContainerGap(152, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(206, 206, 206))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +149,9 @@ public class OpeningScreen extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(98, 98, 98))
+                    .addGap(67, 67, 67)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap())
             );
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,14 +175,19 @@ public class OpeningScreen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
-        try{
         MainThread.main(null);
-        }catch(java.io.FileNotFoundException e){
-            
-        }catch(java.io.IOException e){
-            
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        if(evt.isControlDown()&&evt.isAltDown()){
+            adminInput();
+        }
+                
+    }//GEN-LAST:event_jButton1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -166,5 +229,7 @@ public class OpeningScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
 }

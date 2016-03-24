@@ -142,7 +142,7 @@ public void initCustomers() throws FileNotFoundException, IOException{
         System.out.println("Problem reading file.");
         return;
     }
-JOptionPane.showMessageDialog(null, "Customer Added.");
+JOptionPane.showMessageDialog(null, "Customer added successfully.");
 }
     //determines if cash or credit customer
    public boolean creditCustomer(int customerID, Customer CreditTransaction){

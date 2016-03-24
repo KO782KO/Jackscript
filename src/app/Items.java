@@ -103,7 +103,7 @@ public Object[][] toStringArray(){
                         fileWriter.write(item);
  //closes buffered writer
             fileWriter.close();
-            JOptionPane.showMessageDialog(null, "Export successful");
+            JOptionPane.showMessageDialog(null, "Item added successfully.");
             }
             else
             {
