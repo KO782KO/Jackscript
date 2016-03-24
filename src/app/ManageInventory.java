@@ -5,10 +5,6 @@
  */
 package app;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.UnsupportedLookAndFeelException;
-
 /**
  *
  * @author Kevin+Jack
@@ -17,6 +13,10 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
 
     private Object ItemsSoldField;
 
+    @Override
+    public void setDefaultCloseOperation(int operation) {
+        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
+    }
     /**
      * Creates new form CreateItem
      */
@@ -411,9 +411,8 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
                     .addContainerGap()
                     .addGroup(AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                        .addGroup(AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap(241, Short.MAX_VALUE))
             );
             AddExistingItemsLayout.setVerticalGroup(
@@ -484,7 +483,7 @@ public class ManageInventory extends javax.swing.JFrame implements Comparable<It
 
     private void AddItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddItemButtonActionPerformed
     
-       System.out.println(MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
+       //System.out.println(MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())));
                 if(
                (!MainThread.oItems.checkItems((int)Integer.parseInt(IDNumField.getText())))
                &&NameField.getText().length()>=1

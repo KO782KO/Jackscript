@@ -60,13 +60,14 @@ public void initCustomers() throws FileNotFoundException, IOException{
         
         return result;
     }
-    public boolean checkCust(int CustomerID){
-        for(Customer custard:customers){
-        if(custard.getCustomerID()==CustomerID){
-            return false;
+    public boolean checkCustomers(int id){
+        for(Customer c:MainThread.db.getCustomers()){
+            if(c.getCustomerID()==id){
+                JOptionPane.showMessageDialog(null, "Sorry, that Customer ID is taken. Please select a different one.", "Error", JOptionPane.ERROR_MESSAGE);
+                return true;
+            }
         }
-    }
-        return true;
+        return false;
     }
     public void addNewCustomer(int ID,String fName,String lName,long pnum,String email){
         customers.add(new Customer(ID,fName,lName,pnum,email));
@@ -141,7 +142,7 @@ public void initCustomers() throws FileNotFoundException, IOException{
         System.out.println("Problem reading file.");
         return;
     }
-JOptionPane.showMessageDialog(null, "Customer Added.");
+JOptionPane.showMessageDialog(null, "Customer added successfully.");
 }
     //determines if cash or credit customer
    public boolean creditCustomer(int customerID, Customer CreditTransaction){

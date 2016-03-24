@@ -39,8 +39,6 @@ public class LoadImageApp extends Component {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	  // i = new ImageIcon (getClass().getResource("GameIcon.jpg"));
-	 //  img=(BufferedImage) i.getImage();
  
     }
     public Image getImage(String path){
