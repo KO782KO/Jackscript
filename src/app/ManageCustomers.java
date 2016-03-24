@@ -280,9 +280,9 @@ public class ManageCustomers extends javax.swing.JFrame {
                 &&IDNumField.getText().length()>=1
                 &&FirstNameField.getText().length()>=1
                 &&LastNameField.getText().length()>=1
-                &&PhoneNumField.getText().length()>=1
+                &&PhoneNumField.getText().length()==10
                 &&EmailField.getText().length()>=1){
-   
+                
    MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
         }
     }//GEN-LAST:event_AddCustomerButtonActionPerformed
