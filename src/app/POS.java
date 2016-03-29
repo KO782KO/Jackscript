@@ -554,10 +554,10 @@ public class POS extends javax.swing.JFrame {
            // Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantityRequested, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
+           // price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
 
             //sets final price of item ordered
-            double finalPrice=price;
+         //   double finalPrice=price;
             //adds shipping to price
             Boolean shippingCharged;
             shippingCharged = MainThread.oItems.addShipping(OrderType_ComboBox.getSelectedIndex());
@@ -566,25 +566,25 @@ public class POS extends javax.swing.JFrame {
             //calcualates shipping charge
             if(shippingCharged){
                 int shipping = 4;
-                finalPrice=price+shipping;
+                //finalPrice=price+shipping;
              //   SnHField.setText("$4.00");
             //    SnHField.setVisible(true);
             }
-            tempTransaction.setPrice(finalPrice);
+          // tempTransaction.setPrice(finalPrice);
             PriceField.setVisible(true);
-            PriceField.setText("$"+price);
+          //  PriceField.setText("$"+price);
             TotalCostField.setVisible(true);
-            TotalCostField.setText("$"+finalPrice);
+          //  TotalCostField.setText("$"+finalPrice);
             //creating boolean for giftcard transaction
             Boolean giftcardPay;
             // giftcardPay = MainThread.oitems.addgiftCard()
             //makes sale of item and sends to inventory file
-            MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
+          //  MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
             //summarizes order
-            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
-            int qoh=Integer.parseInt(QuantityField.getText());
-            int updated=qoh-quantityRequested;
-            QuantityField.setText(""+updated);
+           // ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
+           // int qoh=Integer.parseInt(QuantityField.getText());
+          //  int updated=qoh-quantityRequested;
+           // QuantityField.setText(""+updated);
 
         }else{
             IdkField.setVisible(true);

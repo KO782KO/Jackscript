@@ -8,6 +8,8 @@ package app;
 import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,8 +27,18 @@ public class OpeningScreen extends javax.swing.JFrame {
         
 	
         initComponents();
-       
-}
+        this.setVisible(true);
+        new Thread(){
+        @Override
+        public void run(){
+        try {
+            prettyLetters();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(OpeningScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }}}.start();
+
+        
+        }
     private void adminInput(){
         java.util.Scanner scan=new java.util.Scanner(System.in);
         System.out.println("console open");
@@ -79,15 +91,11 @@ public class OpeningScreen extends javax.swing.JFrame {
                 g2d1.fill(p1);
                 //Image img=	image.getImage("/resources/GameIcon2.jpg");
             }};
-            jLabel1 = new javax.swing.JLabel();
             jButton1 = new javax.swing.JButton();
             jTextField1 = new javax.swing.JTextField();
+            FancyTitle = new javax.swing.JTextField();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-            jLabel1.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
-            jLabel1.setForeground(new java.awt.Color(200, 30, 60));
-            jLabel1.setText("jackScript");
 
             jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
             jButton1.setText("Enter");
@@ -104,6 +112,7 @@ public class OpeningScreen extends javax.swing.JFrame {
                 }
             });
 
+            jTextField1.setEditable(false);
             jTextField1.setText("jTextField1");
             try{
                 java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("lib//Version.txt"));
@@ -124,15 +133,25 @@ public class OpeningScreen extends javax.swing.JFrame {
                 }
             });
 
+            FancyTitle.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
+            FancyTitle.setForeground(new java.awt.Color(200, 30, 60));
+            FancyTitle.setText("JackScript");
+            FancyTitle.setBackground(new java.awt.Color(100, 200, 200, 0));
+            FancyTitle.setOpaque(false);
+            FancyTitle.setBorder(null);
+            FancyTitle.setEditable(false);
+            FancyTitle.setHighlighter(null);
+            FancyTitle.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    FancyTitleActionPerformed(evt);
+                }
+            });
+
             javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(151, 151, 151)
-                    .addComponent(jLabel1)
-                    .addContainerGap(152, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -141,13 +160,17 @@ public class OpeningScreen extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())))
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(148, 148, 148)
+                    .addComponent(FancyTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 149, Short.MAX_VALUE))
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(34, 34, 34)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                    .addGap(67, 67, 67)
+                    .addComponent(FancyTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(67, 67, 67)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,6 +212,35 @@ public class OpeningScreen extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_jButton1KeyPressed
 
+    private void FancyTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FancyTitleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FancyTitleActionPerformed
+
+    private void prettyLetters() throws InterruptedException{
+            String jek="JackScript";
+            String showString="";
+            int remain=jek.length()-1;
+            int done=0;
+        for(int i=0;i<"jackscript".length();i++){
+            done++;
+            for(int c=0;c<=50;c++){
+                FancyTitle.setText(showString);
+                Thread.sleep(10);
+                remain=jek.length()-1-done;
+                showString=jek.substring(0,done);
+                for(int r=0;r<=remain;r++){
+                    
+                    int randint=(int) (Math.random()*10);
+                    if(randint>5){
+                    showString=showString+"1";
+                    }
+                    else{
+                    showString=showString+"0";
+                    }
+                }
+            }
+           }
+    }
     /**
      * @param args the command line arguments
      */
@@ -226,8 +278,8 @@ public class OpeningScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField FancyTitle;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
