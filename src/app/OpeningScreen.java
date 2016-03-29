@@ -55,9 +55,11 @@ public class OpeningScreen extends javax.swing.JFrame {
                     }catch(java.io.IOException e){
                         System.out.println("IO Exception.");
                 }
-                    }
-            
-    }
+        }            
+        else if(input.equalsIgnoreCase("close")){
+            System.out.println("Console closed");
+            return;
+    }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -223,8 +225,10 @@ public class OpeningScreen extends javax.swing.JFrame {
             int done=0;
         for(int i=0;i<"jackscript".length();i++){
             done++;
-            if(showString.equals(jek))
+            if(showString.equals(jek)){
+            jButton1.grabFocus();
                 return;
+            }
             for(int c=0;c<=50;c++){
                 FancyTitle.setText(showString);
                 Thread.sleep(10);
