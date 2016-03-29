@@ -54,11 +54,11 @@ public class POS extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel(){
             @Override
-            protected void paintComponent(Graphics g){
-                Graphics2D g2d1=(Graphics2D)g.create();
-                RenderingHints hints1 = new RenderingHints(
-                    RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                RenderingHints render1 =new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);
+            protected void paintComponent(java.awt.Graphics g){
+                java.awt.Graphics2D g2d1=(java.awt.Graphics2D)g.create();
+                java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                    java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                java.awt.RenderingHints render1 =new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING,java.awt.RenderingHints.VALUE_RENDER_SPEED);
                 hints1.add(render1);
                 g2d1.setRenderingHints(hints1);
                 java.awt.Polygon p1 = new java.awt.Polygon();
@@ -77,11 +77,11 @@ public class POS extends javax.swing.JFrame {
             }};
             OrderSummary = new javax.swing.JPanel(){
                 @Override
-                protected void paintComponent(Graphics g){
-                    Graphics2D g2d1=(Graphics2D)g.create();
-                    RenderingHints hints1 = new RenderingHints(
-                        RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                    RenderingHints render1 =new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);
+                protected void paintComponent(java.awt.Graphics g){
+                    java.awt.Graphics2D g2d1=(java.awt.Graphics2D)g.create();
+                    java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                        java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                    java.awt.RenderingHints render1 =new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING,java.awt.RenderingHints.VALUE_RENDER_SPEED);
                     hints1.add(render1);
                     g2d1.setRenderingHints(hints1);
                     g2d1.setColor(new java.awt.Color(240,240,240,150));
@@ -99,11 +99,11 @@ public class POS extends javax.swing.JFrame {
                 BackButton = new javax.swing.JButton();
                 ProductDetails = new javax.swing.JPanel(){
                     @Override
-                    protected void paintComponent(Graphics g){
-                        Graphics2D g2d1=(Graphics2D)g.create();
-                        RenderingHints hints1 = new RenderingHints(
-                            RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                        RenderingHints render1 =new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);
+                    protected void paintComponent(java.awt.Graphics g){
+                        java.awt.Graphics2D g2d1=(java.awt.Graphics2D)g.create();
+                        java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                            java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                        java.awt.RenderingHints render1 =new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING,java.awt.RenderingHints.VALUE_RENDER_SPEED);
                         hints1.add(render1);
                         g2d1.setRenderingHints(hints1);
                         g2d1.setColor(new java.awt.Color(240,240,240,150));
@@ -127,11 +127,11 @@ public class POS extends javax.swing.JFrame {
                     jLabel3 = new javax.swing.JLabel();
                     OrderDetails = new javax.swing.JPanel(){
                         @Override
-                        protected void paintComponent(Graphics g){
-                            Graphics2D g2d1=(Graphics2D)g.create();
-                            RenderingHints hints1 = new RenderingHints(
-                                RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                            RenderingHints render1 =new RenderingHints(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_SPEED);
+                        protected void paintComponent(java.awt.Graphics g){
+                            java.awt.Graphics2D g2d1=(java.awt.Graphics2D)g.create();
+                            java.awt.RenderingHints hints1 = new java.awt.RenderingHints(
+                                java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+                            java.awt.RenderingHints render1 =new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING,java.awt.RenderingHints.VALUE_RENDER_SPEED);
                             hints1.add(render1);
                             g2d1.setRenderingHints(hints1);
                             g2d1.setColor(new java.awt.Color(240,240,240,150));
@@ -551,13 +551,13 @@ public class POS extends javax.swing.JFrame {
             java.util.Calendar date=java.util.Calendar.getInstance();
             String DATE =df.format(date.getTime());
 
-            Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantityRequested, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
+           // Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantityRequested, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
             //gets price
             double price;
-            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
+           // price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
 
             //sets final price of item ordered
-            double finalPrice=price;
+         //   double finalPrice=price;
             //adds shipping to price
             Boolean shippingCharged;
             shippingCharged = MainThread.oItems.addShipping(OrderType_ComboBox.getSelectedIndex());
@@ -566,25 +566,25 @@ public class POS extends javax.swing.JFrame {
             //calcualates shipping charge
             if(shippingCharged){
                 int shipping = 4;
-                finalPrice=price+shipping;
+                //finalPrice=price+shipping;
              //   SnHField.setText("$4.00");
             //    SnHField.setVisible(true);
             }
-            tempTransaction.setPrice(finalPrice);
+          // tempTransaction.setPrice(finalPrice);
             PriceField.setVisible(true);
-            PriceField.setText("$"+price);
+          //  PriceField.setText("$"+price);
             TotalCostField.setVisible(true);
-            TotalCostField.setText("$"+finalPrice);
+          //  TotalCostField.setText("$"+finalPrice);
             //creating boolean for giftcard transaction
             Boolean giftcardPay;
             // giftcardPay = MainThread.oitems.addgiftCard()
             //makes sale of item and sends to inventory file
-            MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
+          //  MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
             //summarizes order
-            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
-            int qoh=Integer.parseInt(QuantityField.getText());
-            int updated=qoh-quantityRequested;
-            QuantityField.setText(""+updated);
+           // ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
+           // int qoh=Integer.parseInt(QuantityField.getText());
+          //  int updated=qoh-quantityRequested;
+           // QuantityField.setText(""+updated);
 
         }else{
             IdkField.setVisible(true);

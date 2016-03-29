@@ -20,7 +20,11 @@ public class MainThread {
         public static CustomerDatabase db=new CustomerDatabase();
         public static TransactionClient transactions=new TransactionClient();
         public static InventoryList list=new InventoryList();
-        private static boolean checkFiles(){
+        public static int load=0;
+    /**
+     * Checks to see if proper csv files are in database and creates them if not
+     */
+    private static boolean checkFiles(){
             boolean tf=false;
             java.io.File Customerfile=new java.io.File("Customer.csv");
 		if(!Customerfile.exists()){
@@ -43,6 +47,7 @@ public class MainThread {
                         }catch(java.io.IOException e){
                             System.out.println("IO Exception");
                         }}
+        load++;
         return tf;
         }
     /**
@@ -51,15 +56,14 @@ public class MainThread {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        try {
-            
+        try {OpeningScreen.jProgressBar1.setValue(1);
             //loads customer
-            db.initCustomers();
+            db.initCustomers();load++;OpeningScreen.jProgressBar1.setValue(2);
             //prepares transaction database
-            transactions.loadTransactions();
-            transactions.printTransactions();
+            transactions.loadTransactions();load++;OpeningScreen.jProgressBar1.setValue(3);
+            transactions.printTransactions();load++;OpeningScreen.jProgressBar1.setValue(4);
             //prepares items
-            oItems.initItems();
+            oItems.initItems();load++;OpeningScreen.jProgressBar1.setValue(5);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainThread.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
