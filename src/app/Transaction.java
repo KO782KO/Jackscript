@@ -5,7 +5,6 @@
  */
 package app;
 
-import static app.Items.a;
 import java.awt.HeadlessException;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -100,6 +99,6 @@ public void logTransaction(){
 
     @Override
     public String toString(){
-        return this.itemID+","+this.customerID+","+this.quantity+",["+this.date+"],"+this.price+","+this.orderType;
+        return this.itemID+","+this.customerID+","+this.quantity+this.date+this.price+","+this.orderType;
     }
 }
