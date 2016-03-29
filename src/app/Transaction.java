@@ -99,6 +99,6 @@ public void logTransaction(){
 
     @Override
     public String toString(){
-        return this.itemID+","+this.customerID+","+this.quantity+this.date+this.price+","+this.orderType;
+        return this.itemID+","+this.customerID+","+this.quantity+","+this.date+","+this.price+","+this.orderType;
     }
 }
