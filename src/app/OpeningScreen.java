@@ -223,6 +223,8 @@ public class OpeningScreen extends javax.swing.JFrame {
             int done=0;
         for(int i=0;i<"jackscript".length();i++){
             done++;
+            if(showString.equals(jek))
+                return;
             for(int c=0;c<=50;c++){
                 FancyTitle.setText(showString);
                 Thread.sleep(10);
