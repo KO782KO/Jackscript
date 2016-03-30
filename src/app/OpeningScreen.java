@@ -48,7 +48,7 @@ public class OpeningScreen extends javax.swing.JFrame {
             java.util.Calendar date=java.util.Calendar.getInstance();
             String DATE =df.format(date.getTime());
             try{
-             BufferedWriter fileWriter=new BufferedWriter(new FileWriter("lib\\Version.txt"));
+             BufferedWriter fileWriter=new BufferedWriter(new FileWriter("dist//lib//Version.txt"));
              fileWriter.write(DATE);
              fileWriter.close();
              System.out.println("new version created");
@@ -118,7 +118,7 @@ public class OpeningScreen extends javax.swing.JFrame {
             jTextField1.setEditable(false);
             jTextField1.setText("jTextField1");
             try{
-                java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("lib//Version.txt"));
+                java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("dist//lib//Version.txt"));
                 jTextField1.setText("Version: "+read.readLine().toString());
             }catch(java.io.FileNotFoundException e){
                 System.out.println("File not found.");
