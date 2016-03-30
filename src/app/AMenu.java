@@ -247,8 +247,8 @@ public class AMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ManageInventoryActionPerformed
 
     private void ManageCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCustomersActionPerformed
-        ManageCustomers mc= new ManageCustomers();
-        mc.setVisible(true);
+        CustomerMenu cmenu =new CustomerMenu();
+        cmenu.setVisible(true);
     }//GEN-LAST:event_ManageCustomersActionPerformed
 
     private void ViewDatabaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDatabaseButtonActionPerformed
