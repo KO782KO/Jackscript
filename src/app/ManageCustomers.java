@@ -68,7 +68,6 @@ public class ManageCustomers extends javax.swing.JFrame {
             LastNameLabel = new javax.swing.JLabel();
             PhoneNumField = new javax.swing.JTextField();
             PhoneNumLabel = new javax.swing.JLabel();
-            AddExistingItems = new javax.swing.JPanel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setTitle("Create Item");
@@ -209,21 +208,6 @@ public class ManageCustomers extends javax.swing.JFrame {
             jTabbedPane1.addTab("Add New Customer", null, AddNewCustomer, "");
             AddNewCustomer.getAccessibleContext().setAccessibleName("");
 
-            AddExistingItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-            javax.swing.GroupLayout AddExistingItemsLayout = new javax.swing.GroupLayout(AddExistingItems);
-            AddExistingItems.setLayout(AddExistingItemsLayout);
-            AddExistingItemsLayout.setHorizontalGroup(
-                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 358, Short.MAX_VALUE)
-            );
-            AddExistingItemsLayout.setVerticalGroup(
-                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 319, Short.MAX_VALUE)
-            );
-
-            jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
-
             javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
@@ -351,7 +335,6 @@ public class ManageCustomers extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddCustomerButton;
-    private javax.swing.JPanel AddExistingItems;
     private javax.swing.JPanel AddNewCustomer;
     private javax.swing.JButton BackButton;
     private javax.swing.JTextField EmailField;

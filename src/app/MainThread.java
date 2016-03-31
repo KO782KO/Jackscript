@@ -19,8 +19,6 @@ public class MainThread {
         public static Items oItems=new Items();
         public static CustomerDatabase db=new CustomerDatabase();
         public static TransactionClient transactions=new TransactionClient();
-        public static InventoryList Ilist=new InventoryList();
-        public static CustomerList Clist=new CustomerList();
         public static int load=0;
     /**
      * Checks to see if proper csv files are in database and creates them if not

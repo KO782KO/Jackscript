@@ -63,7 +63,7 @@ public class CustomerList extends javax.swing.JFrame {
                 else if(c==3){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getStringPhoneNumber(), r, c);
                 }
-                else{
+                else if(c==4){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getEmail(),r,c);
                 }
             }
