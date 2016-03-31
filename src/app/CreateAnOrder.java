@@ -759,16 +759,31 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed
         // TODO add your handling code here:
+        int itemsSelected=0; 
         Collections.sort(Items.a);
-        Item item=MainThread.oItems.a.get(SelProduct_ComboBox.getSelectedIndex());
+        Item item=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
         
         IdkField.setVisible(false);
         ProductNameField.setText(item.getItemName());
         QuantityField.setText(""+item.getQuantity());
         PricePerUnitField.setText("$"+item.getSellingPrice());
+        itemsSelected+=1;
         ProductNameField.setVisible(true);
         ProductNameField.setVisible(true);
         PricePerUnitField.setVisible(true);
+        while(itemsSelected>0){
+            IdkField.setVisible(false);
+            ProductNameField.setText(item.getItemName());
+            QuantityField.setText(""+item.getQuantity());
+            PricePerUnitField.setText("$"+item.getSellingPrice());
+            itemsSelected++;
+            ProductNameField.setVisible(true);
+            ProductNameField.setVisible(true);
+            PricePerUnitField.setVisible(true);
+            if((SelProduct_ComboBox.getSelectedIndex())<=0){
+                itemsSelected=-1;
+            }
+        }
     }//GEN-LAST:event_SelProduct_ComboBoxActionPerformed
 
     private void AmtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmtFieldActionPerformed
