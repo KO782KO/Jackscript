@@ -23,6 +23,7 @@ import javax.swing.DefaultComboBoxModel;
  * @author Nolan
  */
 public class CreateAnOrder extends javax.swing.JFrame {
+    private ArrayList<Transaction> transactions=new ArrayList<Transaction>();
     @Override
     public void setDefaultCloseOperation(int operation) {
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
@@ -39,7 +40,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         
         //Iterator a=MainThread.db.getCustomerList().iterator();
         
-        
+       
         ArrayList<Integer> customerIDList=new ArrayList<Integer>();
         //ArrayList<type> orderType=new ArrayList<type>();
         //Fills array with list of customers to be used with the drop down menu
@@ -638,7 +639,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // exit
         dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
-
+    public ArrayList<Transaction> getArrayList(){
+        return transactions;
+    }
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // selects customer & item to submit order
         Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
