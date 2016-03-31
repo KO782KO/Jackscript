@@ -55,11 +55,7 @@ public class CustomerList extends javax.swing.JFrame {
                 }
                 else if(c==1){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getFirstName(),r,c);
-<<<<<<< HEAD
                     //jTable1.getCellEditor(r,c).cancelCellEditing();
-=======
-                    jTable1.getCellEditor(r,c).cancelCellEditing();
->>>>>>> origin/dev
                 }
                 else if(c==2){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getLastName(),r,c);
@@ -70,12 +66,9 @@ public class CustomerList extends javax.swing.JFrame {
                 else if(c==4){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getEmail(),r,c);
                 }
-<<<<<<< HEAD
                 else{
                     continue;
                 }
-=======
->>>>>>> origin/dev
             }
         }
 
