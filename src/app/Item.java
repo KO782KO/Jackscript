@@ -19,7 +19,6 @@ public class Item implements Comparable<Item>{
     public int getItemId() {
         return itemId;
     }
-
     public String getItemName() {
         return itemName;
     }
