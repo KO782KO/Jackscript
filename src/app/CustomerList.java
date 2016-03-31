@@ -15,7 +15,7 @@ public class CustomerList extends javax.swing.JFrame {
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
     }
     /**
-     * Creates new form InventoryList
+     * Creates new form CustomerList
      */
     public CustomerList() {
         initComponents();
@@ -55,7 +55,7 @@ public class CustomerList extends javax.swing.JFrame {
                 }
                 else if(c==1){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getFirstName(),r,c);
-                    jTable1.getCellEditor(r,c).cancelCellEditing();
+                    //jTable1.getCellEditor(r,c).cancelCellEditing();
                 }
                 else if(c==2){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getLastName(),r,c);
@@ -63,8 +63,11 @@ public class CustomerList extends javax.swing.JFrame {
                 else if(c==3){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getStringPhoneNumber(), r, c);
                 }
-                else{
+                else if(c==4){
                     jTable1.setValueAt(MainThread.db.getCustomers().get(r).getEmail(),r,c);
+                }
+                else{
+                    continue;
                 }
             }
         }

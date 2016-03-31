@@ -69,7 +69,17 @@ public class CreateAnOrder extends javax.swing.JFrame {
         
         /*this.setDefaultCloseOperation(CreateAnOrder.HIDE_ON_CLOSE);*/
     }
-
+//------------>Jack's pseudo code<-----------------
+    /**
+     * public void actionPerformed(ActionEvent blah){
+     * if (blah.getSource() == jbutton){
+		Blah frame = new blah();
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.dispose();
+	 	}
+     * } 
+     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

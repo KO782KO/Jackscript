@@ -60,8 +60,11 @@ public class InventoryList extends javax.swing.JFrame {
                 else if(c==2){
                     jTable1.setValueAt(Double.toString(MainThread.oItems.a.get(r).getSellingPrice()),r,c);
                 }
-                else{
+                else if(c==3){
                     jTable1.setValueAt(Integer.toString(MainThread.oItems.a.get(r).getQuantity()), r, c);
+                }
+                else {
+                    continue;
                 }
             }
         }
