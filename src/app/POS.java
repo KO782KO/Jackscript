@@ -5,6 +5,11 @@
  */
 package app;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author jack+Kevin
@@ -21,6 +26,12 @@ public class POS extends javax.swing.JFrame {
     public POS() {
         
         initComponents();
+         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new POS().setVisible(true);
+            }
+        });
     }
 
     /**
@@ -58,19 +69,20 @@ public class POS extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Item", "Quantity", "Total"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 102, 204)));
 
+        addItem.setBackground(new java.awt.Color(255, 255, 0));
         addItem.setText("Add Item");
         addItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +90,7 @@ public class POS extends javax.swing.JFrame {
             }
         });
 
+        removeItem.setBackground(new java.awt.Color(255, 255, 0));
         removeItem.setText("Remove Item");
         removeItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,20 +98,30 @@ public class POS extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("jButton1");
+        jButton5.setBackground(new java.awt.Color(51, 204, 0));
+        jButton5.setText("Credit");
 
+        priceOverride.setBackground(new java.awt.Color(255, 255, 51));
         priceOverride.setText("Price Override ");
 
+        addNewCust.setBackground(new java.awt.Color(255, 255, 0));
         addNewCust.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         addNewCust.setText("Add New Customer");
 
-        jButton8.setText("jButton1");
+        jButton8.setBackground(new java.awt.Color(51, 204, 0));
+        jButton8.setText("Cash");
 
         jButton9.setText("jButton1");
 
         jButton10.setText("jButton1");
 
-        jButton11.setText("jButton1");
+        jButton11.setBackground(new java.awt.Color(51, 204, 0));
+        jButton11.setText("Gift Card");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText("jButton1");
 
@@ -241,6 +264,10 @@ public class POS extends javax.swing.JFrame {
     private void removeItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_removeItemActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
