@@ -264,6 +264,8 @@ public class ManageCustomers extends javax.swing.JFrame {
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // exit
         dispose();
+        CustomerMenu cm=new CustomerMenu();
+        cm.setVisible(true);
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void FirstNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameFieldActionPerformed
