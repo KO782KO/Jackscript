@@ -1,5 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
+/*//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed
+ * To change this template, choose Tools | Templates//GEN-LAST:event_SelProduct_ComboBoxActionPerformed
  * and open the template in the editor.
  */
 package app;
@@ -69,17 +69,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         
         /*this.setDefaultCloseOperation(CreateAnOrder.HIDE_ON_CLOSE);*/
     }
-//------------>Jack's pseudo code<-----------------
-    /**
-     * public void actionPerformed(ActionEvent blah){
-     * if (blah.getSource() == jbutton){
-		Blah frame = new blah();
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.dispose();
-	 	}
-     * } 
-     */
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,7 +78,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
      * Order entry form class
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel(){
@@ -643,16 +633,16 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
                             pack();
                             setLocationRelativeTo(null);
-                        }// </editor-fold>//GEN-END:initComponents
+                        }// </editor-fold>                        
 
-    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // exit
         dispose();
-    }//GEN-LAST:event_BackButtonActionPerformed
+    }                                          
     public ArrayList<Transaction> getArrayList(){
         return transactions;
     }
-    private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
+    private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // selects customer & item to submit order
         Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
@@ -744,17 +734,17 @@ public class CreateAnOrder extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_SubmitButtonActionPerformed
+    }                                            
 
-    private void IdkFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdkFieldActionPerformed
+    private void IdkFieldActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
-    }//GEN-LAST:event_IdkFieldActionPerformed
+    }                                        
     
-    private void SnHFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SnHFieldActionPerformed
+    private void SnHFieldActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }//GEN-LAST:event_SnHFieldActionPerformed
+    }                                        
 
-    private void SelCustomer_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelCustomer_ComboBoxActionPerformed
+    private void SelCustomer_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                     
 
 // fetches customer information
             
@@ -768,9 +758,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
                 PhoneNumField.setVisible(true);
                 EmailField.setVisible(true);
             }
-    }//GEN-LAST:event_SelCustomer_ComboBoxActionPerformed
+    }                                                    
 
-    private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed
+    private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
        // int itemsSelected=0; 
         Collections.sort(Items.a);
@@ -797,17 +787,17 @@ public class CreateAnOrder extends javax.swing.JFrame {
                 itemsSelected=-1;
 */            
         
-    }//GEN-LAST:event_SelProduct_ComboBoxActionPerformed
+    }                                                   
 
-    private void AmtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmtFieldActionPerformed
+    private void AmtFieldActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
-    }//GEN-LAST:event_AmtFieldActionPerformed
+    }                                        
 
-    private void PriceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PriceFieldActionPerformed
+    private void PriceFieldActionPerformed(java.awt.event.ActionEvent evt) {                                           
         
-    }//GEN-LAST:event_PriceFieldActionPerformed
+    }                                          
 
-    private void OrderType_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderType_ComboBoxActionPerformed
+    private void OrderType_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         // TODO add your handling code here:
         IdkField.setVisible(false);
         //gets item information
@@ -821,35 +811,35 @@ public class CreateAnOrder extends javax.swing.JFrame {
         }else{
             SnHField.setText("$0.00");
         }
-    }//GEN-LAST:event_OrderType_ComboBoxActionPerformed
+    }                                                  
 
-    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameFieldActionPerformed
+    }                                         
 
-    private void TotalCostFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalCostFieldActionPerformed
+    private void TotalCostFieldActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
-    }//GEN-LAST:event_TotalCostFieldActionPerformed
+    }                                              
 
-    private void PhoneNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumFieldActionPerformed
+    private void PhoneNumFieldActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
-    }//GEN-LAST:event_PhoneNumFieldActionPerformed
+    }                                             
 
-    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
+    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailFieldActionPerformed
+    }                                          
 
-    private void QuantityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityFieldActionPerformed
+    private void QuantityFieldActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
-    }//GEN-LAST:event_QuantityFieldActionPerformed
+    }                                             
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
                 IdkField.setVisible(false);
         //gets payment method
 
         
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }                                          
 
     /**
      * @param args the command line arguments
@@ -892,7 +882,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JTextField AmtField;
     private javax.swing.JLabel AmtLabel;
     private javax.swing.JButton BackButton;
@@ -934,5 +924,5 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     javax.swing.JPanel jPanel3;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
