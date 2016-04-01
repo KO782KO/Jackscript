@@ -29,15 +29,18 @@ public class AddItem extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            javax.swing.JButton[] strings = new javax.swing.JButton[MainThread.oItems.a.size()];
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return javax.swing.JButton[i]; }
-        });
+        int ct=MainThread.oItems.a.size();
+
+        int count=0;
+        javax.swing.JButton [] strings=new javax.swing.JButton[MainThread.oItems.a.size()];
+        for(int i=0;i<MainThread.oItems.a.size();i++){
+            strings[i]=new javax.swing.JButton(MainThread.oItems.a.get(i).getItemName());
+
+        }jList1.setListData(strings);
         jList1.setMaximumSize(new java.awt.Dimension(290, 488));
         jList1.setMinimumSize(new java.awt.Dimension(290, 488));
         jList1.setName(""); // NOI18N
