@@ -3,21 +3,39 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/I:/Jekscript/Jackscript/src/app/FileChooser.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/MainThread.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/AMenu.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/InventoryList.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/ManageCustomers.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/AddItem.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/CustomerMenu.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/Item.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/CustomerList.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/LoadImageApp.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/OpeningScreen.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/POS.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/CustomerDatabase.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/ManageInventory.java</file>
-            <file>file:/I:/Jekscript/Jackscript/src/app/CreateAnOrder.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/ManageInventory.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/TransactionClient.java</file>
+            <file>file:/F:/Jekscript/Jackscript/Inventory.csv.csv</file>
+            <file>file:/F:/Jekscript/Jackscript/Transactions_Log.csv</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/AMenu.java</file>
+            <file>file:/F:/Jekscript/Jackscript/README.md</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/GiftCardTransaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CustomerDatabase.java</file>
+            <file>file:/F:/Jekscript/Jackscript/Customer.csv</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/POS.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/Items.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/OpeningScreen.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/AddItem.java</file>
+            <file>file:/F:/Jekscript/Jackscript/Product.csv</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/Transaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/build.xml</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CreateAnOrder.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CustomerList.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/FileChooser.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/Inventory.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CheckTransaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/MainThread.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/Customer.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/InventoryList.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CreditTransaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/ManageCustomers.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/DebitTransaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/nbproject/private/private.xml</file>
+            <file>file:/F:/Jekscript/Jackscript/Inventory.csv</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CustomerMenu.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/CashTransaction.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/Item.java</file>
+            <file>file:/F:/Jekscript/Jackscript/src/app/LoadImageApp.java</file>
         </group>
     </open-files>
 </project-private>

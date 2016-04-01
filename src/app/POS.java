@@ -247,7 +247,8 @@ public class POS extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemActionPerformed
-        // TODO add your handling code here:
+    AddItem add=new AddItem();
+    add.setVisible(true);
     }//GEN-LAST:event_addItemActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
