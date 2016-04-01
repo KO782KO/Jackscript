@@ -102,8 +102,7 @@ public class CustomerMenu extends javax.swing.JFrame {
 
     private void ViewDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDatabaseActionPerformed
         dispose();
-        CustomerList list=new CustomerList();
-        list.setVisible(true);
+        MainThread.Clist.setVisible(true);
     }//GEN-LAST:event_ViewDatabaseActionPerformed
 
     /**
