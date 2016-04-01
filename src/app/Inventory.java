@@ -12,14 +12,13 @@ public class Inventory implements Comparable<Inventory> {
     
     private int itemID;
     private int quantityInStock;
-    private int quantitySold;
+    
     public Inventory(){};
     
-    public Inventory(int itemID, int quantityInStock, int quantitySold){
+    public Inventory(int itemID, int quantityInStock){
         //TODO: ids should be alphanumerical
         this.itemID=itemID;
         this.quantityInStock=quantityInStock;
-        this.quantitySold=quantitySold;
     }
     
     
@@ -44,15 +43,14 @@ public class Inventory implements Comparable<Inventory> {
     public int getQuantityInStock() {
         return quantityInStock;
     }
+
     /**
      * @param quantityInStock the quantityInStock to set
      */
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-    public void setHistory(int quantityInStock){
-        
-    }
+    
     @Override
     public int compareTo(Inventory inventory) {
         if (this.itemID < inventory.itemID) {

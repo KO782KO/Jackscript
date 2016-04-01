@@ -5,27 +5,22 @@ public class Item implements Comparable<Item>{
     private String itemName;
     private double sellingPrice;
     private int quantity;
-    private int itemsSold;
+    
     public Item(){};
 
     public Item(int itemId, String itemName, 
-            double sellingPrice, int quantity, int itemsSold) {
+            double sellingPrice, int quantity) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.sellingPrice = sellingPrice;
         this.quantity=quantity;
-        this.itemsSold=itemsSold;
     }
 
     public int getItemId() {
         return itemId;
     }
-
     public String getItemName() {
         return itemName;
-    }
-    public int setItemsSold(){
-        return itemsSold;
     }
 
     public double getSellingPrice() {
@@ -90,10 +85,7 @@ public class Item implements Comparable<Item>{
         inventory.append(",");
         inventory.append(quantity);
         inventory.append(",");
-        inventory.append(itemsSold);
-        inventory.append(",");
-        return inventory.toString();
-        
+        return inventory.toString(); 
     }
 }
 

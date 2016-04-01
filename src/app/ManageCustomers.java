@@ -68,7 +68,6 @@ public class ManageCustomers extends javax.swing.JFrame {
             LastNameLabel = new javax.swing.JLabel();
             PhoneNumField = new javax.swing.JTextField();
             PhoneNumLabel = new javax.swing.JLabel();
-            AddExistingItems = new javax.swing.JPanel();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
             setTitle("Create Item");
@@ -174,7 +173,7 @@ public class ManageCustomers extends javax.swing.JFrame {
                         .addGroup(AddNewCustomerLayout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(EmailLabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                             .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap())
             );
@@ -209,43 +208,27 @@ public class ManageCustomers extends javax.swing.JFrame {
             jTabbedPane1.addTab("Add New Customer", null, AddNewCustomer, "");
             AddNewCustomer.getAccessibleContext().setAccessibleName("");
 
-            AddExistingItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-            javax.swing.GroupLayout AddExistingItemsLayout = new javax.swing.GroupLayout(AddExistingItems);
-            AddExistingItems.setLayout(AddExistingItemsLayout);
-            AddExistingItemsLayout.setHorizontalGroup(
-                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 358, Short.MAX_VALUE)
-            );
-            AddExistingItemsLayout.setVerticalGroup(
-                AddExistingItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 319, Short.MAX_VALUE)
-            );
-
-            jTabbedPane1.addTab("Add Existing Items", AddExistingItems);
-
             javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jTabbedPane1)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(BackButton)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(BackButton)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jTabbedPane1))
+                    .addContainerGap())
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BackButton)
-                    .addGap(46, 46, 46)
-<<<<<<< HEAD
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(175, Short.MAX_VALUE))
->>>>>>> refs/remotes/origin/dev
+                    .addGap(0, 0, 0)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(396, Short.MAX_VALUE))
             );
 
             jTabbedPane1.getAccessibleContext().setAccessibleDescription("");
@@ -270,7 +253,44 @@ public class ManageCustomers extends javax.swing.JFrame {
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // exit
         dispose();
+        CustomerMenu cm=new CustomerMenu();
+        cm.setVisible(true);
     }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void PhoneNumFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PhoneNumFieldKeyPressed
+        // TODO add your handling code here:
+        if(PhoneNumField.getText().length()<10){
+
+        }
+        else{
+            PhoneNumField.setText(PhoneNumField.getText().substring(0,PhoneNumField.getText().length()-1));
+        }
+    }//GEN-LAST:event_PhoneNumFieldKeyPressed
+
+    private void PhoneNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PhoneNumFieldActionPerformed
+
+    private void LastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LastNameFieldActionPerformed
+
+    private void AddCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomerButtonActionPerformed
+        if(
+            (!MainThread.db.checkCustomers(Integer.parseInt(IDNumField.getText())))
+            &&IDNumField.getText().length()>=1
+            &&FirstNameField.getText().length()>=1
+            &&LastNameField.getText().length()>=1
+            &&PhoneNumField.getText().length()==10
+            &&EmailField.getText().length()>=1){
+
+            MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
+        }
+    }//GEN-LAST:event_AddCustomerButtonActionPerformed
+
+    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailFieldActionPerformed
 
     private void FirstNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameFieldActionPerformed
         // TODO add your handling code here:
@@ -279,41 +299,6 @@ public class ManageCustomers extends javax.swing.JFrame {
     private void IDNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNumFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IDNumFieldActionPerformed
-
-    private void AddCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomerButtonActionPerformed
-        if(
-                (!MainThread.db.checkCustomers(Integer.parseInt(IDNumField.getText())))
-                &&IDNumField.getText().length()>=1
-                &&FirstNameField.getText().length()>=1
-                &&LastNameField.getText().length()>=1
-                &&PhoneNumField.getText().length()==10
-                &&EmailField.getText().length()>=1){
-                
-   MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
-        }
-    }//GEN-LAST:event_AddCustomerButtonActionPerformed
-
-    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmailFieldActionPerformed
-
-    private void LastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastNameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LastNameFieldActionPerformed
-
-    private void PhoneNumFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PhoneNumFieldActionPerformed
-
-    private void PhoneNumFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PhoneNumFieldKeyPressed
-        // TODO add your handling code here:
-        if(PhoneNumField.getText().length()<10){
-            
-        }
-        else{
-            PhoneNumField.setText(PhoneNumField.getText().substring(0,PhoneNumField.getText().length()-1));
-        }
-    }//GEN-LAST:event_PhoneNumFieldKeyPressed
 
     /**
      * @param args the command line arguments
@@ -355,7 +340,6 @@ public class ManageCustomers extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddCustomerButton;
-    private javax.swing.JPanel AddExistingItems;
     private javax.swing.JPanel AddNewCustomer;
     private javax.swing.JButton BackButton;
     private javax.swing.JTextField EmailField;

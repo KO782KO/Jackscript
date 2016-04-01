@@ -48,7 +48,7 @@ public class OpeningScreen extends javax.swing.JFrame {
             java.util.Calendar date=java.util.Calendar.getInstance();
             String DATE =df.format(date.getTime());
             try{
-             BufferedWriter fileWriter=new BufferedWriter(new FileWriter("lib\\Version.txt"));
+             BufferedWriter fileWriter=new BufferedWriter(new FileWriter("dist//lib//Version.txt"));
              fileWriter.write(DATE);
              fileWriter.close();
              System.out.println("new version created");
@@ -116,9 +116,9 @@ public class OpeningScreen extends javax.swing.JFrame {
             });
 
             jTextField1.setEditable(false);
-            jTextField1.setText("jTextField1");
+            jTextField1.setToolTipText("");
             try{
-                java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("lib//Version.txt"));
+                java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("dist//lib//Version.txt"));
                 jTextField1.setText("Version: "+read.readLine().toString());
             }catch(java.io.FileNotFoundException e){
                 System.out.println("File not found.");
@@ -243,9 +243,9 @@ public class OpeningScreen extends javax.swing.JFrame {
             jButton1.grabFocus();
                 return;
             }
-            for(int c=0;c<=50;c++){
+            for(int c=0;c<=10;c++){
                 FancyTitle.setText(showString);
-                Thread.sleep(10);
+                Thread.sleep(30);
                 remain=jek.length()-1-done;
                 showString=jek.substring(0,done);
                 for(int r=0;r<=remain;r++){
