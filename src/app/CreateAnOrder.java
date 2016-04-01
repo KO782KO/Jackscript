@@ -23,7 +23,6 @@ import javax.swing.DefaultComboBoxModel;
  * @author Nolan
  */
 public class CreateAnOrder extends javax.swing.JFrame {
-    private ArrayList<Transaction> transactions=new ArrayList<Transaction>();
     @Override
     public void setDefaultCloseOperation(int operation) {
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
@@ -41,7 +40,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         //Iterator a=MainThread.db.getCustomerList().iterator();
         
        
-        ArrayList<Integer> customerIDList=new ArrayList<Integer>();
+        ArrayList<Integer> customerIDList=new ArrayList<>();
         //ArrayList<type> orderType=new ArrayList<type>();
         //Fills array with list of customers to be used with the drop down menu
         MainThread.db.initCustomers();
@@ -52,11 +51,11 @@ public class CreateAnOrder extends javax.swing.JFrame {
         SelCustomer_ComboBox.setModel(new DefaultComboBoxModel(customerIDList.toArray()));
         //jComboBox1.setModel(new DefaultComboBoxModel())
         
-        Iterator b=MainThread.oItems.a.iterator();
+        Iterator b=Items.a.iterator();
         
-        ArrayList<Integer> productIDList=new ArrayList<Integer>();
+        ArrayList<Integer> productIDList=new ArrayList<>();
         
-        for(Item i:MainThread.oItems.a){
+        for(Item i:Items.a){
             productIDList.add(i.getItemId());
        }
         
@@ -208,6 +207,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             AmtField = new javax.swing.JTextField();
                             AmtLabel = new javax.swing.JLabel();
                             jLabel1 = new javax.swing.JLabel();
+                            addMoreItems = new javax.swing.JButton();
                             IdkField = new javax.swing.JTextField();
 
                             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -478,7 +478,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                             .add(0, 0, Short.MAX_VALUE))
                                         .add(org.jdesktop.layout.GroupLayout.LEADING, ProductDetailsLayout.createSequentialGroup()
                                             .add(ProductNameLabel)
-                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 6, Short.MAX_VALUE)
                                             .add(ProductNameField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                         .add(ProductDetailsLayout.createSequentialGroup()
                                             .add(ProductDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
@@ -550,6 +550,13 @@ public class CreateAnOrder extends javax.swing.JFrame {
                             jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                             jLabel1.setText("Order Details");
 
+                            addMoreItems.setText("Add More Items");
+                            addMoreItems.addActionListener(new java.awt.event.ActionListener() {
+                                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                    addMoreItemsActionPerformed(evt);
+                                }
+                            });
+
                             org.jdesktop.layout.GroupLayout OrderDetailsLayout = new org.jdesktop.layout.GroupLayout(OrderDetails);
                             OrderDetails.setLayout(OrderDetailsLayout);
                             OrderDetailsLayout.setHorizontalGroup(
@@ -557,14 +564,16 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                 .add(OrderDetailsLayout.createSequentialGroup()
                                     .add(73, 73, 73)
                                     .add(jLabel1)
-                                    .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .add(OrderDetailsLayout.createSequentialGroup()
+                                    .addContainerGap(96, Short.MAX_VALUE))
+                                .add(org.jdesktop.layout.GroupLayout.TRAILING, OrderDetailsLayout.createSequentialGroup()
                                     .add(26, 26, 26)
                                     .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                         .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 91, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(AmtLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 7, Short.MAX_VALUE)
-                                    .add(SubmitButton)
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                        .add(addMoreItems, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(SubmitButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addContainerGap())
                             );
                             OrderDetailsLayout.setVerticalGroup(
@@ -578,7 +587,9 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                     .add(OrderDetailsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                         .add(AmtField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(SubmitButton))
-                                    .addContainerGap(98, Short.MAX_VALUE))
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                    .add(addMoreItems, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(55, Short.MAX_VALUE))
                             );
 
                             IdkField.setEditable(false);
@@ -610,7 +621,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
                                             .add(30, 30, 30)
                                             .add(OrderSummary, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .add(IdkField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 775, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .addContainerGap(30, Short.MAX_VALUE))
+                                    .addContainerGap(28, Short.MAX_VALUE))
                             );
                             jPanel3Layout.setVerticalGroup(
                                 jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -649,9 +660,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
         // exit
         dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
-    public ArrayList<Transaction> getArrayList(){
-        return transactions;
-    }
+
     private void SubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitButtonActionPerformed
         // selects customer & item to submit order
         Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
@@ -772,7 +781,6 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void SelProduct_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelProduct_ComboBoxActionPerformed
         // TODO add your handling code here:
-       // int itemsSelected=0; 
         Collections.sort(Items.a);
         Item item=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
         
@@ -780,22 +788,8 @@ public class CreateAnOrder extends javax.swing.JFrame {
         ProductNameField.setText(item.getItemName());
         QuantityField.setText(""+item.getQuantity());
         PricePerUnitField.setText("$"+item.getSellingPrice());
-       // itemsSelected+=1;
-        ProductNameField.setVisible(true);
         ProductNameField.setVisible(true);
         PricePerUnitField.setVisible(true);
-       /* while(itemsSelected>0){
-            IdkField.setVisible(false);
-            ProductNameField.setText(item.getItemName());
-            QuantityField.setText(""+item.getQuantity());
-            PricePerUnitField.setText("$"+item.getSellingPrice());
-            //itemsSelected++;
-            ProductNameField.setVisible(true);
-            ProductNameField.setVisible(true);
-            PricePerUnitField.setVisible(true);
-            if((SelProduct_ComboBox.getSelectedIndex())<=0){
-                itemsSelected=-1;
-*/            
         
     }//GEN-LAST:event_SelProduct_ComboBoxActionPerformed
 
@@ -850,6 +844,24 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void addMoreItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMoreItemsActionPerformed
+        // TODO add your handling code here:
+        Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
+          String entry=(AmtField.getText()).trim();
+        int quantityRequested=-1;
+        int quantity=tempItem.getQuantity();
+        IdkField.setVisible(false);
+        Collections.sort(Items.a);
+        Item item=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
+        
+        IdkField.setVisible(false);
+        ProductNameField.setText(item.getItemName());
+        QuantityField.setText(""+item.getQuantity());
+        PricePerUnitField.setText("$"+item.getSellingPrice());
+        ProductNameField.setVisible(true);
+        PricePerUnitField.setVisible(true);
+    }//GEN-LAST:event_addMoreItemsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -930,6 +942,7 @@ public class CreateAnOrder extends javax.swing.JFrame {
     private javax.swing.JButton SubmitButton;
     private javax.swing.JTextField TotalCostField;
     private javax.swing.JLabel TotalCostLabel;
+    private javax.swing.JButton addMoreItems;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
