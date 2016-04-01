@@ -10,7 +10,7 @@ package app;
  *
  * @author Kevin
  */
-public class CustomerMenu extends javax.swing.JFrame {
+public class InventoryMenu extends javax.swing.JFrame {
     @Override
     public void setDefaultCloseOperation(int operation) {
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
@@ -19,7 +19,7 @@ public class CustomerMenu extends javax.swing.JFrame {
     /**
      * Creates new form CustomerMenu
      */
-    public CustomerMenu() {
+    public InventoryMenu() {
         initComponents();
     }
 
@@ -61,9 +61,10 @@ public class CustomerMenu extends javax.swing.JFrame {
             BackButton = new javax.swing.JButton();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            setSize(new java.awt.Dimension(477, 195));
 
             ManageCustomers.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-            ManageCustomers.setText("Manage Customers");
+            ManageCustomers.setText("Manage Inventory");
             ManageCustomers.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     ManageCustomersActionPerformed(evt);
@@ -80,7 +81,7 @@ public class CustomerMenu extends javax.swing.JFrame {
 
             jLabel1.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
             jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel1.setText("Customer Menu");
+            jLabel1.setText("Inventory Menu");
 
             BackButton.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
             BackButton.setText("< Back");
@@ -141,14 +142,14 @@ public class CustomerMenu extends javax.swing.JFrame {
 
     private void ManageCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCustomersActionPerformed
         dispose();
-        ManageCustomers mc=new ManageCustomers();
-        mc.setVisible(true);
+        ManageInventory mi=new ManageInventory();
+        mi.setVisible(true);
     }//GEN-LAST:event_ManageCustomersActionPerformed
 
     private void ViewDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDatabaseActionPerformed
         dispose();
-        CustomerList clist=new CustomerList();
-        clist.setVisible(true);
+        InventoryList ilist=new InventoryList();
+        ilist.setVisible(true);
     }//GEN-LAST:event_ViewDatabaseActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
@@ -173,20 +174,21 @@ public class CustomerMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CustomerMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CustomerMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CustomerMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CustomerMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventoryMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomerMenu().setVisible(true);
+                new InventoryMenu().setVisible(true);
             }
         });
     }

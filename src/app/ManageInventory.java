@@ -248,6 +248,8 @@ public class ManageInventory extends javax.swing.JFrame {
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // exit
         dispose();
+        InventoryMenu im=new InventoryMenu();
+        im.setVisible(true);
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed

@@ -116,7 +116,7 @@ public class OpeningScreen extends javax.swing.JFrame {
             });
 
             jTextField1.setEditable(false);
-            jTextField1.setText("jTextField1");
+            jTextField1.setToolTipText("");
             try{
                 java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("dist//lib//Version.txt"));
                 jTextField1.setText("Version: "+read.readLine().toString());
@@ -243,9 +243,9 @@ public class OpeningScreen extends javax.swing.JFrame {
             jButton1.grabFocus();
                 return;
             }
-            for(int c=0;c<=50;c++){
+            for(int c=0;c<=10;c++){
                 FancyTitle.setText(showString);
-                Thread.sleep(10);
+                Thread.sleep(30);
                 remain=jek.length()-1-done;
                 showString=jek.substring(0,done);
                 for(int r=0;r<=remain;r++){
