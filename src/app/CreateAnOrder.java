@@ -847,10 +847,18 @@ public class CreateAnOrder extends javax.swing.JFrame {
 
     private void addMoreItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMoreItemsActionPerformed
         // TODO add your handling code here:
+        Customer customer=MainThread.db.getCustomers().get(SelCustomer_ComboBox.getSelectedIndex());
         Item tempItem=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
-          String entry=(AmtField.getText()).trim();
+        int paymentType=jComboBox1.getSelectedIndex();
         int quantityRequested=-1;
         int quantity=tempItem.getQuantity();
+                     java.text.DateFormat df = new java.text.SimpleDateFormat("dd/MM/yy HH:mm:ss");
+            java.util.Calendar date=java.util.Calendar.getInstance();
+            String DATE =df.format(date.getTime());
+        Transaction tempTransaction=MainThread.transactions.generateTransactionType(paymentType,tempItem.getItemId(),customer.getCustomerID(),quantityRequested, DATE, 0, OrderType_ComboBox.getItemAt(OrderType_ComboBox.getSelectedIndex()).toString());
+
+          String entry=(AmtField.getText()).trim();
+
         IdkField.setVisible(false);
         Collections.sort(Items.a);
         Item item=Items.a.get(SelProduct_ComboBox.getSelectedIndex());
@@ -861,6 +869,40 @@ public class CreateAnOrder extends javax.swing.JFrame {
         PricePerUnitField.setText("$"+item.getSellingPrice());
         ProductNameField.setVisible(true);
         PricePerUnitField.setVisible(true);
+            int orderType=OrderType_ComboBox.getSelectedIndex();
+        boolean shippingCharged=MainThread.oItems.addShipping(orderType);
+        double shippingFee=4.00;
+        String shipping="$"+shippingFee+"0";
+        if(shippingCharged){
+            SnHField.setText(shipping);
+            
+        }else{
+            SnHField.setText("$0.00");
+        }
+            shippingCharged = MainThread.oItems.addShipping(OrderType_ComboBox.getSelectedIndex());
+            SnHField.setText("$0.00");
+            //calcualates shipping charge 
+            double price;
+            price = MainThread.oItems.getOrderPrice(tempTransaction, tempItem, quantityRequested);
+           
+            //sets final price of item ordered
+            double finalPrice=price;
+                    tempTransaction.setPrice(finalPrice);
+            PriceField.setVisible(true);
+            PriceField.setText("$"+price);
+            TotalCostField.setVisible(true);
+            TotalCostField.setText("$"+finalPrice);
+            //creating boolean for giftcard transaction
+            Boolean giftcardPay;
+           // giftcardPay = MainThread.oitems.addgiftCard()
+            //makes sale of item and sends to inventory file
+            MainThread.oItems.sellAnItem(shippingCharged,tempTransaction,tempItem);
+            //summarizes order
+            ScrollPaneTextArea.setText(MainThread.oItems.orderSummary(tempTransaction));
+            int qoh=Integer.parseInt(QuantityField.getText());
+            int updated=qoh-quantityRequested;
+            QuantityField.setText(""+updated);
+        
     }//GEN-LAST:event_addMoreItemsActionPerformed
 
     /**
