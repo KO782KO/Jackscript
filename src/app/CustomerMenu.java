@@ -59,6 +59,7 @@ public class CustomerMenu extends javax.swing.JFrame {
             ViewDatabase = new javax.swing.JButton();
             jLabel1 = new javax.swing.JLabel();
             BackButton = new javax.swing.JButton();
+            jProgressBar1 = new javax.swing.JProgressBar();
 
             setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,10 +92,18 @@ public class CustomerMenu extends javax.swing.JFrame {
                 }
             });
 
+            jProgressBar1.setIndeterminate(true);
+            jProgressBar1.setString("Loading...");
+            jProgressBar1.setStringPainted(true);
+            jProgressBar1.setVisible(false);
+
             javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
             jPanel1.setLayout(jPanel1Layout);
             jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(BackButton)
+                    .addGap(0, 0, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(58, 58, 58)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -104,9 +113,7 @@ public class CustomerMenu extends javax.swing.JFrame {
                             .addGap(31, 31, 31)
                             .addComponent(ViewDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(58, Short.MAX_VALUE))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(BackButton)
-                    .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             );
             jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +123,9 @@ public class CustomerMenu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ManageCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ViewDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(BackButton))
             );
 
@@ -146,9 +155,15 @@ public class CustomerMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ManageCustomersActionPerformed
 
     private void ViewDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDatabaseActionPerformed
-        dispose();
+        jProgressBar1.setVisible(true);    
+        new Thread(){
+        @Override
+        public void run(){
         CustomerList clist=new CustomerList();
         clist.setVisible(true);
+        }}.start();
+        
+        dispose();
     }//GEN-LAST:event_ViewDatabaseActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
@@ -197,5 +212,6 @@ public class CustomerMenu extends javax.swing.JFrame {
     private javax.swing.JButton ViewDatabase;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
