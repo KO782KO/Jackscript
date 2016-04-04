@@ -260,6 +260,10 @@ public class OpeningScreen extends javax.swing.JFrame {
                 }
             }
            }
+        if(done==jek.length()){
+            Thread.sleep(800);
+            prettyLetters();
+        }
     }
     /**
      * @param args the command line arguments
