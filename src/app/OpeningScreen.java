@@ -213,7 +213,7 @@ public class OpeningScreen extends javax.swing.JFrame {
         public void run(){
         MainThread.main(null);dispose();
         }}.start();
-    
+     
        // dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
