@@ -232,7 +232,7 @@ public class OpeningScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FancyTitleActionPerformed
 
-    private void prettyLetters() throws InterruptedException{
+    private void prettyLetters() throws InterruptedException{Thread.sleep(800);
             String jek="JackScript";
             String showString="";
             int remain=jek.length()-1;
@@ -260,6 +260,10 @@ public class OpeningScreen extends javax.swing.JFrame {
                 }
             }
            }
+        if(done==jek.length()){
+            Thread.sleep(800);
+            prettyLetters();
+        }
     }
     /**
      * @param args the command line arguments

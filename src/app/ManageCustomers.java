@@ -5,6 +5,8 @@
  */
 package app;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kevin
@@ -20,7 +22,38 @@ public class ManageCustomers extends javax.swing.JFrame {
     public ManageCustomers() {
         initComponents();
     }
-
+    private boolean emailCheck(){
+        for(char c:EmailField.getText().toCharArray()){
+            if(c=='@'){
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean crazyBoo(){
+        if(
+            (!MainThread.db.checkCustomers(Integer.parseInt(IDNumField.getText())))
+            &&IDNumField.getText().length()>=1
+            &&FirstNameField.getText().length()>=1
+            &&LastNameField.getText().length()>=1
+            &&PhoneNumField.getText().length()==10
+            &&EmailField.getText().length()>=1
+            &&emailCheck()){
+            return true;
+        }
+        else{
+        if(IDNumField.getText().length()==0);
+            JOptionPane.showMessageDialog(null, "The ID number field is empty.", "Error", JOptionPane.ERROR_MESSAGE);
+        if(FirstNameField.getText().length()==0);
+            JOptionPane.showMessageDialog(null, "The First Name field is empty.", "Error", JOptionPane.ERROR_MESSAGE);
+        if(LastNameField.getText().length()==0);
+            JOptionPane.showMessageDialog(null, "The Last Name field is empty.", "Error", JOptionPane.ERROR_MESSAGE);
+        if(PhoneNumField.getText().length()==0);
+            JOptionPane.showMessageDialog(null, "The Phone Number field is empty.", "Error", JOptionPane.ERROR_MESSAGE);
+        if(EmailField.getText().length()==0);
+            JOptionPane.showMessageDialog(null, "The Email field is empty.", "Error", JOptionPane.ERROR_MESSAGE);
+        return false;}
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -276,14 +309,7 @@ public class ManageCustomers extends javax.swing.JFrame {
     }//GEN-LAST:event_LastNameFieldActionPerformed
 
     private void AddCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomerButtonActionPerformed
-        if(
-            (!MainThread.db.checkCustomers(Integer.parseInt(IDNumField.getText())))
-            &&IDNumField.getText().length()>=1
-            &&FirstNameField.getText().length()>=1
-            &&LastNameField.getText().length()>=1
-            &&PhoneNumField.getText().length()==10
-            &&EmailField.getText().length()>=1){
-
+        if(crazyBoo()){
             MainThread.db.addNewCustomer(Integer.parseInt(IDNumField.getText()), FirstNameField.getText(), LastNameField.getText(), Long.parseLong(PhoneNumField.getText()), EmailField.getText());
         }
     }//GEN-LAST:event_AddCustomerButtonActionPerformed
