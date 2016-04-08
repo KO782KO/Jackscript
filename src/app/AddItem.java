@@ -53,6 +53,8 @@ public class AddItem extends javax.swing.JFrame {
             .addGap(0, 447, Short.MAX_VALUE)
         );
 
+        jScrollPane2.add(jPanel2);
+
         jScrollPane2.setViewportView(jPanel2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
