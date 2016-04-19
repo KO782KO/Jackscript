@@ -12,14 +12,15 @@ package app;
 public class CustLookup extends javax.swing.JFrame {
     private java.util.List<javax.swing.JButton> list=new java.util.ArrayList<javax.swing.JButton>();
     javax.swing.JButton but;
-    
+    @Override
+    public void setDefaultCloseOperation(int operation) {
+        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
+    }
     /**
      * Creates new form CustLookup
      */
     public CustLookup() {
         initComponents();
-        
-                
     }
 
     /**
@@ -149,6 +150,7 @@ public class CustLookup extends javax.swing.JFrame {
     );
 
     pack();
+    setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
@@ -229,7 +231,6 @@ public class CustLookup extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
