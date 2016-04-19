@@ -144,7 +144,10 @@ public class POS extends javax.swing.JFrame {
 
             jButton12.setText("jButton1");
 
-            jButton13.setText("jButton1");
+            jButton13.setBackground(new java.awt.Color(255, 51, 51));
+            jButton13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            jButton13.setText("VOID");
+            jButton13.setToolTipText("");
 
             exitPOS.setText("Exit");
             exitPOS.addActionListener(new java.awt.event.ActionListener() {

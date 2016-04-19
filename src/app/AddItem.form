@@ -23,62 +23,63 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <EmptySpace min="0" pref="800" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="619" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanel3">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="195" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="241" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="59" max="32767" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JScrollPane(jPanel2)"/>
-          </AuxValues>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel2">
+            <Container class="javax.swing.JPanel" name="jPanel4">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jPanel2.setLayout(new java.awt.GridLayout(MainThread.oItems.a.size(), 1)); // 15 rows, 1 column"/>
-                <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="jScrollPane2.add(jPanel2);"/>
-                <AuxValue name="JavaCodeGenerator_LayoutCodePre" type="java.lang.String" value="for(Item i:MainThread.oItems.a){&#xa;jPanel2.add(new javax.swing.JButton(i.getItemName()));&#xa;}"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel4 = new javax.swing.JPanel();&#xa;//jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4,javax.swing.BoxLayout.Y_AXIS)); // 15 rows, 1 column&#xa;&#xa;jPanel4.setSize(new java.awt.Dimension(100,300));&#xa;// Code of sub-components - not shown here&#xa;java.util.List&lt;javax.swing.JButton&gt; list=new java.util.ArrayList&lt;javax.swing.JButton&gt;();&#xa;jPanel4.setLayout(null);&#xa;int h=0;&#xa;for(Item i:MainThread.oItems.a){&#xa;    javax.swing.JButton button=new javax.swing.JButton(i.getItemName()+&quot; -- $&quot;+i.getSellingPrice());&#xa;    button.setSize(new java.awt.Dimension(250,60));&#xa;    button.setLocation(0,h);&#xa;    button.setFont(new java.awt.Font(&quot;Cambria&quot;,1,20));&#xa;    button.addActionListener(new java.awt.event.ActionListener() {&#xa;            public void actionPerformed(java.awt.event.ActionEvent evt) {&#xa;                buttonActionPerformed(evt);&#xa;            }&#xa;        });&#xa;    h+=button.getHeight();&#xa;    list.add(button);&#xa;}&#xa;for(int i=0;i&lt;list.size();i++){&#xa;    jPanel4.add(list.get(i));&#xa;}&#xa;// Layout setup code - not shown here&#xa;&#xa;// Code adding the component to the parent container - not shown here)"/>
               </AuxValues>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="351" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="447" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="578" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
