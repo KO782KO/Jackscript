@@ -36,7 +36,7 @@ public class AddItem extends javax.swing.JFrame {
         jPanel4 = jPanel4 = new javax.swing.JPanel();
         //jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4,javax.swing.BoxLayout.Y_AXIS)); // 15 rows, 1 column
 
-        jPanel4.setSize(new java.awt.Dimension(100,300));
+        jPanel4.setSize(new java.awt.Dimension(100,600));
         // Code of sub-components - not shown here
         java.util.List<javax.swing.JButton> list=new java.util.ArrayList<javax.swing.JButton>();
         jPanel4.setLayout(null);
@@ -52,6 +52,7 @@ public class AddItem extends javax.swing.JFrame {
                 }
             });
             h+=button.getHeight();
+            jPanel4.setPreferredSize(new java.awt.Dimension(300,h));
             list.add(button);
         }
         for(int i=0;i<list.size();i++){
@@ -71,7 +72,7 @@ public class AddItem extends javax.swing.JFrame {
     );
     jPanel4Layout.setVerticalGroup(
         jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 578, Short.MAX_VALUE)
+        .addGap(0, 2000, Short.MAX_VALUE)
     );
 
     jScrollPane1.setViewportView(jPanel4);
@@ -89,8 +90,8 @@ public class AddItem extends javax.swing.JFrame {
         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(28, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(50, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

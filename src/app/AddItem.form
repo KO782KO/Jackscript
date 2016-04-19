@@ -55,8 +55,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="558" max="-2" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -68,7 +68,7 @@
           <SubComponents>
             <Container class="javax.swing.JPanel" name="jPanel4">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel4 = new javax.swing.JPanel();&#xa;//jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4,javax.swing.BoxLayout.Y_AXIS)); // 15 rows, 1 column&#xa;&#xa;jPanel4.setSize(new java.awt.Dimension(100,300));&#xa;// Code of sub-components - not shown here&#xa;java.util.List&lt;javax.swing.JButton&gt; list=new java.util.ArrayList&lt;javax.swing.JButton&gt;();&#xa;jPanel4.setLayout(null);&#xa;int h=0;&#xa;for(Item i:MainThread.oItems.a){&#xa;    javax.swing.JButton button=new javax.swing.JButton(i.getItemName()+&quot; -- $&quot;+i.getSellingPrice());&#xa;    button.setSize(new java.awt.Dimension(250,60));&#xa;    button.setLocation(0,h);&#xa;    button.setFont(new java.awt.Font(&quot;Cambria&quot;,1,20));&#xa;    button.addActionListener(new java.awt.event.ActionListener() {&#xa;            public void actionPerformed(java.awt.event.ActionEvent evt) {&#xa;                buttonActionPerformed(evt);&#xa;            }&#xa;        });&#xa;    h+=button.getHeight();&#xa;    list.add(button);&#xa;}&#xa;for(int i=0;i&lt;list.size();i++){&#xa;    jPanel4.add(list.get(i));&#xa;}&#xa;// Layout setup code - not shown here&#xa;&#xa;// Code adding the component to the parent container - not shown here)"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel4 = new javax.swing.JPanel();&#xa;//jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4,javax.swing.BoxLayout.Y_AXIS)); // 15 rows, 1 column&#xa;&#xa;jPanel4.setSize(new java.awt.Dimension(100,600));&#xa;// Code of sub-components - not shown here&#xa;java.util.List&lt;javax.swing.JButton&gt; list=new java.util.ArrayList&lt;javax.swing.JButton&gt;();&#xa;jPanel4.setLayout(null);&#xa;int h=0;&#xa;for(Item i:MainThread.oItems.a){&#xa;    javax.swing.JButton button=new javax.swing.JButton(i.getItemName()+&quot; -- $&quot;+i.getSellingPrice());&#xa;    button.setSize(new java.awt.Dimension(250,60));&#xa;    button.setLocation(0,h);&#xa;    button.setFont(new java.awt.Font(&quot;Cambria&quot;,1,20));&#xa;    button.addActionListener(new java.awt.event.ActionListener() {&#xa;        public void actionPerformed(java.awt.event.ActionEvent evt) {&#xa;            buttonActionPerformed(evt);&#xa;        }&#xa;    });&#xa;    h+=button.getHeight();&#xa;    jPanel4.setPreferredSize(new java.awt.Dimension(300,h));&#xa;    list.add(button);&#xa;}&#xa;for(int i=0;i&lt;list.size();i++){&#xa;    jPanel4.add(list.get(i));&#xa;}&#xa;// Layout setup code - not shown here&#xa;&#xa;// Code adding the component to the parent container - not shown here)"/>
               </AuxValues>
 
               <Layout>
@@ -79,7 +79,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="578" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="2000" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>

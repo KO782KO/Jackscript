@@ -16,6 +16,8 @@ import java.util.logging.Logger;
  */
 
 public class POS extends javax.swing.JFrame {
+    private java.util.ArrayList<Transaction> tempList=new java.util.ArrayList<Transaction>();
+    public int customerID=0;
     @Override
     public void setDefaultCloseOperation(int operation) {
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE); //To change body of generated methods, choose Tools | Templates.
@@ -75,6 +77,7 @@ public class POS extends javax.swing.JFrame {
             jButton12 = new javax.swing.JButton();
             jButton13 = new javax.swing.JButton();
             exitPOS = new javax.swing.JButton();
+            jTextField2 = new javax.swing.JTextField();
             jTextField1 = new javax.swing.JTextField();
             jLabel1 = new javax.swing.JLabel();
 
@@ -130,7 +133,12 @@ public class POS extends javax.swing.JFrame {
             jButton8.setBackground(new java.awt.Color(51, 204, 0));
             jButton8.setText("Cash");
 
-            jButton9.setText("jButton1");
+            jButton9.setText("Customer Lookup");
+            jButton9.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton9ActionPerformed(evt);
+                }
+            });
 
             jButton10.setText("jButton1");
 
@@ -153,6 +161,18 @@ public class POS extends javax.swing.JFrame {
             exitPOS.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     exitPOSActionPerformed(evt);
+                }
+            });
+
+            jTextField2.setEditable(false);
+            jTextField2.setText("Member ID: ");
+            jTextField2.setEnabled(false);
+            jTextField1.setOpaque(false);
+            jTextField1.setBorder(null);
+            jTextField1.setEditable(false);
+            jTextField2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jTextField2ActionPerformed(evt);
                 }
             });
 
@@ -185,7 +205,10 @@ public class POS extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(exitPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(exitPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             jPanel2Layout.setVerticalGroup(
@@ -211,8 +234,13 @@ public class POS extends javax.swing.JFrame {
                         .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(exitPOS, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 26, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap())
             );
+
+            jTextField2.setOpaque(false);
+            jTextField2.setBorder(null);
 
             jTextField1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,7 +297,7 @@ public class POS extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
     private void addItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemActionPerformed
-    AddItem add=new AddItem();
+    AddMenu add=new AddMenu();
     add.setVisible(true);
     }//GEN-LAST:event_addItemActionPerformed
 
@@ -289,6 +317,15 @@ public class POS extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        CustLookup cust=new CustLookup();
+        cust.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,6 +380,7 @@ public class POS extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField2;
     private javax.swing.JButton priceOverride;
     private javax.swing.JButton removeItem;
     // End of variables declaration//GEN-END:variables

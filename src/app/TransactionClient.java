@@ -54,7 +54,6 @@ if(transactions.size()>=1)
     readItem.close();
 }
 
-
 public void printTransactions(){
     for(Transaction t:transactions){
         System.out.println(t.toString());
