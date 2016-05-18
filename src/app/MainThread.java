@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
  * @author Nolan
  */
 public class MainThread {
+        public static POS pos=new POS();
         public static AMenu code=new AMenu();
         public static Items oItems=new Items();
         public static CustomerDatabase db=new CustomerDatabase();

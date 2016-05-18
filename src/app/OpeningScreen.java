@@ -116,7 +116,7 @@ public class OpeningScreen extends javax.swing.JFrame {
             });
 
             jTextField1.setEditable(false);
-            jTextField1.setText("jTextField1");
+            jTextField1.setToolTipText("");
             try{
                 java.io.BufferedReader read=new java.io.BufferedReader(new java.io.FileReader("dist//lib//Version.txt"));
                 jTextField1.setText("Version: "+read.readLine().toString());
@@ -232,7 +232,7 @@ public class OpeningScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FancyTitleActionPerformed
 
-    private void prettyLetters() throws InterruptedException{
+    private void prettyLetters() throws InterruptedException{Thread.sleep(800);
             String jek="JackScript";
             String showString="";
             int remain=jek.length()-1;
@@ -243,9 +243,9 @@ public class OpeningScreen extends javax.swing.JFrame {
             jButton1.grabFocus();
                 return;
             }
-            for(int c=0;c<=50;c++){
+            for(int c=0;c<=10;c++){
                 FancyTitle.setText(showString);
-                Thread.sleep(10);
+                Thread.sleep(30);
                 remain=jek.length()-1-done;
                 showString=jek.substring(0,done);
                 for(int r=0;r<=remain;r++){
@@ -260,6 +260,10 @@ public class OpeningScreen extends javax.swing.JFrame {
                 }
             }
            }
+        if(done==jek.length()){
+            Thread.sleep(800);
+            prettyLetters();
+        }
     }
     /**
      * @param args the command line arguments

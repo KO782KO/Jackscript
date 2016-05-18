@@ -139,7 +139,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
     if(t.getQuantity()>0&&itemID>0&&t.getQuantity()>0){
        MainThread.transactions.getList().add(t);
        t.logTransaction();
-       MainThread.oItems.getItems().updateQuantity(i.getItemId());
+       MainThread.oItems.getItems().updateItemInfo(i.getItemId());
     }
 }
 
@@ -219,7 +219,7 @@ public void sellAnItem(boolean shippingCharged,Transaction t,Item i){
          {
          }
 }
-     public void updateQuantity(int itemID) {
+     public void updateItemInfo(int itemID) {
          Item item=null;
          for(Item i:MainThread.oItems.getItems().a){
              if(i.getItemId()==itemID){

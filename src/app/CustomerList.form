@@ -45,6 +45,9 @@
           <Color blue="99" green="66" red="0" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    @Override&#xa;    protected void paintComponent(java.awt.Graphics g){&#xa;        java.awt.Graphics2D g2d1=(java.awt.Graphics2D)g.create();&#xa;        java.awt.RenderingHints hints1 = new java.awt.RenderingHints(&#xa;            java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);&#xa;        java.awt.RenderingHints render1 =new java.awt.RenderingHints(java.awt.RenderingHints.KEY_RENDERING,java.awt.RenderingHints.VALUE_RENDER_SPEED);&#xa;        hints1.add(render1);&#xa;        g2d1.setRenderingHints(hints1);&#xa;        java.awt.Polygon p1 = new java.awt.Polygon();&#xa;        p1.addPoint(0,0);&#xa;        p1.addPoint(0,200);&#xa;&#xa;        p1.addPoint(this.getWidth()+50, 200);&#xa;        p1.addPoint(this.getWidth()+50,0);&#xa;        java.awt.GradientPaint gp1 = new java.awt.GradientPaint(0.0f,200.0f,new java.awt.Color(20,60,100),&#xa;            0.0f, 0.0f,new java.awt.Color(100,200,200,255), true);&#xa;&#xa;        g2d1.setColor(new java.awt.Color(20,60,100));&#xa;        g2d1.fill(getBounds());&#xa;        g2d1.setPaint(gp1);&#xa;        g2d1.fill(p1);&#xa;    }}"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -57,8 +60,8 @@
                   <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="620" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="640" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>

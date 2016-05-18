@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,74 +23,67 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="945" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="800" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
+              <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="490" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="619" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+              <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanel3">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="342" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="241" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="397" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="558" max="-2" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
-              <Properties>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[290, 488]"/>
-                </Property>
-                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[290, 488]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[290, 488]"/>
-                </Property>
-              </Properties>
+            <Container class="javax.swing.JPanel" name="jPanel4">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList()"/>
-                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int ct=MainThread.oItems.a.size();&#xa;&#xa;int count=0;&#xa;javax.swing.JButton [] strings=new javax.swing.JButton[MainThread.oItems.a.size()];&#xa;for(int i=0;i&lt;MainThread.oItems.a.size();i++){&#xa;strings[i]=new javax.swing.JButton(MainThread.oItems.a.get(i).getItemName());&#xa;&#xa;&#x9;}jList1.setListData(strings);"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="jPanel4 = new javax.swing.JPanel();&#xa;//jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4,javax.swing.BoxLayout.Y_AXIS)); // 15 rows, 1 column&#xa;&#xa;jPanel4.setSize(new java.awt.Dimension(100,600));&#xa;// Code of sub-components - not shown here&#xa;java.util.List&lt;javax.swing.JButton&gt; list=new java.util.ArrayList&lt;javax.swing.JButton&gt;();&#xa;jPanel4.setLayout(null);&#xa;int h=0;&#xa;for(Item i:MainThread.oItems.a){&#xa;    javax.swing.JButton button=new javax.swing.JButton(i.getItemName()+&quot; -- $&quot;+i.getSellingPrice());&#xa;    button.setSize(new java.awt.Dimension(250,60));&#xa;    button.setLocation(0,h);&#xa;    button.setFont(new java.awt.Font(&quot;Cambria&quot;,1,20));&#xa;    button.addActionListener(new java.awt.event.ActionListener() {&#xa;        public void actionPerformed(java.awt.event.ActionEvent evt) {&#xa;            buttonActionPerformed(evt);&#xa;        }&#xa;    });&#xa;    h+=button.getHeight();&#xa;    jPanel4.setPreferredSize(new java.awt.Dimension(300,h));&#xa;    list.add(button);&#xa;}&#xa;for(int i=0;i&lt;list.size();i++){&#xa;    jPanel4.add(list.get(i));&#xa;}&#xa;// Layout setup code - not shown here&#xa;&#xa;// Code adding the component to the parent container - not shown here)"/>
               </AuxValues>
-            </Component>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="2000" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>

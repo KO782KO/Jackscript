@@ -7,7 +7,7 @@ package app;
 
 /**
  *
- * @author Kevin+Jack
+ * @author Kevin+Jack (but mostly Kevin)
  */
 public class TransactionClient {
     private java.util.ArrayList<Transaction> transactions=new java.util.ArrayList<Transaction>();
@@ -53,7 +53,6 @@ if(transactions.size()>=1)
     }
     readItem.close();
 }
-
 
 public void printTransactions(){
     for(Transaction t:transactions){
