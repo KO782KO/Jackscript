@@ -26,3 +26,4 @@ app.CashTransaction,56,6,2,[23/03/16 10:26:00],176.881,Online ($4 S&H)
 app.CashTransaction,67,5,3,[23/03/16 10:27:19],260.4715,Online ($4 S&H)
 app.CashTransaction,7865,10,5,[24/03/16 09:06:46],0.0475,In-Store
 app.DebitTransaction,12,13,3,[29/03/16 19:00:43],379.0,Online ($4 S&H)
+app.CashTransaction,67,7,4,01/04/16 22:45:35,345.962,Online ($4 S&H)
